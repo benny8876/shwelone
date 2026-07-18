@@ -121,10 +121,29 @@
       }
     });
   });
+
+  /* Practice area card accordion */
+  document.querySelectorAll('.pa-card-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.pa-card-accordion');
+      if (!card) return;
+      const open = card.classList.contains('is-open');
+      document.querySelectorAll('.pa-card-accordion.is-open').forEach((el) => {
+        el.classList.remove('is-open');
+        const toggle = el.querySelector('.pa-card-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+      if (!open) {
+        card.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
   /* Scroll reveal + staggered grids */
   const staggerGroups = [
     { root: document.querySelector('.pa-grid'), item: '.pa-card.reveal' },
-    { root: document.querySelector('.engage-accordion'), item: '.engage-item.reveal' },
+    { root: document.querySelector('.engage-accordion#engage-accordion'), item: '.engage-item.reveal' },
     { root: document.querySelector('.retainer-grid'), item: '.retainer-card.reveal' },
     { root: document.querySelector('.insights-grid'), item: '.insight-card.reveal' },
   ].filter((g) => g.root && g.root.querySelectorAll(g.item).length);
@@ -166,6 +185,60 @@
   } else {
     reveals.forEach((el) => el.classList.add('visible'));
   }
+
+  /* BlurText (react-bits style) — word-by-word blur reveal */
+  function initBlurText(el) {
+    if (!el || el.dataset.blurReady === '1') return;
+    const raw = el.textContent.replace(/\s+/g, ' ').trim();
+    if (!raw) return;
+
+    const delay = Number(el.dataset.blurDelay || 150);
+    const direction = el.dataset.blurDirection || 'top';
+    const fromY = direction === 'top' ? -50 : 50;
+    const midY = direction === 'top' ? 5 : -5;
+    const words = raw.split(' ');
+
+    el.setAttribute('aria-label', raw);
+    el.textContent = '';
+    el.style.setProperty('--blur-from-y', `${fromY}px`);
+    el.style.setProperty('--blur-mid-y', `${midY}px`);
+
+    words.forEach((word, i) => {
+      const seg = document.createElement('span');
+      seg.className = 'blur-text-seg';
+      seg.textContent = word;
+      seg.style.setProperty('--blur-delay', `${(i * delay) / 1000}s`);
+      el.appendChild(seg);
+      if (i < words.length - 1) {
+        el.appendChild(document.createTextNode('\u00A0'));
+      }
+    });
+
+    el.dataset.blurReady = '1';
+
+    const play = () => el.classList.add('is-inview');
+
+    if (reduceMotion) {
+      play();
+      return;
+    }
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) return;
+          play();
+          io.disconnect();
+        },
+        { threshold: 0.1, rootMargin: '0px' }
+      );
+      io.observe(el);
+    } else {
+      play();
+    }
+  }
+
+  document.querySelectorAll('[data-blur-text]').forEach(initBlurText);
 
   /* Hero stats count-up */
   const statsRoot = document.querySelector('.hero-stats');

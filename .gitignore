@@ -9,3 +9,4 @@ shwelone-demo.zip
 .idea/
 node_modules/
 .netlify/
+.venv-img/
