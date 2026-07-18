@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*.log
+.deploy-tunnel.log
+shwelone-demo.zip
+.env
+.env.*
+.vscode/
+.idea/
+node_modules/
+.netlify/

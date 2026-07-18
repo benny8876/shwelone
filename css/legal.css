@@ -1,0 +1,121 @@
+/* Shared legal pages */
+.legal-page {
+  padding: calc(var(--nav-h) + 2rem) 0 4rem;
+  min-height: 60vh;
+  background: var(--surface);
+}
+
+.legal-wrap {
+  max-width: 720px;
+}
+
+.legal-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.legal-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.legal-org {
+  font-size: 0.9rem;
+  color: var(--navy-soft);
+  font-weight: 600;
+  margin: -0.5rem 0 1.5rem;
+}
+
+.legal-page .lead {
+  margin-bottom: 1.5rem;
+}
+
+.legal-page .lead a,
+.legal-body a {
+  color: var(--gold-muted);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.lang-tabs {
+  display: inline-flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  margin-bottom: 1.75rem;
+}
+
+.lang-tab {
+  border: none;
+  background: transparent;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.lang-tab.is-active {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.legal-body section {
+  margin-bottom: 1.35rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.legal-body section:last-of-type {
+  border-bottom: none;
+}
+
+.legal-body h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.45rem;
+}
+
+.legal-body h3 {
+  font-size: 0.95rem;
+  margin: 0.75rem 0 0.35rem;
+  color: var(--navy-soft);
+}
+
+.legal-group {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--line-soft);
+  line-height: 1.55;
+  scroll-margin-top: 6rem;
+}
+
+.legal-body p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.legal-note {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1rem;
+  background: rgba(201, 168, 92, 0.1);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.legal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
