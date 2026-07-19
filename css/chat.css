@@ -124,16 +124,18 @@
 }
 
 .chat-head-link {
-  height: 32px;
-  padding: 0 10px;
+  min-height: 32px;
+  padding: 6px 10px;
   border-radius: 999px;
   background: #c9a85c;
   color: #071628;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
+  line-height: 1.2;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .chat-close {
@@ -238,6 +240,18 @@
   color: #3a4a5e;
   font-weight: 600;
   border-color: transparent;
+}
+
+.chat-inline-btn.is-contact {
+  border-color: rgba(201, 168, 92, 0.55);
+  background: linear-gradient(180deg, #fffdf7 0%, #fff 100%);
+  font-weight: 600;
+  color: #0c2340;
+}
+
+.chat-inline-btn.is-contact:hover:not(:disabled) {
+  border-color: #c9a85c;
+  background: #fff9eb;
 }
 
 .chat-inline-kb.is-used .chat-inline-btn {

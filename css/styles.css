@@ -262,6 +262,54 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.45rem); }
   justify-self: end;
 }
 
+.site-lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.site-header.is-scrolled .site-lang-toggle {
+  background: rgba(12, 35, 64, 0.06);
+  border-color: rgba(12, 35, 64, 0.1);
+}
+
+.site-lang-btn {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.55rem;
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.site-header.is-scrolled .site-lang-btn {
+  color: var(--muted);
+}
+
+.site-lang-btn.is-active {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.site-header.is-scrolled .site-lang-btn.is-active {
+  background: var(--navy);
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .site-lang-toggle {
+    order: -1;
+  }
+}
+
 .nav-cta {
   padding: 0.55rem 1.2rem;
   background: var(--gold);
@@ -342,6 +390,10 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.45rem); }
   pointer-events: none;
   z-index: 0;
   opacity: 0.28;
+}
+
+.hero-panel-watermark.is-hidden {
+  display: none !important;
 }
 
 .hero-panel-watermark img {
@@ -2610,6 +2662,12 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.45rem); }
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.25s;
 }
 
+.insight-card--visual {
+  display: block;
+  padding: 0;
+  background: var(--navy);
+}
+
 .insight-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 18px 40px rgba(7, 22, 40, 0.12);
@@ -2619,18 +2677,41 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.45rem); }
 .insight-card-media {
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--mist);
+  background: var(--navy);
+}
+
+.insight-card--visual .insight-card-media {
+  width: 100%;
+}
+
+.insight-card--visual:not(.is-portrait) .insight-card-media {
+  aspect-ratio: 16 / 10;
+}
+
+.insight-card--visual.is-portrait .insight-card-media {
+  aspect-ratio: 210 / 297;
 }
 
 .insight-card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.5s var(--ease);
+  display: block;
+}
+
+.insight-card--visual.is-portrait .insight-card-media img {
+  object-fit: cover;
+  object-position: top center;
 }
 
 .insight-card:hover .insight-card-media img {
   transform: scale(1.04);
+}
+
+.insight-card--visual:hover .insight-card-media img {
+  transform: scale(1.02);
 }
 
 .insight-card-body {
@@ -2922,7 +3003,14 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.45rem); }
   box-shadow: 0 1px 2px rgba(12, 35, 64, 0.03);
 }
 
+.contact-form-side .field select {
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
 .contact-form-side .field input:focus,
+.contact-form-side .field select:focus,
 .contact-form-side .field textarea:focus {
   border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(201, 168, 92, 0.2);
@@ -4053,6 +4141,13 @@ h3 { font-size: clamp(1.2rem, 1.8vw, 1.45rem); }
   color: var(--ink);
   border: 1px solid var(--line-soft);
   border-bottom-left-radius: 4px;
+}
+
+.chat-bubble.bot.is-info {
+  background: #f8f4ee;
+  border-color: #e8dfd2;
+  color: #4a4035;
+  white-space: pre-line;
 }
 
 .chat-bubble.user {

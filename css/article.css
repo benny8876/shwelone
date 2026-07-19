@@ -15,11 +15,24 @@
   background: var(--navy);
 }
 
+.article-hero.is-portrait {
+  aspect-ratio: 210 / 297;
+  max-height: min(85vh, 920px);
+  width: min(100%, 520px);
+  margin-inline: auto;
+  background: var(--mist);
+}
+
 .article-hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0.85;
+}
+
+.article-hero.is-portrait img {
+  object-fit: contain;
+  opacity: 1;
 }
 
 .article-wrap {
@@ -92,5 +105,11 @@
   .article-hero {
     aspect-ratio: 16 / 10;
     border-radius: 16px;
+  }
+
+  .article-hero.is-portrait {
+    aspect-ratio: 210 / 297;
+    width: 100%;
+    max-height: min(75vh, 640px);
   }
 }

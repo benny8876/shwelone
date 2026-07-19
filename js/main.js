@@ -6,6 +6,8 @@
   /* Lenis perpetual RAF feels heavy on touch — desktop/fine pointer only */
   const useLenis = !reduceMotion && finePointer && !narrowScreen && typeof Lenis !== 'undefined';
 
+  /* Site settings loaded by homepage if needed later */
+
   /* Smooth scroll (Lenis) — shared RAF with effects */
   let lenis = null;
   let sharedRafId = 0;
@@ -303,21 +305,51 @@
 
   if (contactForm) {
     const success = document.getElementById('contact-success');
-    contactForm.addEventListener('submit', (e) => {
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = Object.fromEntries(new FormData(contactForm).entries());
       if (planSelect && planSelect.selectedIndex >= 0) {
         data.planLabel = planSelect.options[planSelect.selectedIndex].text;
       }
-      const msgs = JSON.parse(localStorage.getItem('harrington_messages') || '[]');
-      msgs.push({ ...data, id: Date.now() });
-      localStorage.setItem('harrington_messages', JSON.stringify(msgs));
-      if (success) {
-        success.classList.add('show');
-        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.dataset.prevLabel = submitBtn.textContent;
+        submitBtn.textContent = 'Sending…';
       }
-      contactForm.reset();
-      if (planSelect) planSelect.selectedIndex = 0;
+
+      try {
+        const res = await fetch(
+          (window.SiteApi ? SiteApi.apiUrl('/api/telegram/contact') : '/api/telegram/contact'),
+          {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+          }
+        );
+        const result = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(result.error || 'Send failed');
+
+        if (success) {
+          success.classList.add('show');
+          success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        contactForm.reset();
+        if (planSelect) planSelect.selectedIndex = 0;
+      } catch (err) {
+        console.warn('Contact form:', err.message);
+        window.alert(
+          err.message ||
+            'Could not send your message. Please try again or contact us by phone or email.'
+        );
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtn.dataset.prevLabel || 'Send message';
+        }
+      }
     });
   }
 
@@ -492,4 +524,13 @@
   } else if (lenis) {
     kickRaf();
   }
+
+  window.addEventListener('site-lang-change', () => {
+    document.querySelectorAll('.blur-text').forEach((el) => {
+      el.classList.remove('is-inview');
+      delete el.dataset.blurReady;
+      el.removeAttribute('aria-label');
+    });
+    document.querySelectorAll('.blur-text').forEach((el) => initBlurText(el));
+  });
 })();

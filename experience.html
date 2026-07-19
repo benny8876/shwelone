@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Experience — Shwe Lone Myanmar</title>
   <meta name="description" content="Professional experience and representative matters — Daw Myat Noe Oo, Corporate Lawyer, Shwe Lone Myanmar." />
-  <link rel="stylesheet" href="css/styles.css?v=exp4" />
+  <link rel="stylesheet" href="css/styles.css?v=svc7" />
+  <link rel="stylesheet" href="css/lang-mm.css?v=3" />
+  <link rel="stylesheet" href="css/chat.css?v=policy3" />
 </head>
-<body>
+<body data-i18n-page="experience">
   <header class="site-header is-scrolled">
     <div class="container">
       <div class="nav-inner">
@@ -22,8 +24,8 @@
           <a href="index.html#contact">Contact</a>
         </nav>
         <div class="nav-end">
-          <a href="index.html#contact" class="nav-cta">Book</a>
-          <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+          <a href="index.html#contact" class="nav-cta">Start your consultation</a>
+          <button class="nav-toggle" aria-label="Menu" data-i18n-aria="nav.menu" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
       </div>
     </div>
@@ -147,7 +149,7 @@
           </div>
 
           <div class="btn-row">
-            <a href="index.html#contact" class="btn btn-hero-primary">Book appointment</a>
+            <a href="index.html#contact" class="btn btn-hero-primary">Start your consultation</a>
             <a href="index.html#profile" class="btn btn-outline-light">View profile</a>
           </div>
         </aside>
@@ -199,7 +201,47 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=exp3"></script>
-  <script src="js/chat.js?v=tg7"></script>
+  <div class="chat-widget" id="chat-widget">
+    <div class="chat-panel" id="chat-panel" hidden>
+      <div class="chat-panel-head">
+        <div class="chat-panel-head-main">
+          <div class="chat-panel-head-text">
+            <strong>Ask Shwe Lone</strong>
+            <span>Quick answers · FAQ</span>
+          </div>
+        </div>
+        <div class="chat-head-actions">
+          <button type="button" class="chat-back" hidden aria-label="Back to main menu">← Back</button>
+          <a href="index.html#contact" class="chat-head-link">Start your consultation</a>
+          <button type="button" class="chat-close" aria-label="Close chat">×</button>
+        </div>
+      </div>
+      <div class="chat-messages" id="chat-messages"></div>
+      <form class="chat-compose" id="chat-compose" autocomplete="on">
+        <textarea
+          id="chat-input"
+          name="message"
+          class="chat-input"
+          rows="1"
+          placeholder="Type your message…"
+          maxlength="1000"
+          required
+        ></textarea>
+        <button type="submit" class="chat-send" id="chat-send" aria-label="Send message">Send</button>
+      </form>
+      <p class="chat-policy-note">Before booking, read <a href="consultation-policy.html">Consultation Policy</a> · <a href="payment-policy.html">Payment Policy</a></p>
+    </div>
+    <button type="button" class="chat-launcher magnetic" id="chat-launcher" aria-expanded="false" aria-controls="chat-panel">
+      <span class="chat-launcher-icon" aria-hidden="true">?</span>
+      <span class="chat-launcher-text">Ask us · မေးရန်</span>
+      <span class="chat-launcher-pulse" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <script src="js/site-api.js?v=1"></script>
+  <script src="js/i18n.js?v=4"></script>
+  <script src="js/main.js?v=svc6"></script>
+  <script src="js/analytics.js?v=2" defer></script>
+  <script src="js/chat.js?v=tg17"></script>
 </body>
 </html>

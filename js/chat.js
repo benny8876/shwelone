@@ -58,6 +58,43 @@
     { id: 'contractLaw', label: 'Contract Law FAQ' }
   ];
 
+  const CONTACT_ADMIN_LABEL = 'တိုက်ရိုက်ဆက်သွယ်ရန် · Contact admin';
+  const OFFICE_START_HOUR = 10;
+  const OFFICE_END_HOUR = 18;
+
+  function apiUrl(path) {
+    return window.SiteApi ? SiteApi.apiUrl(path) : path;
+  }
+
+  function getMyanmarMinutes(date = new Date()) {
+    const parts = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Yangon',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }).formatToParts(date);
+    const hour = Number(parts.find((p) => p.type === 'hour').value);
+    const minute = Number(parts.find((p) => p.type === 'minute').value);
+    return hour * 60 + minute;
+  }
+
+  function isWithinOfficeHours(date = new Date()) {
+    const mins = getMyanmarMinutes(date);
+    return mins >= OFFICE_START_HOUR * 60 && mins < OFFICE_END_HOUR * 60;
+  }
+
+  function officeHoursMessage() {
+    return [
+      'ယခု ရုံးချိန် မဟုတ်ပါ။',
+      '',
+      'တိုက်ရိုက်ဆက်သွယ်ရန် ရုံးချိန်မှာ ဆက်သွယ်နိုင်ပါသည် —',
+      'နံနက် ၁၀:၀၀ မှ ညနေ ၆:၀၀ အထိ (Myanmar Time)။',
+      '',
+      'ကျေးဇူးပြု၍ Contact Form မှတစ်ဆင့် စာပို့ပေးပါ။',
+      'ရုံးဖွင့်ချိန်တွင် ပြန်လည်ဆက်သွယ်ပါမည်။',
+    ].join('\n');
+  }
+
   function initChat() {
     const root = document.getElementById('chat-widget');
     const panel = document.getElementById('chat-panel');
@@ -70,14 +107,447 @@
     const closeBtn = panel.querySelector('.chat-close');
     const backBtn = panel.querySelector('.chat-back');
     let currentCatId = null;
+    let liveSessionId = null;
+    let liveStatus = null;
+    let pollTimer = null;
+    let messageCursor = 0;
+    let liveIntakeStep = null;
+    let pendingVisitorName = '';
+    let liveEndHandled = false;
+    let pollFailCount = 0;
+    let pollNotFoundCount = 0;
+    let pollBackoffMs = 2000;
+    let outboundQueue = [];
+    let flushingQueue = false;
+    const DEFAULT_INPUT_PLACEHOLDER = 'Type your message…';
+    const POLL_BASE_MS = 2000;
+    const POLL_MAX_MS = 12000;
+    const FETCH_TIMEOUT_MS = 15000;
+
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    async function fetchWithTimeout(url, options = {}, timeoutMs = FETCH_TIMEOUT_MS) {
+      const ctrl = new AbortController();
+      const timer = window.setTimeout(() => ctrl.abort(), timeoutMs);
+      try {
+        return await fetch(url, { ...options, signal: ctrl.signal });
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    function stopLivePoll() {
+      if (pollTimer) {
+        clearTimeout(pollTimer);
+        pollTimer = null;
+      }
+    }
+
+    function scheduleLivePoll(delayMs = pollBackoffMs) {
+      stopLivePoll();
+      if (!liveSessionId) return;
+      pollTimer = window.setTimeout(() => {
+        pollLiveSession();
+      }, delayMs);
+    }
+
+    function cancelLiveIntake() {
+      liveIntakeStep = null;
+      pendingVisitorName = '';
+      if (input) input.placeholder = DEFAULT_INPUT_PLACEHOLDER;
+    }
+
+    function isLiveActive() {
+      return liveSessionId && liveStatus === 'active';
+    }
+
+    function isLivePending() {
+      return liveSessionId && liveStatus === 'pending';
+    }
+
+    function endLiveSessionUi(greeting = 'ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?') {
+      stopLivePoll();
+      liveSessionId = null;
+      liveStatus = null;
+      messageCursor = 0;
+      liveEndHandled = false;
+      cancelLiveIntake();
+      currentCatId = null;
+      setBackVisible(false);
+      messages.innerHTML = '';
+      showMainMenu(greeting);
+    }
+
+    function clearLiveSessionState() {
+      stopLivePoll();
+      liveSessionId = null;
+      liveStatus = null;
+      messageCursor = 0;
+      pollFailCount = 0;
+      pollNotFoundCount = 0;
+      pollBackoffMs = POLL_BASE_MS;
+      outboundQueue = [];
+      flushingQueue = false;
+      cancelLiveIntake();
+      setBackVisible(false);
+      if (input) input.placeholder = DEFAULT_INPUT_PLACEHOLDER;
+    }
+
+    function applyPollPayload(data) {
+      liveStatus = data.status;
+      (data.messages || []).forEach((msg) => {
+        if (msg.from === 'system' || msg.from === 'admin') {
+          appendBubble(msg.text, 'bot', msg.from === 'system');
+        }
+      });
+      messageCursor = data.nextIndex ?? messageCursor;
+
+      if (liveStatus === 'active') {
+        flushOutboundQueue();
+      }
+      if (liveStatus === 'rejected') {
+        handleLiveRejected();
+        return true;
+      }
+      if (liveStatus === 'closed') {
+        handleLiveClosed();
+        return true;
+      }
+      return false;
+    }
+
+    async function pollLiveSession() {
+      if (!liveSessionId) return;
+      try {
+        const res = await fetchWithTimeout(
+          apiUrl(`/api/chat/session/${encodeURIComponent(liveSessionId)}?since=${messageCursor}`)
+        );
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          if (res.status === 404) {
+            pollNotFoundCount += 1;
+            if (pollNotFoundCount >= 3) {
+              endLiveSessionUi('ဆက်သွယ်မှု ပြီးဆုံးပါပြီ။ ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?');
+            } else {
+              pollFailCount += 1;
+              pollBackoffMs = Math.min(POLL_MAX_MS, POLL_BASE_MS * Math.pow(1.6, pollFailCount));
+              scheduleLivePoll();
+            }
+            return;
+          }
+          pollFailCount += 1;
+          pollBackoffMs = Math.min(POLL_MAX_MS, POLL_BASE_MS * Math.pow(1.6, pollFailCount));
+          scheduleLivePoll();
+          return;
+        }
+
+        pollFailCount = 0;
+        pollNotFoundCount = 0;
+        pollBackoffMs = POLL_BASE_MS;
+        const ended = applyPollPayload(data);
+        if (!ended) scheduleLivePoll(POLL_BASE_MS);
+      } catch (err) {
+        pollFailCount += 1;
+        pollBackoffMs = Math.min(POLL_MAX_MS, POLL_BASE_MS * Math.pow(1.6, pollFailCount));
+        console.warn('Live poll:', err.message);
+        scheduleLivePoll();
+      }
+    }
+
+    function startLivePoll() {
+      pollFailCount = 0;
+      pollNotFoundCount = 0;
+      pollBackoffMs = POLL_BASE_MS;
+      stopLivePoll();
+      pollLiveSession();
+    }
+
+    async function sendLiveMessageToServer(text, { retries = 4 } = {}) {
+      for (let attempt = 0; attempt < retries; attempt++) {
+        try {
+          const res = await fetchWithTimeout(apiUrl('/api/chat/live-message'), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sessionId: liveSessionId, message: text }),
+          });
+          const data = await res.json().catch(() => ({}));
+
+          if (res.ok) {
+            if (data.telegramOk === false) {
+              console.warn('Live message saved but Telegram delivery delayed');
+            }
+            return data;
+          }
+
+          if (res.status === 409) {
+            await pollLiveSession();
+            if (!isLiveActive()) throw new Error(data.error || 'Session not active');
+            continue;
+          }
+
+          if (res.status === 429 || res.status >= 500) {
+            await sleep(1200 * (attempt + 1));
+            continue;
+          }
+
+          throw new Error(data.error || `HTTP ${res.status}`);
+        } catch (err) {
+          if (attempt === retries - 1) throw err;
+          await sleep(1000 * (attempt + 1));
+        }
+      }
+      throw new Error('Send failed');
+    }
+
+    async function flushOutboundQueue() {
+      if (flushingQueue || !isLiveActive() || outboundQueue.length === 0) return;
+      flushingQueue = true;
+      const queue = [...outboundQueue];
+      outboundQueue = [];
+
+      for (const text of queue) {
+        try {
+          await sendLiveMessageToServer(text);
+        } catch (err) {
+          console.warn('Queued live message:', err.message);
+          outboundQueue.push(text);
+          appendBubble('စာပို့၍ မရပါ။ ထပ်ကြိုးစားပါ။', 'bot');
+          break;
+        }
+      }
+
+      flushingQueue = false;
+    }
+
+    function scrollToContactForm() {
+      setOpen(false);
+      const target = document.querySelector('#contact');
+      if (!target) return;
+      window.setTimeout(() => {
+        if (window.lenis) {
+          window.lenis.scrollTo(target, { offset: -96 });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 80);
+    }
+
+    function showOutsideOfficeHours() {
+      disableLastKeyboard();
+      setBackVisible(false);
+      appendBubble(CONTACT_ADMIN_LABEL, 'user');
+      appendBubble(officeHoursMessage(), 'bot', true);
+      appendKeyboard([
+        {
+          label: 'Contact Form သို့ သွားမယ်',
+          onClick: () => {
+            disableLastKeyboard();
+            scrollToContactForm();
+          },
+          isContact: true,
+        },
+        {
+          label: '← Main Menu',
+          isBack: true,
+          onClick: () => goMainMenu('ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?'),
+        },
+      ]);
+    }
+
+    function showLiveEndActions(kind) {
+      const buttons =
+        kind === 'rejected'
+          ? [
+              {
+                label: 'ထပ်ကြိုးစားမယ် · Try again',
+                onClick: () => {
+                  disableLastKeyboard();
+                  liveEndHandled = false;
+                  if (!isWithinOfficeHours()) {
+                    showOutsideOfficeHours();
+                    return;
+                  }
+                  startLiveIntake();
+                },
+                isContact: true,
+              },
+              {
+                label: 'Contact Form သို့ သွားမယ်',
+                onClick: () => {
+                  disableLastKeyboard();
+                  scrollToContactForm();
+                },
+                isContact: true,
+              },
+              {
+                label: '← Main Menu',
+                isBack: true,
+                onClick: () => {
+                  disableLastKeyboard();
+                  messages.innerHTML = '';
+                  liveEndHandled = false;
+                  goMainMenu('ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?');
+                },
+              },
+            ]
+          : [
+              {
+                label: '← Main Menu',
+                isBack: true,
+                onClick: () => {
+                  disableLastKeyboard();
+                  messages.innerHTML = '';
+                  liveEndHandled = false;
+                  goMainMenu('အခြား ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?');
+                },
+              },
+            ];
+
+      appendKeyboard(buttons);
+    }
+
+    function handleLiveRejected() {
+      if (liveEndHandled) return;
+      liveEndHandled = true;
+      clearLiveSessionState();
+      window.setTimeout(() => showLiveEndActions('rejected'), 400);
+    }
+
+    function handleLiveClosed() {
+      if (liveEndHandled) return;
+      liveEndHandled = true;
+      clearLiveSessionState();
+      window.setTimeout(() => showLiveEndActions('closed'), 400);
+    }
+
+    function startLiveIntake() {
+      if (liveSessionId && (liveStatus === 'pending' || liveStatus === 'active')) {
+        appendBubble('ရုံးနှင့် ဆက်သွယ်မှု တောင်းဆိုထားပြီးသား ဖြစ်ပါသည်။', 'bot');
+        return;
+      }
+
+      if (!isWithinOfficeHours()) {
+        showOutsideOfficeHours();
+        return;
+      }
+
+      disableLastKeyboard();
+      liveIntakeStep = 'name';
+      pendingVisitorName = '';
+      setBackVisible(true);
+      appendBubble(CONTACT_ADMIN_LABEL, 'user');
+      appendBubble('ရုံးနှင့် တိုက်ရိုက်ဆက်သွယ်ရန် သင့်နာမည် ရေးပေးပါ။', 'bot');
+      if (input) {
+        input.placeholder = 'သင့်နာမည်…';
+        input.focus();
+      }
+    }
+
+    async function submitLiveRequest(visitorName, visitorReason) {
+      try {
+        const res = await fetch(apiUrl('/api/chat/live-request'), {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ visitorName, visitorReason }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          if (res.status === 403 && data.code === 'outside_office_hours') {
+            cancelLiveIntake();
+            setBackVisible(false);
+            appendBubble(data.error || officeHoursMessage(), 'bot', true);
+            appendKeyboard([
+              {
+                label: 'Contact Form သို့ သွားမယ်',
+                onClick: () => scrollToContactForm(),
+                isContact: true,
+              },
+              {
+                label: '← Main Menu',
+                isBack: true,
+                onClick: () => goMainMenu('ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?'),
+              },
+            ]);
+            return;
+          }
+          throw new Error(data.error || 'Request failed');
+        }
+
+        liveSessionId = data.sessionId;
+        liveStatus = data.status || 'pending';
+        messageCursor = 0;
+        liveEndHandled = false;
+        if (input) input.placeholder = DEFAULT_INPUT_PLACEHOLDER;
+        startLivePoll();
+      } catch (err) {
+        console.warn('Live request:', err.message);
+        appendBubble(
+          'ယခု ဆက်သွယ်၍ မရသေးပါ။ နောက်မှ ထပ်ကြိုးစားပါ သို့မဟုတ် contact form မှတစ်ဆင့် ဆက်သွယ်ပါ။',
+          'bot'
+        );
+        window.setTimeout(() => goMainMenu('ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?'), 900);
+      }
+    }
+
+    function handleLiveIntakeInput(text, done) {
+      if (liveIntakeStep === 'name') {
+        if (text.length < 2) {
+          appendBubble('နာမည် အနည်းဆုံး ၂ လုံး ရေးပေးပါ။', 'bot');
+          done();
+          return;
+        }
+        pendingVisitorName = text;
+        liveIntakeStep = 'reason';
+        appendBubble('ဆက်သွယ်လိုသည့် အကြောင်းအရာ ရေးပေးပါ။', 'bot');
+        if (input) {
+          input.placeholder = 'ဆက်သွယ်လိုသည့် အကြောင်းအရာ…';
+          input.focus();
+        }
+        done();
+        return;
+      }
+
+      if (liveIntakeStep === 'reason') {
+        if (text.length < 5) {
+          appendBubble('အကြောင်းအရာ အနည်းဆုံး ၅ လုံး ရေးပေးပါ။', 'bot');
+          done();
+          return;
+        }
+        const name = pendingVisitorName;
+        const reason = text;
+        liveIntakeStep = null;
+        pendingVisitorName = '';
+        submitLiveRequest(name, reason).finally(done);
+      }
+    }
+
+    async function requestLiveAdmin() {
+      startLiveIntake();
+    }
+
+    function mainMenuButtons() {
+      return [
+        ...categories.map((cat) => ({
+          label: cat.label,
+          onClick: () => handleCategorySelect(cat),
+        })),
+        {
+          label: CONTACT_ADMIN_LABEL,
+          onClick: () => requestLiveAdmin(),
+          isContact: true,
+        },
+      ];
+    }
 
     function scrollToBottom() {
       messages.scrollTop = messages.scrollHeight;
     }
 
-    function appendBubble(text, who) {
+    function appendBubble(text, who, isInfo = false) {
       const el = document.createElement('div');
-      el.className = 'chat-bubble ' + who;
+      el.className = 'chat-bubble ' + who + (isInfo ? ' is-info' : '');
       el.textContent = text;
       messages.appendChild(el);
       scrollToBottom();
@@ -97,10 +567,14 @@
       disableLastKeyboard();
       const kb = document.createElement('div');
       kb.className = 'chat-inline-kb';
-      buttons.forEach(({ label, onClick, isBack }) => {
+      buttons.forEach(({ label, onClick, isBack, isContact }) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = isBack ? 'chat-inline-btn is-back' : 'chat-inline-btn';
+        btn.className = isBack
+          ? 'chat-inline-btn is-back'
+          : isContact
+            ? 'chat-inline-btn is-contact'
+            : 'chat-inline-btn';
         btn.textContent = label;
         btn.addEventListener('click', () => {
           if (kb.classList.contains('is-used')) return;
@@ -120,18 +594,14 @@
 
     function goMainMenu(greeting) {
       currentCatId = null;
+      cancelLiveIntake();
       setBackVisible(false);
       showMainMenu(greeting);
     }
 
     function showMainMenu(greeting = "မင်္ဂလာပါ။ Shwe Lone Myanmar မှ ကြိုဆိုပါတယ်။ ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?") {
       appendBubble(greeting, 'bot');
-      appendKeyboard(
-        categories.map((cat) => ({
-          label: cat.label,
-          onClick: () => handleCategorySelect(cat),
-        }))
-      );
+      appendKeyboard(mainMenuButtons());
     }
 
     function handleCategorySelect(cat) {
@@ -210,6 +680,7 @@
         panel.style.display = 'none';
         root.classList.remove('is-open');
         launcher.setAttribute('aria-expanded', 'false');
+        stopLivePoll();
         if (window.lenis) window.lenis.start();
         document.body.style.overflow = '';
       }
@@ -257,20 +728,14 @@
       });
     }
 
-    function saveMessage(message) {
-      try {
-        const list = JSON.parse(localStorage.getItem('shwelone_chat_messages') || '[]');
-        list.push({
-          id: Date.now(),
-          name: 'Guest',
-          message,
-          source: 'ask-us',
-          createdAt: new Date().toISOString(),
-        });
-        localStorage.setItem('shwelone_chat_messages', JSON.stringify(list));
-      } catch (_) {
-        /* ignore */
-      }
+    async function notifyTelegram(message) {
+      const res = await fetch(apiUrl('/api/telegram/chat'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message }),
+      });
+      const result = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(result.error || 'Send failed');
     }
 
     function sendMessage() {
@@ -279,9 +744,41 @@
       if (!text) return;
 
       appendBubble(text, 'user');
-      saveMessage(text);
       input.value = '';
       input.style.height = 'auto';
+      input.disabled = true;
+
+      const done = () => {
+        input.disabled = false;
+      };
+
+      if (liveIntakeStep) {
+        handleLiveIntakeInput(text, done);
+        return;
+      }
+
+      if (isLiveActive()) {
+        sendLiveMessageToServer(text)
+          .catch((err) => {
+            console.warn('Live message:', err.message);
+            appendBubble('စာပို့၍ မရပါ။ ထပ်ကြိုးစားပါ။', 'bot');
+          })
+          .finally(done);
+        return;
+      }
+
+      if (isLivePending()) {
+        outboundQueue.push(text);
+        appendBubble('ရုံးမှ လက်ခံမှု စောင့်ဆိုင်းနေပါသည် — စာကို တန်းစီထားပါမည်။', 'bot');
+        done();
+        return;
+      }
+
+      notifyTelegram(text)
+        .catch((err) => {
+          console.warn('Chat telegram:', err.message);
+        })
+        .finally(done);
 
       window.setTimeout(() => {
         appendBubble(
@@ -290,12 +787,7 @@
         );
         currentCatId = null;
         setBackVisible(false);
-        appendKeyboard(
-          categories.map((cat) => ({
-            label: cat.label,
-            onClick: () => handleCategorySelect(cat),
-          }))
-        );
+        appendKeyboard(mainMenuButtons());
       }, 450);
     }
 
@@ -318,6 +810,14 @@
         input.style.height = Math.min(input.scrollHeight, 80) + 'px';
       });
     }
+
+    // Reconnect poll when tab becomes visible or network returns
+    window.addEventListener('online', () => {
+      if (liveSessionId) pollLiveSession();
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && liveSessionId) pollLiveSession();
+    });
 
     // Prevent page scroll while hovering chat messages
     messages.addEventListener(

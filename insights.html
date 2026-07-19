@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Insights — Shwe Lone Myanmar</title>
   <meta name="description" content="Legal insights from Shwe Lone Myanmar — corporate, real estate, and commercial notes." />
-  <link rel="stylesheet" href="css/styles.css?v=insights2" />
+  <link rel="stylesheet" href="css/styles.css?v=svc7" />
+  <link rel="stylesheet" href="css/lang-mm.css?v=3" />
 </head>
-<body>
+<body data-i18n-page="insights">
   <header class="site-header is-scrolled">
     <div class="container">
       <div class="nav-inner">
@@ -20,7 +21,7 @@
           <a href="index.html#contact">Contact</a>
         </nav>
         <div class="nav-end">
-          <a href="index.html#contact" class="nav-cta">Book</a>
+          <a href="index.html#contact" class="nav-cta">Start your consultation</a>
         </div>
       </div>
     </div>
@@ -34,40 +35,8 @@
           <h1 style="font-size: clamp(1.85rem, 3vw, 2.65rem); margin-bottom: 0.9rem;">All legal insights</h1>
           <p class="lead" style="margin-inline:auto">Practical notes on corporate, real estate, and commercial matters — for orientation, not formal advice. See our <a href="disclaimer.html">Disclaimer</a>.</p>
         </div>
-        <div class="insights-grid">
-          <a class="insight-card" href="insights/real-estate-due-diligence.html">
-            <div class="insight-card-media">
-              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="" />
-            </div>
-            <div class="insight-card-body">
-              <p class="insight-meta"><span>Real Estate</span> · <time datetime="2026-07-01">Jul 2026</time></p>
-              <h3>Why due diligence matters before you buy land</h3>
-              <p>Key checks on ownership, encumbrances, and documents — before deposit and signing.</p>
-              <span class="insight-more">Read more →</span>
-            </div>
-          </a>
-          <a class="insight-card" href="insights/contract-review.html">
-            <div class="insight-card-media">
-              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="" />
-            </div>
-            <div class="insight-card-body">
-              <p class="insight-meta"><span>Contracts</span> · <time datetime="2026-06-15">Jun 2026</time></p>
-              <h3>When a sample contract is not enough</h3>
-              <p>Why tailored review protects payment terms, termination, and dispute clauses.</p>
-              <span class="insight-more">Read more →</span>
-            </div>
-          </a>
-          <a class="insight-card" href="insights/company-setup.html">
-            <div class="insight-card-media">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="" />
-            </div>
-            <div class="insight-card-body">
-              <p class="insight-meta"><span>Corporate</span> · <time datetime="2026-05-20">May 2026</time></p>
-              <h3>Company registration is only the first step</h3>
-              <p>Licences, tax, and governance steps that often follow incorporation.</p>
-              <span class="insight-more">Read more →</span>
-            </div>
-          </a>
+        <div class="insights-grid" id="insights-page-grid">
+          <!-- loaded from data/insights.json -->
         </div>
         <div class="insights-actions">
           <a href="index.html" class="btn btn-primary">← Back to home</a>
@@ -75,5 +44,7 @@
       </div>
     </section>
   </main>
+  <script src="js/i18n.js?v=1"></script>
+  <script src="js/insights-loader.js?v=5"></script>
 </body>
 </html>

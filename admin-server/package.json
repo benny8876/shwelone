@@ -1,0 +1,13 @@
+{
+  "name": "shwelone-admin-server",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local admin API for Shwe Lone Myanmar site content",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "sharp": "^0.35.3"
+  }
+}

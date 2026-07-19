@@ -1,0 +1,12 @@
+{
+  "policies": [
+    { "id": "privacy", "file": "privacy.html", "title": "Privacy Policy" },
+    { "id": "terms", "file": "terms.html", "title": "Terms of Use" },
+    { "id": "disclaimer", "file": "disclaimer.html", "title": "Disclaimer" },
+    { "id": "consultation-policy", "file": "consultation-policy.html", "title": "Consultation Policy" },
+    { "id": "payment-policy", "file": "payment-policy.html", "title": "Payment Policy" },
+    { "id": "service-terms", "file": "service-terms.html", "title": "Service Terms" },
+    { "id": "cookie-policy", "file": "cookie-policy.html", "title": "Cookie Policy" },
+    { "id": "conflict-of-interest-policy", "file": "conflict-of-interest-policy.html", "title": "Conflict of Interest Policy" }
+  ]
+}

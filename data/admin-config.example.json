@@ -1,0 +1,4 @@
+{
+  "passwordHash": "REPLACE_AFTER_FIRST_LOGIN",
+  "note": "Copy to data/admin-config.json. Default password on first setup: ShweLone@2026 — change immediately in Admin → Settings."
+}

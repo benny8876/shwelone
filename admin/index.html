@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin — Shwe Lone Myanmar</title>
+  <link rel="stylesheet" href="css/admin.css?v=9" />
+</head>
+<body>
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <img src="../assets/2-nobg.png" alt="" class="login-logo" />
+      <h1>Shwe Lone Admin</h1>
+      <p class="login-sub">Manage insights and policy pages</p>
+      <p class="login-url">Open <strong>http://localhost:8790/admin/</strong></p>
+  <p class="login-sub" style="margin-top:0.5rem;font-size:0.82rem">Change the default password after first sign-in (Settings).</p>
+      <form id="login-form">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+        <button type="submit" id="login-btn" class="btn btn-primary">Sign in</button>
+        <p id="login-error" class="form-error" hidden></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="app" class="admin-app" hidden>
+    <aside class="admin-sidebar">
+      <div class="sidebar-brand">
+        <img src="../assets/2-nobg.png" alt="" />
+        <span>Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <button type="button" class="nav-item is-active" data-view="insights">Insights</button>
+        <button type="button" class="nav-item" data-view="policies">Policies</button>
+        <button type="button" class="nav-item" data-view="chats">Chat history</button>
+        <button type="button" class="nav-item" data-view="visitors">Visitors</button>
+        <button type="button" class="nav-item" data-view="settings">Settings</button>
+      </nav>
+      <div class="sidebar-foot">
+        <a href="../index.html" target="_blank" rel="noopener">View site ↗</a>
+        <button type="button" id="logout-btn" class="btn-text">Sign out</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p class="topbar-eyebrow">Shwe Lone Myanmar</p>
+          <h2 id="view-title">Insights</h2>
+        </div>
+      </header>
+
+      <section id="view-insights" class="admin-view">
+        <div class="view-toolbar">
+          <p class="view-hint">Create and publish legal insight articles.</p>
+          <button type="button" id="new-insight-btn" class="btn btn-primary">+ New insight</button>
+        </div>
+        <div id="insights-list" class="data-list"></div>
+      </section>
+
+      <section id="view-insight-edit" class="admin-view" hidden>
+        <button type="button" class="btn-back" id="insight-back">← Back</button>
+        <form id="insight-form" class="editor-form">
+          <div class="form-grid">
+            <div class="form-field span-2">
+              <label for="ins-title">Title</label>
+              <input type="text" id="ins-title" required />
+            </div>
+            <div class="form-field">
+              <label for="ins-category">Category</label>
+              <input type="text" id="ins-category" list="ins-category-suggestions" required placeholder="e.g. Corporate" />
+              <datalist id="ins-category-suggestions">
+                <option value="Corporate"></option>
+                <option value="Contracts"></option>
+                <option value="Real Estate"></option>
+                <option value="Commercial"></option>
+                <option value="Family"></option>
+                <option value="Advisory"></option>
+                <option value="Other"></option>
+              </datalist>
+            </div>
+            <div class="form-field">
+              <label for="ins-date">Date</label>
+              <input type="date" id="ins-date" required />
+            </div>
+            <div class="form-field span-2">
+              <label for="ins-excerpt">Short summary</label>
+              <textarea id="ins-excerpt" rows="2" required placeholder="Shown on insight cards"></textarea>
+            </div>
+            <div class="form-field span-2">
+              <label for="ins-lead">Introduction</label>
+              <textarea id="ins-lead" rows="2" required></textarea>
+            </div>
+            <div class="form-field span-2">
+              <label>Cover image <span class="label-opt">(optional)</span></label>
+              <div class="image-upload">
+                <div class="image-preview" id="ins-image-preview" hidden>
+                  <img id="ins-image-preview-img" src="" alt="Cover preview" />
+                </div>
+                <div class="image-upload-actions">
+                  <button type="button" id="ins-image-pick" class="btn btn-outline">Upload image</button>
+                  <input type="file" id="ins-image-file" accept="image/png,image/jpeg,image/webp,image/gif" hidden />
+                  <button type="button" id="ins-image-clear" class="btn-text-dark" hidden>Remove</button>
+                </div>
+                <input type="hidden" id="ins-image" value="" />
+                <input type="hidden" id="ins-image-thumb" value="" />
+                <input type="hidden" id="ins-image-portrait" value="" />
+                <p class="field-hint">PNG, JPG, or WebP — max 6MB. A4 documents show full page on the article; cards use an auto thumbnail. Logo watermark applies when enabled in Settings.</p>
+                <input type="url" id="ins-image-url" placeholder="https://… (optional URL)" />
+              </div>
+            </div>
+          </div>
+
+          <div class="section-board-head">
+            <h3>Article sections</h3>
+          </div>
+          <div id="ins-sections" class="section-board"></div>
+          <button type="button" id="ins-add-section" class="btn btn-outline btn-add-section">+ Add section</button>
+
+          <div class="form-field" style="margin-top:1.25rem">
+            <label class="checkbox-label">
+              <input type="checkbox" id="ins-published" checked />
+              Published on website
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="button" id="delete-insight-btn" class="btn btn-danger" hidden>Delete</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+          <p id="insight-status" class="form-status" hidden></p>
+        </form>
+      </section>
+
+      <section id="view-policies" class="admin-view" hidden>
+        <p class="view-hint">Edit terms, privacy, disclaimer, and other policy pages.</p>
+        <div id="policies-list" class="data-list"></div>
+      </section>
+
+      <section id="view-chats" class="admin-view" hidden>
+        <p class="view-hint">Archived live chat sessions from the website widget.</p>
+        <div id="chats-list" class="data-list"></div>
+      </section>
+
+      <section id="view-visitors" class="admin-view" hidden>
+        <p class="view-hint">Cookie-free page views from the public website (last 30 days). No personal names — device and browser only.</p>
+        <div id="visitors-stats" class="stats-grid"></div>
+        <div class="visitors-panels">
+          <div class="settings-card">
+            <h3>Devices · Browsers · OS</h3>
+            <div id="visitors-breakdown" class="breakdown-grid"></div>
+          </div>
+          <div class="settings-card">
+            <h3>Top pages</h3>
+            <div id="visitors-pages" class="breakdown-list"></div>
+          </div>
+          <div class="settings-card">
+            <h3>Top referrers</h3>
+            <div id="visitors-referrers" class="breakdown-list"></div>
+          </div>
+        </div>
+        <div class="settings-card">
+          <h3>Recent visits</h3>
+          <div id="visitors-recent" class="data-list"></div>
+        </div>
+      </section>
+
+      <section id="view-chat-detail" class="admin-view" hidden>
+        <button type="button" class="btn-back" id="chat-back">← Back</button>
+        <div id="chat-detail" class="chat-archive-detail"></div>
+      </section>
+
+      <section id="view-policy-edit" class="admin-view" hidden>
+        <button type="button" class="btn-back" id="policy-back">← Back</button>
+        <form id="policy-form" class="editor-form editor-form--wide">
+          <div class="form-grid">
+            <div class="form-field span-2">
+              <label for="pol-title">Page title</label>
+              <input type="text" id="pol-title" required />
+            </div>
+            <div class="form-field">
+              <label for="pol-updated">Last updated</label>
+              <input type="date" id="pol-updated" required />
+            </div>
+            <div class="form-field span-2">
+              <label for="pol-lead">Introduction</label>
+              <textarea id="pol-lead" rows="2" required placeholder="Short intro at the top of the page"></textarea>
+            </div>
+          </div>
+
+          <div class="editor-lang-tabs" role="tablist">
+            <button type="button" class="editor-lang-tab is-active" data-editor-lang="en">English</button>
+            <button type="button" class="editor-lang-tab" data-editor-lang="mm">Myanmar</button>
+          </div>
+
+          <div class="rich-editor-panel is-active" data-editor-panel="en">
+            <div id="pol-sections-en" class="section-board"></div>
+            <button type="button" id="pol-add-en" class="btn btn-outline btn-add-section">+ Add section</button>
+          </div>
+          <div class="rich-editor-panel" data-editor-panel="mm" hidden>
+            <div id="pol-sections-mm" class="section-board"></div>
+            <button type="button" id="pol-add-mm" class="btn btn-outline btn-add-section">+ Add section</button>
+          </div>
+
+          <details class="advanced-block">
+            <summary>More options</summary>
+            <div class="form-grid" style="margin-top:1rem">
+              <div class="form-field span-2">
+                <label for="pol-meta-sub">Myanmar subtitle <span class="label-opt">(optional)</span></label>
+                <input type="text" id="pol-meta-sub" placeholder="Shown after the date on the page" />
+              </div>
+              <div class="form-field span-2">
+                <label for="pol-org">Organization line <span class="label-opt">(optional)</span></label>
+                <input type="text" id="pol-org" placeholder="Shwe Lone Myanmar · Myat Noe Oo" />
+              </div>
+            </div>
+          </details>
+
+          <div class="form-actions">
+            <a id="policy-preview" href="#" target="_blank" rel="noopener" class="btn btn-outline">Preview ↗</a>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+          <p id="policy-status" class="form-status" hidden></p>
+        </form>
+      </section>
+
+      <section id="view-settings" class="admin-view" hidden>
+        <div class="settings-card">
+          <h3>Site appearance</h3>
+          <form id="site-settings-form">
+            <label class="checkbox-label checkbox-label--block">
+              <input type="checkbox" id="setting-watermark" checked />
+              Add logo watermark to uploaded insight images
+            </label>
+            <p class="field-hint">When on, uploads get the site logo stamped (center + corner) so photos are harder to reuse. Uses <code>assets/2-nobg.png</code>.</p>
+            <button type="submit" class="btn btn-primary" style="margin-top:1rem">Save settings</button>
+            <p id="site-settings-status" class="form-status" hidden></p>
+          </form>
+        </div>
+        <div class="settings-card">
+          <h3>Change password</h3>
+          <form id="password-form">
+            <div class="form-field">
+              <label for="cur-password">Current password</label>
+              <input type="password" id="cur-password" required />
+            </div>
+            <div class="form-field">
+              <label for="new-password">New password</label>
+              <input type="password" id="new-password" minlength="8" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Update password</button>
+            <p id="password-status" class="form-status" hidden></p>
+          </form>
+        </div>
+        <div class="settings-card">
+          <h3>How to use</h3>
+          <ol class="settings-steps">
+            <li>Run <code>node admin-server/server.js</code></li>
+            <li>Open <code>http://localhost:8790/admin/</code></li>
+            <li>Edit content, then click Save</li>
+            <li>Commit and push to publish on the live site</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/admin.js?v=13"></script>
+</body>
+</html>

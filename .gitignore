@@ -10,3 +10,8 @@ shwelone-demo.zip
 node_modules/
 .netlify/
 .venv-img/
+data/contact-messages.json
+data/chat-sessions.json
+data/chat-archive.json
+data/analytics.json
+data/admin-config.json

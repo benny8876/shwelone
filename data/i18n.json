@@ -1,0 +1,2424 @@
+{
+  "meta": {
+    "index": {
+      "en": "Myat Noe Oo — Corporate Lawyer | Shwe Lone Myanmar",
+      "mm": "Myat Noe Oo — Corporate Lawyer | Shwe Lone Myanmar"
+    },
+    "experience": {
+      "en": "Experience — Shwe Lone Myanmar",
+      "mm": "Experience — Shwe Lone Myanmar"
+    },
+    "insights": {
+      "en": "Insights — Shwe Lone Myanmar",
+      "mm": "Insights — Shwe Lone Myanmar"
+    },
+    "insight": {
+      "en": "Insight — Shwe Lone Myanmar",
+      "mm": "Insight — Shwe Lone Myanmar"
+    }
+  },
+  "strings": {
+    "nav.home": {
+      "en": "Home",
+      "mm": "Home"
+    },
+    "nav.services": {
+      "en": "Services",
+      "mm": "Services"
+    },
+    "nav.profile": {
+      "en": "Profile",
+      "mm": "Profile"
+    },
+    "nav.experience": {
+      "en": "Experience",
+      "mm": "Experience"
+    },
+    "nav.howWeWork": {
+      "en": "How we work",
+      "mm": "How we work"
+    },
+    "nav.fees": {
+      "en": "Fees",
+      "mm": "Fees"
+    },
+    "nav.retainers": {
+      "en": "Retainers",
+      "mm": "Retainers"
+    },
+    "nav.insights": {
+      "en": "Insights",
+      "mm": "Insights"
+    },
+    "nav.contact": {
+      "en": "Contact",
+      "mm": "Contact"
+    },
+    "nav.cta": {
+      "en": "Start your consultation",
+      "mm": "Start your consultation"
+    },
+    "nav.book": {
+      "en": "Start your consultation",
+      "mm": "Start your consultation"
+    },
+    "nav.menu": {
+      "en": "Menu",
+      "mm": "Menu"
+    },
+    "footer.pages": {
+      "en": "Pages",
+      "mm": "Pages"
+    },
+    "footer.engage": {
+      "en": "Engage",
+      "mm": "Engage"
+    },
+    "footer.policies": {
+      "en": "Policies",
+      "mm": "Policies"
+    },
+    "footer.office": {
+      "en": "Office",
+      "mm": "Office"
+    },
+    "footer.book": {
+      "en": "Start your consultation",
+      "mm": "Start your consultation"
+    },
+    "chat.ask": {
+      "en": "Ask Shwe Lone",
+      "mm": "Shwe Lone ကို မေးမြန်းရန်"
+    },
+    "chat.subtitle": {
+      "en": "Quick answers · FAQ",
+      "mm": "အမြန်အဖြေများ · မေးလေ့ရှိသောမေးခွန်းများ"
+    },
+    "chat.back": {
+      "en": "← Back",
+      "mm": "← Back"
+    },
+    "chat.close": {
+      "en": "Close chat",
+      "mm": "Chat ပိတ်ရန်"
+    },
+    "chat.send": {
+      "en": "Send message",
+      "mm": "Send Message"
+    },
+    "lang.en": {
+      "en": "English",
+      "mm": "English"
+    },
+    "lang.mm": {
+      "en": "မြန်မာ",
+      "mm": "မြန်မာ"
+    }
+  },
+  "pages": {
+    "index": [
+      {
+        "sel": ".hero-badge",
+        "mm": "<span class=\"hero-badge-icon\" aria-hidden=\"true\">◆</span> Corporate Lawyer",
+        "html": true
+      },
+      {
+        "sel": "#home .hero-role",
+        "mm": "Corporate Lawyer | Real Estate Legal Advisor",
+        "html": false
+      },
+      {
+        "sel": "#home .hero-lead",
+        "mm": "ဥပဒေနှင့် မဟာဗျူဟာတို့ ပေါင်းစပ်သည့်နေရာ။ Corporate၊ စီးပွားရေးနှင့် အိမ်ခြံမြေ ဆိုင်ရာ ကိစ္စရပ်များအတွက် ရှင်းလင်းသော ဥပဒေအကြံဉာဏ် — ပွင့်လင်းမြင်သာသော အခကြေးငွေနှင့် တိုက်ရိုက်ဆက်သွယ်နိုင်မှု။",
+        "html": false
+      },
+      {
+        "sel": "#home .btn-hero-primary",
+        "mm": "Start your consultation",
+        "html": false
+      },
+      {
+        "sel": "#home .btn-outline-light.magnetic[href='#services']",
+        "mm": "ဝန်ဆောင်မှုများ ကြည့်ရန်",
+        "html": false
+      },
+      {
+        "sel": "#home .hero-stat:nth-child(1) span:last-child",
+        "mm": "Years of Experience",
+        "html": false
+      },
+      {
+        "sel": "#home .hero-stat:nth-child(2) span:last-child",
+        "mm": "Success rate",
+        "html": false
+      },
+      {
+        "sel": "#home .hero-stat:nth-child(3) span:last-child",
+        "mm": "Cases completed",
+        "html": false
+      },
+      {
+        "sel": "#home .hero-stat:nth-child(4) span:last-child",
+        "mm": "Client focused",
+        "html": false
+      },
+      {
+        "sel": ".marquee-group:first-child span:nth-child(1)",
+        "mm": "Real Estate",
+        "html": false
+      },
+      {
+        "sel": ".marquee-group:first-child span:nth-child(3)",
+        "mm": "Corporate",
+        "html": false
+      },
+      {
+        "sel": ".marquee-group:first-child span:nth-child(5)",
+        "mm": "Investment",
+        "html": false
+      },
+      {
+        "sel": ".marquee-group:first-child span:nth-child(7)",
+        "mm": "Contract Drafting",
+        "html": false
+      },
+      {
+        "sel": ".marquee-group:first-child span:nth-child(9)",
+        "mm": "Family Law",
+        "html": false
+      },
+      {
+        "sel": ".marquee-group:first-child span:nth-child(11)",
+        "mm": "Legal Advice",
+        "html": false
+      },
+      {
+        "sel": ".marquee-group:first-child span:nth-child(13)",
+        "mm": "Property Law",
+        "html": false
+      },
+      {
+        "sel": ".marquee-group:first-child span:nth-child(15)",
+        "mm": "Business Law",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-eyebrow",
+        "mm": "<span aria-hidden=\"true\">•</span> PRACTICE AREAS",
+        "html": true
+      },
+      {
+        "sel": "#services h2",
+        "mm": "ဥပဒေဝန်ဆောင်မှု နယ်ပယ်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(1)",
+        "mm": "Coporate အုပ်ချုပ်မှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(2)",
+        "mm": "ကုမ္ပဏီဖွဲ့စည်းခြင်းနှင့် လုပ်ငန်းမှတ်ပုံတင်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(3)",
+        "mm": "Coporate ပြန်လည်ဖွဲ့စည်းခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(4)",
+        "mm": "Coporate အတွင်းရေးဝန်ဆောင်မှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(5)",
+        "mm": "စီးပွားရေးစာချုပ်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(6)",
+        "mm": "စာချုပ်ရေးဆွဲခြင်း၊ ပြန်လည်သုံးသပ်ခြင်းနှင့် ညှိနှိုင်းခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(7)",
+        "mm": "ရှယ်ယာရှင်သဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(8)",
+        "mm": "ပူးပေါင်းလုပ်ငန်းသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(9)",
+        "mm": "ဥပဒေဆိုင်ရာ စစ်ဆေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(10)",
+        "mm": "စည်းမျဉ်းလိုက်နာမှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(11)",
+        "mm": "လုပ်ငန်းလိုင်စင်နှင့် ခွင့်ပြုချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(12)",
+        "mm": "နိုင်ငံခြားရင်းနှီးမြှုပ်နှံမှု အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(13)",
+        "mm": "အန္တရာယ်စီမံခန့်ခွဲမှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(14)",
+        "mm": "Coporate ဥပဒေ အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) h3",
+        "mm": "Coporate နှင့် စီးပွားရေးဥပဒေ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-card-summary",
+        "mm": "ကုမ္ပဏီဖွဲ့စည်းမှု၊ ရှယ်ယာရှင်သဘောတူညီချက်၊ ရင်းနှီးမြှုပ်နှံမှုသဘောတူညီချက်၊ အုပ်ချုပ်မှု၊ လိုင်စင်နှင့် နိုင်ငံခြားရင်းနှီးမြှုပ်နှံမှု အကြံပေးခြင်း။",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(1) .pa-card-cta",
+        "mm": "ဤနယ်ပယ်အကြောင်း ဆွေးနွေးရန် →",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) h3",
+        "mm": "စာချုပ်ရေးဆွဲခြင်းနှင့် ပြန်လည်သုံးသပ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-card-summary",
+        "mm": "စီးပွားရေး၊ ဝန်ဆောင်မှု၊ OEM၊ ဖြန့်ဖြူးရေး၊ NDA၊ MOU နှင့် အလုပ်သမားသဘောတူညီချက်များ — လက်မှတ်မထိုးမီ ပြန်လည်သုံးသပ်ပေးပါသည်။",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(1)",
+        "mm": "စီးပွားရေးသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(2)",
+        "mm": "ရှယ်ယာရှင်သဘောတူညီချက်များ (SHA)",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(3)",
+        "mm": "ရှယ်ယာဝယ်ယူမှုသဘောတူညီချက်များ (SPA)",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(4)",
+        "mm": "ပူးပေါင်းလုပ်ငန်းသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(5)",
+        "mm": "ရင်းနှီးမြှုပ်နှံမှုသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(6)",
+        "mm": "နားလည်မှုသဘောတူညီချက် (MOU)",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(7)",
+        "mm": "လျှို့ဝှက်ထားရမည့်သဘောတူညီချက်များ (NDA)",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(8)",
+        "mm": "ဝန်ဆောင်မှုနှင့် အကြံပေးမှုသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(9)",
+        "mm": "အလုပ်သမားသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(10)",
+        "mm": "အိမ်ခြံမြေသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(11)",
+        "mm": "စာချုပ်ညှိနှိုင်းခြင်းနှင့် ဥပဒေဆိုင်ရာ အန္တရာယ်သုံးသပ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-service-list li:nth-child(12)",
+        "mm": "စာချုပ်လိုက်နာမှု အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(2) .pa-card-cta",
+        "mm": "ဤနယ်ပယ်အကြောင်း ဆွေးနွေးရန် →",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) h3",
+        "mm": "အိမ်ခြံမြေနှင့် ပိုင်ဆိုင်မှုဥပဒေ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-card-summary",
+        "mm": "စစ်ဆေးခြင်း၊ ဝယ်ယူမှုနှင့် ငှားရမ်းမှုပြန်လည်သုံးသပ်ခြင်း၊ ပိုင်ဆိုင်မှုအတည်ပြုခြင်း၊ ငွေချေးစစ်ဆေးခြင်းနှင့် ပိုင်ဆိုင်မှုဆိုင်ရာ အငြင်းပွားမှု အကြံပေးခြင်း။",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(1)",
+        "mm": "ပိုင်ဆိုင်မှု စစ်ဆေးခြင်းနှင့် ဥပဒေဆိုင်ရာ အကဲဖြတ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(2)",
+        "mm": "မြေယာပိုင်ဆိုင်မှု အတည်ပြုခြင်းနှင့် ခေါင်းစဉ်ပြန်လည်သုံးသပ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(3)",
+        "mm": "အိမ်ခြံမြေ ရောင်းဝယ်မှုလုပ်ငန်းများ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(4)",
+        "mm": "ပိုင်ဆိုင်မှု လွှဲပြောင်းခြင်းနှင့် မှတ်ပုံတင်ခြင်း အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(5)",
+        "mm": "အိမ်ခြံမြေ ရင်းနှီးမြှုပ်နှံမှု ဖွဲ့စည်းခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(6)",
+        "mm": "ပိုင်ဆိုင်မှုဖွံ့ဖြိုးတိုးတက်မှုနှင့် ပူးပေါင်းလုပ်ငန်းသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(7)",
+        "mm": "ငှားရမ်းခြင်းနှင့် အငှားသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(8)",
+        "mm": "မြေပိုင်ဆိုင်ခွင့် ငွေချေးနှင့် ငွေကြေးထောက်ပံ့မှု စာရွက်စာတမ်းများ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(9)",
+        "mm": "အိမ်ခြံမြေစာချုပ် ရေးဆွဲခြင်းနှင့် ညှိနှိုင်းခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-service-list li:nth-child(10)",
+        "mm": "ပိုင်ဆိုင်မှုဆိုင်ရာ အငြင်းပွားမှု ကာကွယ်ခြင်းနှင့် အန္တရာယ်စီမံခန့်ခွဲမှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(3) .pa-card-cta",
+        "mm": "ဤနယ်ပယ်အကြောင်း ဆွေးနွေးရန် →",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) h3",
+        "mm": "မိသားစုဥပဒေနှင့် အမွေအနှစ်စီမံခန့်ခွဲမှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-card-summary",
+        "mm": "လက်ထပ်ခြင်း၊ ကွာရှင်းခြင်းဆိုင်ရာ ကိစ္စရပ်များ၊ မိသားစုညှိနှိုင်းမှုများ၊ အမွေအနှစ်စီမံခန့်ခွဲမှု၊ မှတ်တမ်းတင်ထားချက်များနှင့် အမွေဆက်ခံမှုဆိုင်ရာ အထောက်အပံ့။",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-service-list li:nth-child(1)",
+        "mm": "မိသားစုဥပဒေ အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-service-list li:nth-child(2)",
+        "mm": "လက်ထပ်ခြင်းနှင့် မိသားစုသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-service-list li:nth-child(3)",
+        "mm": "ကွာရှင်းခြင်းနှင့် ခွဲထွက်ခြင်း အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-service-list li:nth-child(4)",
+        "mm": "အမွေအနှစ်နှင့် အမွေဆက်ခံမှု စီမံခန့်ခွဲမှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-service-list li:nth-child(5)",
+        "mm": "မှတ်တမ်းတင်ထားချက် ရေးဆွဲခြင်းနှင့် အမွေအနှစ်စီမံခန့်ခွဲမှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-service-list li:nth-child(6)",
+        "mm": "ပိုင်ဆိုင်မှု ကာကွယ်ခြင်းနှင့် ဥစ္စာပိုင်ဆိုင်မှု လွှဲပြောင်းခြင်း မဟာဗျူဟာများ",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-service-list li:nth-child(7)",
+        "mm": "အမွေအနှစ်အုပ်ချုပ်မှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-service-list li:nth-child(8)",
+        "mm": "မိသားစုပိုင်ဆိုင်မှု ဖွဲ့စည်းခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-service-list li:nth-child(9)",
+        "mm": "မိသားစုဆိုင်ရာ ကိစ္စရပ်များအတွက် ဥပဒေစာရွက်စာတမ်းနှင့် အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(4) .pa-card-cta",
+        "mm": "ဤနယ်ပယ်အကြောင်း ဆွေးနွေးရန် →",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) h3",
+        "mm": "ဥပဒေအကြံပေးခြင်းနှင့် အကြံပေးဝန်ဆောင်မှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-card-summary",
+        "mm": "ဥပဒေအမြင်များ၊ အန္တရာယ်အကဲဖြတ်ခြင်း၊ စီးပွားရေးမဟာဗျူဟာအကြံပေးခြင်းနှင့် ပုဂ္ဂလိကပုဂ္ဂလိကများနှင့် ကုမ္ပဏီများအတွက် ညှိနှိုင်းမှုဆိုင်ရာ အထောက်အပံ့။",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(1)",
+        "mm": "မဟာဗျူဟာမြောက် ဥပဒေအကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(2)",
+        "mm": "စီးပွားရေးနှင့် ကော်ပိုရိတ်အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(3)",
+        "mm": "ဥပဒေဆိုင်ရာ အန္တရာယ်အကဲဖြတ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(4)",
+        "mm": "စည်းမျဉ်းလိုက်နာမှု အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(5)",
+        "mm": "စာချုပ်နှင့် လုပ်ငန်းဆိုင်ရာ အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(6)",
+        "mm": "ရင်းနှီးမြှုပ်နှံမှုဥပဒေ အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(7)",
+        "mm": "အိမ်ခြံမြေဥပဒေ အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(8)",
+        "mm": "ဥပဒေဆိုင်ရာ စစ်ဆေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(9)",
+        "mm": "ကော်ပိုရိတ်ဖွဲ့စည်းမှု စီမံကိန်းရေးဆွဲခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-service-list li:nth-child(10)",
+        "mm": "အဆက်မပြတ် ဥပဒေအကြံပေးဝန်ဆောင်မှု",
+        "html": false
+      },
+      {
+        "sel": "#services .pa-card-accordion:nth-child(5) .pa-card-cta",
+        "mm": "ဤနယ်ပယ်အကြောင်း ဆွေးနွေးရန် →",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-stat:nth-child(1) span",
+        "mm": "Years",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-stat:nth-child(2) span",
+        "mm": "Cases",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-stat:nth-child(3) span",
+        "mm": "Success",
+        "html": false
+      },
+      {
+        "sel": "#profile .eyebrow",
+        "mm": "About Me",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-role",
+        "mm": "Corporate Lawyer | Real Estate Legal Advisor · Shwe Lone Myanmar",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-lead",
+        "mm": "I am Myat Noe Oo, a Corporate Lawyer specializing in corporate and commercial law, real estate, and business advisory.",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-body:nth-of-type(1)",
+        "mm": "ကျွန်မလုပ်ငန်းသည် မဟာဗျူဟာမြောက် ဥပဒေအကြံဉာဏ်ပေးခြင်း၊ ဥပဒေဆိုင်ရာ အန္တရာယ်များကို စီမံခန့်ခွဲခြင်းနှင့် လက်တွေ့ကျသော စီးပွားရေးအမြင်ရှိသော ဥပဒေဖြေရှင်းချက်များဖြင့် စီးပွားရေး၊ စီးပွားရေးလုပ်ငန်းရှင်များနှင့် ရင်းနှီးမြှုပ်နှံသူများ၏ အကျိုးစီးပွားကို ကာကွယ်ပေးရန် အခြေခံထားပါသည်။",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-body:nth-of-type(2)",
+        "mm": "ပရော်ဖက်ရှင်နယ်လ်ဆန်မှု၊ ရိုးသားမှုနှင့် ထူးချွန်မှုတို့ကို ဦးတည်ပြီး ယုံကြည်မှုတည်ဆောက်ပေးသော ဥပဒေအကြံဉာဏ်များကို ပေးအပ်ရန် ကတိပြုပါသည်။",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-subhead:nth-of-type(1)",
+        "mm": "BACKGROUND EDUCATION",
+        "html": false
+      },
+      {
+        "sel": "#profile .edu-rows li:nth-child(1) strong",
+        "mm": "LL.B",
+        "html": false
+      },
+      {
+        "sel": "#profile .edu-rows li:nth-child(1) span:last-child",
+        "mm": "Bachelor of Laws",
+        "html": false
+      },
+      {
+        "sel": "#profile .edu-rows li:nth-child(2) strong",
+        "mm": "Diploma in Business Law",
+        "html": false
+      },
+      {
+        "sel": "#profile .edu-rows li:nth-child(2) span:last-child",
+        "mm": "United Kingdom",
+        "html": false
+      },
+      {
+        "sel": "#profile .edu-rows li:nth-child(3) strong",
+        "mm": "Diploma in International Law",
+        "html": false
+      },
+      {
+        "sel": "#profile .edu-rows li:nth-child(3) span:last-child",
+        "mm": "United Kingdom",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-subhead:nth-of-type(2)",
+        "mm": "အဓိက လုပ်ငန်းနယ်ပယ်များ",
+        "html": false
+      },
+      {
+        "sel": "#profile .focus-pills span:nth-child(1)",
+        "mm": "Corporate & Commercial",
+        "html": false
+      },
+      {
+        "sel": "#profile .focus-pills span:nth-child(2)",
+        "mm": "Real Estate",
+        "html": false
+      },
+      {
+        "sel": "#profile .focus-pills span:nth-child(3)",
+        "mm": "Business Advisory",
+        "html": false
+      },
+      {
+        "sel": "#profile .focus-pills span:nth-child(4)",
+        "mm": "Regulatory Compliance",
+        "html": false
+      },
+      {
+        "sel": "#profile .btn-primary",
+        "mm": "Start your consultation",
+        "html": false
+      },
+      {
+        "sel": "#profile .btn-outline",
+        "mm": "View Experience →",
+        "html": false
+      },
+      {
+        "sel": "#process .eyebrow",
+        "mm": "How we work",
+        "html": false
+      },
+      {
+        "sel": "#process h2",
+        "mm": "Where Strategy Meets <em>Client Trust</em> ",
+        "html": true
+      },
+      {
+        "sel": "#process .hww-intro > p",
+        "mm": "ပထမဆုံးစကားပြောဆိုမှုမှ အပြီးသတ်ပေးသည့်အထိ ရှင်းလင်းသော အဆင့်များ ",
+        "html": false
+      },
+      {
+        "sel": "#process .hww-intro .btn-primary",
+        "mm": "Start a conversation",
+        "html": false
+      },
+      {
+        "sel": "#process .policy-micro",
+        "mm": "ဆက်လက်လုပ်ဆောင်ခြင်းဖြင့် ကျွန်ုပ်တို့၏ <a href=\"terms.html\">အသုံးပြုမှု စည်းမျဉ်းများ</a> နှင့် <a href=\"privacy.html\">ကိုယ်ရေးအချက်အလက် မူဝါဒ</a> ကို ကြည့်ရှုပါ။",
+        "html": true
+      },
+      {
+        "sel": "#process .hww-stack-card:nth-child(1) h3",
+        "mm": "တိုင်ပင်ဆွေးနွေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#process .hww-stack-card:nth-child(1) > p:last-of-type",
+        "mm": "သင့်ကိစ္စရပ်ကို မျှဝေပါ။ ကျွန်ုပ်တို့ နားထောင်ပြီး လိုအပ်သော မေးခွန်းများမေးကာ လက်တွေ့ကျသော ရွေးချယ်စရာများကို ဖော်ပြပါသည်။",
+        "html": false
+      },
+      {
+        "sel": "#process .hww-stack-card:nth-child(2) h3",
+        "mm": "ရှင်းလင်းသော အတိုင်းအတာနှင့် အခကြေးငွေ",
+        "html": false
+      },
+      {
+        "sel": "#process .hww-stack-card:nth-child(2) > p:last-of-type",
+        "mm": "လုပ်ငန်းမစမီ ရေးဖွဲ့ထားသော အတိုင်းအတာ၊ အချိန်ဇယားနှင့် အခကြေးငွေကို ရရှိပါသည် — ခန့်မှန်းရန်မလို။",
+        "html": false
+      },
+      {
+        "sel": "#process .hww-stack-card:nth-child(3) h3",
+        "mm": "တိုက်ရိုက်အပ်ဒိတ်များ",
+        "html": false
+      },
+      {
+        "sel": "#process .hww-stack-card:nth-child(3) > p:last-of-type",
+        "mm": "ရှေ့နေနှင့် တိုက်ရိုက်ဆက်သွယ်နိုင်မှု — progress, risks နှင့် နောက်အဆင့်များကို ရိုးရှင်းစွာ ရှင်းပြပါသည်။",
+        "html": false
+      },
+      {
+        "sel": "#process .hww-stack-card:nth-child(4) h3",
+        "mm": "သေချာစွာ ပြီးမြောက်ပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#process .hww-stack-card:nth-child(4) > p:last-of-type",
+        "mm": "လုပ်ငန်းကို တိကျမှုနှင့် ရှင်းလင်းမှုဖြင့် ပြီးမြောက်ပေးပါသည် — ရလဒ်အပေါ် ယုံကြည်မှုတည်ဆောက်နိုင်ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": "#faq h2",
+        "mm": "Frequently Asked <em>Questions</em>",
+        "html": true
+      },
+      {
+        "sel": "#faq .faq-item:nth-child(1) .faq-q-text",
+        "mm": "တိုင်ပင်ဆွေးနွေးခ အခကြေးငွေများ ဘယ်လောက်လဲ။",
+        "html": false
+      },
+      {
+        "sel": "#faq .faq-item:nth-child(1) .faq-a p",
+        "mm": "တိုင်ပင်ဆွေးနွေးခ သည် MMK 200,000 (ပထမဆုံး) မှ စတင်ပြီး အမှုဆောင်အကြံပေးမှု MMK 1,500,000 မှ စတင်ပါသည်။ လစဉ်အကြံပေးဝန်ဆောင်မှု သည် MMK 1,500,000 မှ စတင်ပါသည်။ <a href=\"#fees\">တိုင်ပင်ဆွေးနွေးအစည်းအဝေးများ</a> နှင့် <a href=\"#retainers\">လစဉ်အကြံပေးအစီအစဉ်များ</a> ကို ကြည့်ပါ။ ငွေပေးချေမှုနှင့် ကြိုတင်ရယူမှု စည်းမျဉ်းများ — <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> · <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a>။",
+        "html": true
+      },
+      {
+        "sel": "#faq .faq-item:nth-child(2) .faq-q-text",
+        "mm": "အွန်လိုင်းတွေ့ဆုံမှု ရရှိနိုင်ပါသလား။",
+        "html": false
+      },
+      {
+        "sel": "#faq .faq-item:nth-child(2) .faq-a p",
+        "mm": "ရပါသည်။ ဗီဒီယိုတွေ့ဆုံမှုများ ရရှိနိုင်ပါသည်။ ကြိုတင်ရယူပြီးနောက် အတည်ပြုချက်နှင့်အတူ meeting link ပို့ပေးပါသည်။",
+        "html": false
+      },
+      {
+        "sel": "#faq .faq-item:nth-child(3) .faq-q-text",
+        "mm": "ဆက်သွယ်လို့ရမယ့် လုပ်ငန်းချိန်တွေက ဘယ်အချိန်တွေလဲ။",
+        "html": false
+      },
+      {
+        "sel": "#faq .faq-item:nth-child(3) .faq-a p",
+        "mm": "တနင်္လာမှ သောကြာ၊ နံနက် ၉:၀၀ – ညနေ ၅:၃၀။ ဤအချိန်ပြင်ပ တွေ့ဆုံမှုများကို တောင်းဆိုပါက စီစဉ်ပေးနိုင်ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": "#faq .faq-item:nth-child(4) .faq-q-text",
+        "mm": "တွေ့ဆုံချိန် ဘယ်လို ကြိုတင်ရယူရမလဲ။",
+        "html": false
+      },
+      {
+        "sel": "#faq .faq-item:nth-child(4) .faq-a p",
+        "mm": "Contact Form ကို အသုံးပြုပါ — သင့်နှစ်သက်သော တိုင်ပင်ဆွေးနွေးအမျိုးအစား၊ ရက်စွဲနှင့် အချိန်ကို ပြောပါ။ အီးမေးလ်ဖြင့် အတည်ပြုပေးပါမည်။ ကြိုတင်ရယူမှုများသည် ကျွန်ုပ်တို့၏ <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a> နှင့် <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> အရ ဖြစ်ပါသည်။",
+        "html": true
+      },
+      {
+        "sel": "#fees .eyebrow",
+        "mm": "Consulation",
+        "html": false
+      },
+      {
+        "sel": "#fees h2",
+        "mm": "Consultation sessions",
+        "html": false
+      },
+      {
+        "sel": "#fees .section-head .lead",
+        "mm": "သင့်ကိစ္စရပ်နှင့် ကိုက်ညီသော ပုံစံကို ရွေးချယ်ပါ။ စာရွက်စာတမ်းရေးဆွဲခြင်းနှင့် ပြန်လည်သုံးသပ်ခြင်းကို သီးခြား quoted ပေးပါသည် (မပါဝင်ကြောင်း မဖော်ပြပါက)။ ကြိုတင်ရယူမှုများသည် ကျွန်ုပ်တို့၏ <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a> နှင့် <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> အရ ဖြစ်ပါသည်။",
+        "html": true
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-title",
+        "mm": "ပထမဆုံး ဥပဒေအကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-lead",
+        "mm": "ဥပဒေဦးတည်ချက်ရှာဖွေနေသော ပထမဆုံး Client များအတွက် အကောင်းဆုံး။",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-summary-meta span:nth-child(1)",
+        "mm": "၄၅ မိနစ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-summary-meta span:nth-child(2)",
+        "mm": "MMK 200,000",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-details-hint",
+        "mm": "အသေးစိတ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-panel .engage-label:nth-of-type(1)",
+        "mm": "ပါဝင်သည့်အရာများ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-list:not(.engage-list-inline) li:nth-child(1)",
+        "mm": "ကနဦး ဥပဒေဆိုင်ရာ အကဲဖြတ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-list:not(.engage-list-inline) li:nth-child(2)",
+        "mm": "ယေဘုယျ ဥပဒေအကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-list:not(.engage-list-inline) li:nth-child(3)",
+        "mm": "မဟာဗျူဟာဆိုင်ရာ လမ်းညွှန်မှု",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-list:not(.engage-list-inline) li:nth-child(4)",
+        "mm": "အကြံပြုထားသော နောက်တစ်ဆင့်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(1) .engage-cta",
+        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-title",
+        "mm": "ပရော်ဖက်ရှင်နယ် ဥပဒေအကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-lead",
+        "mm": "နက်ရှိုင်းစွာ သုံးသပ်ရန် လိုအပ်သော ဆက်လက်လုပ်ဆောင်နေသော ဥပဒေကိစ္စရပ်များအတွက်။",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-summary-meta span:nth-child(1)",
+        "mm": "၆၀ မိနစ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-summary-meta span:nth-child(2)",
+        "mm": "MMK 350,000",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-details-hint",
+        "mm": "အသေးစိတ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-panel .engage-label:nth-of-type(1)",
+        "mm": "သင့်တော်သော နယ်ပယ်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list-inline li:nth-child(1)",
+        "mm": "Corporate",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list-inline li:nth-child(2)",
+        "mm": "စီးပွားရေး",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list-inline li:nth-child(3)",
+        "mm": "စာချုပ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list-inline li:nth-child(4)",
+        "mm": "အလုပ်သမား",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list-inline li:nth-child(5)",
+        "mm": "မိသားစု",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list-inline li:nth-child(6)",
+        "mm": "ပြည်သူ့",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-panel .engage-label:nth-of-type(2)",
+        "mm": "ပါဝင်သည့်အရာများ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list:not(.engage-list-inline) li:nth-child(1)",
+        "mm": "ဥပဒေဆိုင်ရာ အကဲဖြတ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list:not(.engage-list-inline) li:nth-child(2)",
+        "mm": "လက်တွေ့ကျသော ဖြေရှင်းချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list:not(.engage-list-inline) li:nth-child(3)",
+        "mm": "အန္တရာယ်သုံးသပ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-list:not(.engage-list-inline) li:nth-child(4)",
+        "mm": "ဥပဒေမဟာဗျူဟာ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(2) .engage-cta",
+        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-title",
+        "mm": "Corporate ဥပဒေ အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-lead",
+        "mm": "စီးပွားရေးပိုင်ရှင်များ၊ ဒါရိုက်တာများ၊ ကုမ္ပဏီများ၊ ရင်းနှီးမြှုပ်နှံသူများနှင့် နိုင်ငံခြားစီးပွားရေးလုပ်ငန်းများအတွက်။",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-summary-meta span:nth-child(1)",
+        "mm": "၉၀ မိနစ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-summary-meta span:nth-child(2)",
+        "mm": "MMK 750,000",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-details-hint",
+        "mm": "အသေးစိတ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-panel .engage-label:nth-of-type(1)",
+        "mm": "ခေါင်းစဉ်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-list:not(.engage-list-inline) li:nth-child(1)",
+        "mm": "Corporate အုပ်ချုပ်မှုနှင့် လိုက်နာမှု",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-list:not(.engage-list-inline) li:nth-child(2)",
+        "mm": "ရှယ်ယာရှင်ဆိုင်ရာ ကိစ္စရပ်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-list:not(.engage-list-inline) li:nth-child(3)",
+        "mm": "ရင်းနှီးမြှုပ်နှံမှုဖွဲ့စည်းမှု",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-list:not(.engage-list-inline) li:nth-child(4)",
+        "mm": "စီးပွားရေးချဲ့ထွင်မှုနှင့် စည်းမျဉ်းဆိုင်ရာ ကိစ္စရပ်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(3) .engage-cta",
+        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-title",
+        "mm": "အိမ်ခြံမြေဥပဒေ အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-lead",
+        "mm": "ဝယ်ယူသူများ၊ ရောင်းသူများ၊ ဖွံ့ဖြိုးတိုးတက်ရေးလုပ်ငန်းရှင်များနှင့် အိမ်ခြံမြေ ရင်းနှီးမြှုပ်နှံသူများအတွက်။",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-summary-meta span:nth-child(1)",
+        "mm": "၉၀ မိနစ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-summary-meta span:nth-child(2)",
+        "mm": "MMK 750,000",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-details-hint",
+        "mm": "အသေးစိတ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-panel .engage-label:nth-of-type(1)",
+        "mm": "ခေါင်းစဉ်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-list:not(.engage-list-inline) li:nth-child(1)",
+        "mm": "ပိုင်ဆိုင်မှု စစ်ဆေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-list:not(.engage-list-inline) li:nth-child(2)",
+        "mm": "မြေယာပိုင်ဆိုင်မှု အတည်ပြုခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-list:not(.engage-list-inline) li:nth-child(3)",
+        "mm": "ရောင်းဝယ်မှုဖွဲ့စည်းမှု",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-list:not(.engage-list-inline) li:nth-child(4)",
+        "mm": "မြေပိုင်ဆိုင်ခွင့် ငွေချေး၊ ဖွံ့ဖြိုးတိုးတက်ရေးလုပ်ငန်းနှင့် ရင်းနှီးမြှုပ်နှံမှု ကာကွယ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(4) .engage-cta",
+        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-title",
+        "mm": "စာချုပ်မဟာဗျူဟာ တိုင်ပင်ဆွေးနွေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-lead",
+        "mm": "အရေးကြီးသော သဘောတူညီချက်များ လက်မှတ်မထိုးမီ အကောင်းဆုံး။",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-summary-meta span",
+        "mm": "MMK 500,000 မှစ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-details-hint",
+        "mm": "အသေးစိတ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-panel .engage-label:nth-of-type(1)",
+        "mm": "သင့်တော်သော နယ်ပယ်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-list-inline li:nth-child(1)",
+        "mm": "ရှယ်ယာရှင်နှင့် ပူးပေါင်းလုပ်ငန်းသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-list-inline li:nth-child(2)",
+        "mm": "အလုပ်သမား၊ OEM နှင့် ဖြန့်ဖြူးရေးသဘောတူညီချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-list-inline li:nth-child(3)",
+        "mm": "စီးပွားရေးစာချုပ်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-panel .engage-label:nth-of-type(2)",
+        "mm": "ပါဝင်သည့်အရာများ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-list:not(.engage-list-inline) li:nth-child(1)",
+        "mm": "ဥပဒေဆိုင်ရာ အန္တရာယ်သုံးသပ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-list:not(.engage-list-inline) li:nth-child(2)",
+        "mm": "ညှိနှိုင်းမှုမဟာဗျူဟာ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-list:not(.engage-list-inline) li:nth-child(3)",
+        "mm": "စာချုပ်ဖွဲ့စည်းမှုနှင့် အဓိကကာကွယ်ရေးပါဝင်ချက်များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-note",
+        "mm": "စာရွက်စာတမ်းရေးဆွဲခြင်း/ပြန်လည်သုံးသပ်ခြင်း အခကြေးငွေများကို သီးခြားကotation ပေးပါသည်။",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(5) .engage-cta",
+        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-title",
+        "mm": "အမှုဆောင်ပုဂ္ဂလိက အကြံပေးမှု",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-lead",
+        "mm": "တန်ဖိုးမြင့်၊ လျှို့ဝှက်ထားရမည့်နှင့် မဟာဗျူဟာမြောက် ဥပဒေကိစ္စရပ်များအတွက်။",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-summary-meta span:nth-child(1)",
+        "mm": "၁၂၀ မိနစ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-summary-meta span:nth-child(2)",
+        "mm": "MMK 1,500,000 မှစ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-details-hint",
+        "mm": "အသေးစိတ်",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-panel .engage-label:nth-of-type(1)",
+        "mm": "အကြံပြုထားသော လူများ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-list-inline li:nth-child(1)",
+        "mm": "CEO များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-list-inline li:nth-child(2)",
+        "mm": "စီးပွားရေးမိသားစုများ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-list-inline li:nth-child(3)",
+        "mm": "ရင်းနှီးမြှုပ်နှံသူများ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-list-inline li:nth-child(4)",
+        "mm": "HNWI များ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-list-inline li:nth-child(5)",
+        "mm": "နယ်စပ်ဖြတ်ကျော စီးပွားရေးလုပ်ငန်းများ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-panel .engage-label:nth-of-type(2)",
+        "mm": "ပါဝင်သည့်အရာများ",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-list:not(.engage-list-inline) li:nth-child(1)",
+        "mm": "လျှို့ဝှက်ထားသော မဟာဗျူဟာအစည်းအဝေး",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-list:not(.engage-list-inline) li:nth-child(2)",
+        "mm": "ဥပဒေဆိုင်ရာ အန္တရာယ်မြေပုံကြမ်း",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-list:not(.engage-list-inline) li:nth-child(3)",
+        "mm": "ရေရှည်အကြံပေးမှု",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-list:not(.engage-list-inline) li:nth-child(4)",
+        "mm": "ဦးစားပေးချိန်းဆိုမှုနှင့် ပုဂ္ဂလိကတွေ့ဆုံမှု",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-note",
+        "mm": "ကြိုတင်ချိန်းဆိုမှုတစ်ခုတည်းဖြင့်။",
+        "html": false
+      },
+      {
+        "sel": "#engage-accordion .engage-item:nth-child(6) .engage-cta",
+        "mm": "Request appointment →",
+        "html": false
+      },
+      {
+        "sel": ".booking-info h3",
+        "mm": "ကြိုတင်ရယူမှု အချက်အလက်",
+        "html": false
+      },
+      {
+        "sel": ".booking-info li:nth-child(1)",
+        "mm": "တိုင်ပင်ဆွေးနွေးခကို ကြိုတင်ပေးချေရမည်။",
+        "html": false
+      },
+      {
+        "sel": ".booking-info li:nth-child(2)",
+        "mm": "ငွေပေးချေမှု လက်ခံရရှိပြီးနောက် တွေ့ဆုံချိန်းကို အတည်ပြုပေးပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".booking-info li:nth-child(3)",
+        "mm": "တွေ့ဆုံချိန်း အတည်ပြုပြီးနောက် တိုင်ပင်ဆွေးနွေးခကို ပြန်အမ်းမရပါ (အခြားသဘောတူညီချက်မရှိပါက)။",
+        "html": false
+      },
+      {
+        "sel": ".booking-info li:nth-child(4)",
+        "mm": "စာရွက်စာတမ်းရေးဆွဲခြင်း၊ ပြန်လည်သုံးသပ်ခြင်း၊ တရားရုံးကိုယ်စားလှယ်ခြင်းနှင့် အခြားဥပဒေဝန်ဆောင်မှုများကို သီးခြားကotation ပေးပါသည် (မပါဝင်ကြောင်း မဖော်ပြပါက)။",
+        "html": false
+      },
+      {
+        "sel": ".booking-info-link a:nth-child(1)",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".booking-info-link a:nth-child(3)",
+        "mm": "ငွေပေးချေမှု မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".booking-info-link a:nth-child(5)",
+        "mm": "ဝန်ဆောင်မှု စည်းမျဉ်းများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-tier",
+        "mm": "အခြေခံအကြံပေးမှု",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-for span",
+        "mm": "အတွက်",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-for",
+        "mm": "SME စီးပွားရေးလုပ်ငန်းများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-fee",
+        "mm": "MMK 1,500,000",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-fee span",
+        "mm": "/လ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-includes-label",
+        "mm": "ပါဝင်သည့်အရာများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-list li:nth-child(1)",
+        "mm": "လစဉ်ဥပဒေအကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-list li:nth-child(2)",
+        "mm": "အခြေခံစာချုပ် ပြန်လည်သုံးသပ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-list li:nth-child(3)",
+        "mm": "ပုံမှန်ဥပဒေလမ်းညွှန်မှု",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-list li:nth-child(4)",
+        "mm": "အီးမေးလ်အထောက်အပံ့",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(1) .retainer-cta",
+        "mm": "စုံစမ်းရန်",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-tier",
+        "mm": "စီးပွားရေးအကြံပေးမှု",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-for span",
+        "mm": "အတွက်",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-for",
+        "mm": "တိုးတက်နေသော ကုမ္ပဏီများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-fee",
+        "mm": "MMK 3,000,000",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-fee span",
+        "mm": "/လ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-includes-label",
+        "mm": "ပါဝင်သည့်အရာများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-list li:nth-child(1)",
+        "mm": "ချဲ့ထွင်ထားသော လစဉ်အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-list li:nth-child(2)",
+        "mm": "စာချုပ်နှင့် အလုပ်သမား ပြန်လည်သုံးသပ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-list li:nth-child(3)",
+        "mm": "စီးပွားရေးအန္တရာယ် လမ်းညွှန်မှု",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-list li:nth-child(4)",
+        "mm": "ဦးစားပေး Email အထောက်အပံ့",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(2) .retainer-cta",
+        "mm": "စုံစမ်းရန်",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-badge",
+        "mm": "အများဆုံး ရွေးချယ်ထားသော",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-tier",
+        "mm": "Corporate အကြံပေးမှု",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-for span",
+        "mm": "အတွက်",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-for",
+        "mm": "တည်ငြိမ်သော ကုမ္ပဏီများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-fee",
+        "mm": "MMK 5,000,000",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-fee span",
+        "mm": "/လ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-includes-label",
+        "mm": "ပါဝင်သည့်အရာများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-list li:nth-child(1)",
+        "mm": "ဦးစားပေးအုပ်ချုပ်မှုအကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-list li:nth-child(2)",
+        "mm": "လိုက်နာမှုနှင့် ဘုတ်အဖွဲ့အထောက်အပံ့",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-list li:nth-child(3)",
+        "mm": "ပမာဏများသော စီးပွားရေးလုပ်ငန်း",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-list li:nth-child(4)",
+        "mm": "စီစဉ်ထားသော မဟာဗျူဟာစစ်ဆေးမှုများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(3) .retainer-cta",
+        "mm": "စုံစမ်းရန်",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-tier",
+        "mm": "အမှုဆောင်အကြံပေးမှု",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-for span",
+        "mm": "အတွက်",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-for",
+        "mm": "ကြီးမားသော Corporate များနှင့် ရင်းနှီးမြှုပ်နှံသူများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-fee-custom",
+        "mm": "CustomBy proposal",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-fee-custom span",
+        "mm": "ကိုယ်စားလှယ်လျှောက်လွှာဖြင့်",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-includes-label",
+        "mm": "ပါဝင်သည့်အရာများ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-list li:nth-child(1)",
+        "mm": "လျှို့ဝှက်ထားသော ပုဂ္ဂလိကအကြံပေးမှု",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-list li:nth-child(2)",
+        "mm": "နယ်စပ်ဖြတ်ကျော်နှင့် ရှုပ်ထွေးသောကိစ္စရပ်များ",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-list li:nth-child(3)",
+        "mm": "ဦးစားပေးချိန်းဆိုမှု",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-list li:nth-child(4)",
+        "mm": "လစဉ်အတိုင်းအတာ စိတ်ကြိုက်ပြင်ဆင်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": "#retainers .retainer-card:nth-child(4) .retainer-cta",
+        "mm": "Request Proposal",
+        "html": false
+      },
+      {
+        "sel": "#retainers .eyebrow",
+        "mm": "Retainer",
+        "html": false
+      },
+      {
+        "sel": "#retainers h2",
+        "mm": "Retainer Services",
+        "html": false
+      },
+      {
+        "sel": "#retainers .section-head .lead",
+        "mm": "ပုံမှန်ဥပဒေလမ်းညွှန်မှု လိုအပ်သော စီးပွားရေးလုပ်ငန်းများအတွက် လစဉ်အကြံပေးမှု — တစ်ကြိမ်တည်း အစည်းအဝေးများသာ မဟုတ်ပါ။ လစဉ်အကြံပေးဝန်ဆောင်မှုများသည် ကျွန်ုပ်တို့၏ <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> နှင့် <a href=\"service-terms.html\">ဝန်ဆောင်မှု စည်းမျဉ်းများ</a> အရ ဖြစ်ပါသည်။",
+        "html": true
+      },
+      {
+        "sel": "#retainers .retainer-foot",
+        "mm": "လစဉ်အစီအစဉ်များကို သီးခြားကောက်ခံပါသည်။ အတိုင်းအတာနှင့် ပါဝင်မှုများကို လုပ်ငန်းမစမီ ရေးဖွဲ့အတည်ပြုပါသည်။ <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> နှင့် <a href=\"service-terms.html\">ဝန်ဆောင်မှု စည်းမျဉ်းများ</a> ကို ကြည့်ပါ။",
+        "html": true
+      },
+      {
+        "sel": "#insights .eyebrow",
+        "mm": "Insights",
+        "html": false
+      },
+      {
+        "sel": "#insights h2",
+        "mm": "Legal Insights",
+        "html": false
+      },
+      {
+        "sel": "#insights .lead",
+        "mm": "Corporate ၊ အိမ်ခြံမြေနှင့် စီးပွားရေးဆိုင်ရာ Insights များ — လမ်းညွှန်မှုအတွက်သာ၊ တရားဝင်အကြံပေးချက် မဟုတ်ပါ။",
+        "html": false
+      },
+      {
+        "sel": "#insights .btn-outline-light",
+        "mm": "See All Insights",
+        "html": false
+      },
+      {
+        "sel": "#insights .policy-micro-light",
+        "mm": "ဥပဒေဆိုင်ရာ အမြင်များသည် ယေဘုယျအချက်အလက်သာ ဖြစ်ပါသည် — ကျွန်ုပ်တို့၏ <a href=\"disclaimer.html\">မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်</a> ကို ကြည့်ပါ။",
+        "html": true
+      },
+      {
+        "sel": "#contact .eyebrow",
+        "mm": "Contact",
+        "html": false
+      },
+      {
+        "sel": "#contact h2",
+        "mm": "Get in touch",
+        "html": false
+      },
+      {
+        "sel": "#contact .lead",
+        "mm": "ဝန်ဆောင်မှုများ သို့မဟုတ် အချိန်ဇယားဆိုင်ရာ မေးခွန်းများရှိပါသလား။ လုပ်ငန်းချိန်အတွင်း မက်ဆေ့ချ်ပို့ပါ သို့မဟုတ် ဖုန်းဆက်ပါ။",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside-label",
+        "mm": "Office",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside h3",
+        "mm": "Reach counsel directly",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside-text",
+        "mm": "လုပ်ငန်းချိန်တစ်ရက် အတွင်း အမြန်ဆုံး အကြောင်းပြန်ပါသည်။ ကြိုတင်ရယူသည့်အခါ ဖောင်တွင် တိုင်ပင်ဆွေးနွေးမှု သို့မဟုတ် လစဉ်အကြံပေးအစီအစဉ်ကို ရွေးချယ်ပါ။ ပို့သော မက်ဆေ့ချ်များကို ကျွန်ုပ်တို့၏ <a href=\"privacy.html\">ကိုယ်ရေးအချက်အလက် မူဝါဒ</a> နှင့် <a href=\"terms.html\">အသုံးပြုမှု စည်းမျဉ်းများ</a> ဖြင့် ကာကွယ်ပါသည်။",
+        "html": true
+      },
+      {
+        "sel": "#contact .contact-aside-list li:nth-child(1) .meta-label",
+        "mm": "Phone",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside-list li:nth-child(2) .meta-label",
+        "mm": "Email ",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside-list li:nth-child(3) .meta-label",
+        "mm": "မူဆယ် Office",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside-list li:nth-child(3) span:not(.meta-label)",
+        "mm": "Ta/243, Muse Township, Shan State, Myanmar",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside-list li:nth-child(3) .contact-maps-link",
+        "mm": "Maps တွင် ဖွင့်ရန် →",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside-list li:nth-child(4) .meta-label",
+        "mm": "မန္တလေး Office",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside-list li:nth-child(4) span:not(.meta-label)",
+        "mm": "Aung Mingalar Ward, Patheingyi Township, Mandalay, Myanmar",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside-list li:nth-child(4) .contact-maps-link",
+        "mm": "Maps တွင် ဖွင့်ရန် →",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-social .meta-label",
+        "mm": "Follow",
+        "html": false
+      },
+      {
+        "sel": "#contact .wechat-qr-caption",
+        "mm": "WeChat — ဆက်သွယ်ရန် Scan ဖတ်ပါ",
+        "html": false
+      },
+      {
+        "sel": "#contact .contact-aside .btn-primary",
+        "mm": "View Sessions",
+        "html": false
+      },
+      {
+        "sel": "#contact-success h4",
+        "mm": "မက်ဆေ့ချ် ပို့ပြီးပါပြီ",
+        "html": false
+      },
+      {
+        "sel": "#contact-success p",
+        "mm": "ကျေးဇူးတင်ပါသည်။ ရုံးမှ တစ်ရက်လုပ်ငန်းအတွင်း တုံ့ပြန်ပါမည်။",
+        "html": false
+      },
+      {
+        "sel": "#contact .panel-title",
+        "mm": "Send a Message",
+        "html": false
+      },
+      {
+        "sel": "label[for=\"c-name\"]",
+        "mm": "အမည်",
+        "html": false
+      },
+      {
+        "sel": "#c-name",
+        "mm": "သင့်အမည်",
+        "html": false
+      },
+      {
+        "sel": "label[for=\"c-email\"]",
+        "mm": "Email",
+        "html": false
+      },
+      {
+        "sel": "#c-email",
+        "mm": "you@email.com",
+        "html": false
+      },
+      {
+        "sel": "label[for=\"c-phone\"]",
+        "mm": "Phone",
+        "html": false
+      },
+      {
+        "sel": "#c-phone",
+        "mm": "မဖြစ်မနေမဟုတ်",
+        "html": false
+      },
+      {
+        "sel": "label[for=\"c-subject\"]",
+        "mm": "SUBJECT",
+        "html": false
+      },
+      {
+        "sel": "#c-subject",
+        "mm": "ဘယ်လို ကူညီပေးရမလဲ။",
+        "html": false
+      },
+      {
+        "sel": "label[for=\"c-plan\"]",
+        "mm": "Plan of interest",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"\"]",
+        "mm": "အစည်းအဝေး သို့မဟုတ် လစဉ်အကြံပေးကို ရွေးချယ်ပါ",
+        "html": false
+      },
+      {
+        "sel": "#c-plan optgroup[label=\"Consultation sessions\"]",
+        "attr": "label",
+        "mm": "တိုင်ပင်ဆွေးနွေးအစည်းအဝေးများ",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"session-initial\"]",
+        "mm": "ပထမဆုံး ဥပဒေအကြံပေးခြင်း — MMK 200,000",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"session-professional\"]",
+        "mm": "ပရော်ဖက်ရှင်နယ် ဥပဒေအကြံပေးခြင်း — MMK 350,000",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"session-corporate\"]",
+        "mm": "Corporate ဥပဒေ အကြံပေးခြင်း — MMK 750,000",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"session-realestate\"]",
+        "mm": "အိမ်ခြံမြေဥပဒေ အကြံပေးခြင်း — MMK 750,000",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"session-contract\"]",
+        "mm": "စာချုပ်မဟာဗျူဟာ တိုင်ပင်ဆွေးနွေးခြင်း — MMK 500,000 မှစ",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"session-executive\"]",
+        "mm": "အမှုဆောင်ပုဂ္ဂလိက အကြံပေးမှု — MMK 1,500,000 မှစ",
+        "html": false
+      },
+      {
+        "sel": "#c-plan optgroup[label=\"Monthly retainers\"]",
+        "attr": "label",
+        "mm": "လစဉ်အကြံပေးဝန်ဆောင်မှုများ",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"retainer-essential\"]",
+        "mm": "အခြေခံအကြံပေးမှု — MMK 1,500,000/လ",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"retainer-business\"]",
+        "mm": "စီးပွားရေးအကြံပေးမှု — MMK 3,000,000/လ",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"retainer-corporate\"]",
+        "mm": "Corporateအကြံပေးမှု — MMK 5,000,000/လ",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"retainer-executive\"]",
+        "mm": "အမှုဆောင်အကြံပေးမှု — စိတ်ကြိုက်",
+        "html": false
+      },
+      {
+        "sel": "#c-plan option[value=\"general\"]",
+        "mm": "ယေဘုယျစုံစမ်းမှု / မသေချာသေးပါ",
+        "html": false
+      },
+      {
+        "sel": "label[for=\"c-message\"]",
+        "mm": "message",
+        "html": false
+      },
+      {
+        "sel": "#c-message",
+        "mm": "အသေးစိတ်အချက်အလက်၊ နှစ်သက်သော ရက်စွဲ သို့မဟုတ် အချိန်ကို မျှဝေပါ…",
+        "html": false
+      },
+      {
+        "sel": "#contact-form button[type='submit']",
+        "mm": "Send Message",
+        "html": false
+      },
+      {
+        "sel": "#contact .form-note",
+        "mm": "ပို့ခြင်းဖြင့် ကျွန်ုပ်တို့၏ <a href=\"terms.html\">အသုံးပြုမှု စည်းမျဉ်းများ</a> နှင့် <a href=\"privacy.html\">ကိုယ်ရေးအချက်အလက် မူဝါဒ</a> ကို သဘောတူပါသည်။ အခကြေးငွေကို ကြိုတင်ပေးချေရမည် — <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> နှင့် <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a> ကို ကြည့်ပါ။",
+        "html": true
+      },
+      {
+        "sel": ".footer-brand > p",
+        "mm": "ပုဂ္ဂလိကများနှင့် စီးပွားရေးလုပ်ငန်းများအတွက် လက်တွေ့ကျသော ဥပဒေအကြံဉာဏ်များ။",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(2) h4",
+        "mm": "Pages",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(2) a[href='#home']",
+        "mm": "Home",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(2) a[href='#profile']",
+        "mm": "Profile",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(2) a[href='experience.html']",
+        "mm": "Experience",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(2) a[href='#services']",
+        "mm": "Services",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(2) a[href='#process']",
+        "mm": "How we work",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(2) a[href='insights.html']",
+        "mm": "Insights",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(3) h4",
+        "mm": "Contact",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(3) a[href='#fees']",
+        "mm": "Fees",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(3) a[href='#retainers']",
+        "mm": "Retainers",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(3) a[href='#contact']:first-of-type",
+        "mm": "Start your consultation",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(3) a[href='#contact']:last-of-type",
+        "mm": "Contact",
+        "html": false
+      },
+      {
+        "sel": ".footer-col-policies h4",
+        "mm": "Policies",
+        "html": false
+      },
+      {
+        "sel": ".footer-col-policies a[href='disclaimer.html']",
+        "mm": "မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်",
+        "html": false
+      },
+      {
+        "sel": ".footer-col-policies a[href='terms.html']",
+        "mm": "အသုံးပြုမှု စည်းမျဉ်းများ",
+        "html": false
+      },
+      {
+        "sel": ".footer-col-policies a[href='service-terms.html']",
+        "mm": "ဝန်ဆောင်မှု စည်းမျဉ်းနှင့် သတ်မှတ်ချက်များ",
+        "html": false
+      },
+      {
+        "sel": ".footer-col-policies a[href='conflict-of-interest-policy.html']",
+        "mm": "အကျိုးစီးပွားဆန့်ကျင်မှု မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".footer-col-policies a[href='privacy.html']",
+        "mm": "ကိုယ်ရေးအချက်အလက် မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".footer-col-policies a[href='cookie-policy.html']",
+        "mm": "Cookie မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".footer-col-policies a[href='payment-policy.html']",
+        "mm": "ငွေပေးချေမှု မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".footer-col-policies a[href='consultation-policy.html']",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(5) h4",
+        "mm": "Office",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(5) li:nth-child(1)",
+        "mm": "Ta/243, Muse Township, Shan State",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(5) li:nth-child(2)",
+        "mm": "Aung Mingalar Ward, Patheingyi Township, Mandalay",
+        "html": false
+      },
+      {
+        "sel": ".footer-bottom-left > span:first-child",
+        "mm": "© 2026 (Daw Myat Noe Oo) Shwe Lone Myanmar. မူပိုင်ခွင့်အားလုံး လက်ဝယ်ရှိပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".footer-disclaimer-note",
+        "mm": "ရှေ့နေကြော်ငြာမှု။ ယခင်ရလဒ်များသည် အနာဂတ်ရလဒ်ကို အာမမခံပါ။ <a href=\"disclaimer.html\">မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်</a> ကို ကြည့်ပါ။",
+        "html": true
+      },
+      {
+        "sel": ".chat-panel-head strong",
+        "mm": "Shwe Lone ကို မေးမြန်းရန်",
+        "html": false
+      },
+      {
+        "sel": ".chat-panel-head-text span",
+        "mm": "အမြန်အဖြေများ · မေးလေ့ရှိသောမေးခွန်းများ",
+        "html": false
+      },
+      {
+        "sel": ".chat-back",
+        "mm": "← ပြန်သွားရန်",
+        "html": false
+      },
+      {
+        "sel": ".chat-head-link",
+        "mm": "Start your consultation",
+        "html": false
+      },
+      {
+        "sel": ".chat-close",
+        "mm": "×",
+        "html": false
+      },
+      {
+        "sel": "#chat-input",
+        "mm": "သင့်မက်ဆေ့ချ် ရိုက်ထည့်ပါ…",
+        "html": false
+      },
+      {
+        "sel": "#chat-send",
+        "mm": "ပို့ရန်",
+        "html": false
+      },
+      {
+        "sel": ".chat-policy-note",
+        "mm": "ကြိုတင်ရယူမီ <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a> · <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> ကို ဖတ်ပါ",
+        "html": true
+      },
+      {
+        "sel": ".chat-launcher-text",
+        "mm": "မေးရန် · Ask us",
+        "html": false
+      }
+    ],
+    "experience": [
+      {
+        "sel": ".experience-hero .eyebrow",
+        "mm": "Experience",
+        "html": false
+      },
+      {
+        "sel": ".experience-title",
+        "mm": "Professional Experience",
+        "html": false
+      },
+      {
+        "sel": ".experience-hero .lead",
+        "mm": "Corporate ၊ စီးပွားရေး၊ အိမ်ခြံမြေနှင့် စီးပွားရေးအကြံပေးခြင်းတွင် မဟာဗျူဟာမြောက် ဥပဒေအကြံဉာဏ် — ၂၀၂၀ ခုနှစ်မှ စတင်၍ စီးပွားရေးလုပ်ငန်းများ၊ စီးပွားရေးလုပ်ငန်းရှင်များနှင့် ရင်းနှီးမြှုပ်နှံသူများကို ဝန်ဆောင်မှုပေးနေပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".experience-stats .profile-stat:nth-child(1) span",
+        "mm": "Years in practice",
+        "html": false
+      },
+      {
+        "sel": ".experience-stats .profile-stat:nth-child(2) span",
+        "mm": "Matters handled",
+        "html": false
+      },
+      {
+        "sel": ".experience-stats .profile-stat:nth-child(3) span",
+        "mm": "Core practice areas",
+        "html": false
+      },
+      {
+        "sel": ".experience-matters .pa-eyebrow",
+        "mm": "<span aria-hidden=\"true\">•</span> Representative matters",
+        "html": true
+      },
+      {
+        "sel": ".experience-matters h2",
+        "mm": "Selected experience",
+        "html": false
+      },
+      {
+        "sel": ".experience-matters .lead",
+        "mm": "ဥပမာလုပ်ငန်းများသာ — Client အမည်များနှင့် လျှို့ဝှက်ထားရမည့် အသေးစိတ်များကို မဖော်ပြပါ။ ယခင်အတွေ့အကြုံသည် အနာဂတ်ရလဒ်ကို အာမမခံပါ။ ကျွန်ုပ်တို့၏ <a href=\"disclaimer.html\">မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်</a> ကို ကြည့်ပါ။",
+        "html": true
+      },
+      {
+        "sel": ".experience-matter:nth-child(1) .experience-matter-tag",
+        "mm": "Corporate",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(1) h3",
+        "mm": "ကုမ္ပဏီဖွဲ့စည်းခြင်းနှင့် လိုက်နာမှု",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(1) > p:last-of-type",
+        "mm": "SME နှင့် တိုးတက်နေသော စီးပွားရေးလုပ်ငန်းများအတွက် ဖွဲ့စည်းခြင်း၊ ရှယ်ယာရှင်စီမံခန့်ခွဲမှု၊ Corporateအုပ်ချုပ်မှုနှင့် အဆက်မပြတ် စည်းမျဉ်းလိုက်နာမှုအတွက် အကြံပေးခဲ့ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(2) .experience-matter-tag",
+        "mm": "စာချုပ်များ",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(2) h3",
+        "mm": "စီးပွားရေးစာချုပ် ရေးဆွဲခြင်းနှင့် ပြန်လည်သုံးသပ်ခြင်း",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(2) > p:last-of-type",
+        "mm": "ထောက်ပံ့မှု၊ ဝန်ဆောင်မှု၊ မိတ်ဖက်နှင့် ပူးပေါင်းလုပ်ငန်းသဘောတူညီချက်များကို ရေးဆွဲပြီး ပြန်လည်သုံးသပ်ခဲ့ပါသည် — ငွေပေးချေမှု၊ ရပ်ဆိုင်းခြင်းနှင့် အငြင်းပွားမှုပါဝင်ချက်များကို အထူးဂရုစိုက်ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(3) .experience-matter-tag",
+        "mm": "အိမ်ခြံမြေ",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(3) h3",
+        "mm": "ပိုင်ဆိုင်မှု စစ်ဆေးခြင်းနှင့် လုပ်ငန်းများ",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(3) > p:last-of-type",
+        "mm": "ခေါင်းစဉ်နှင့် စာရွက်စာတမ်းပြန်လည်သုံးသပ်ခြင်း၊ ဝယ်ယူမှုနှင့် ငှားရမ်းမှုဖွဲ့စည်းမှု အကြံပေးခြင်းနှင့် ညှိနှိုင်းမှုနှင့် ပိတ်သိမ်းခြင်းအထိ ကလိုင်းယင့်များကို အထောက်အပံ့ပေးခဲ့ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(4) .experience-matter-tag",
+        "mm": "ရင်းနှီးမြှုပ်နှံမှု",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(4) h3",
+        "mm": "ရင်းနှီးမြှုပ်နှံမှုနှင့် စီးပွားရေးလုပ်ငန်းများ",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(4) > p:last-of-type",
+        "mm": "ရင်းနှီးမြှုပ်နှံသူများနှင့် လုပ်ငန်းလည်ပတ်သူများအတွက် လုပ်ငန်းဖွဲ့စည်းမှု၊ ဥပဒေဆိုင်ရာ အန္တရာယ်အကဲဖြတ်ခြင်းနှင့် နိုင်ငံခြားနှင့် ပြည်တွင်းလုပ်ငန်းများအတွက် စာရွက်စာတမ်းများတွင် အထောက်အပံ့ပေးခဲ့ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(5) .experience-matter-tag",
+        "mm": "မိသားစု",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(5) h3",
+        "mm": "မိသားစုဥပဒေနှင့် အမွေအနှစ်စီမံခန့်ခွဲမှု",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(5) > p:last-of-type",
+        "mm": "ပုဂ္ဂလိကများနှင့် မိသားစုများအတွက် အမွေအနှစ်စီမံခန့်ခွဲမှု၊ ပိုင်ဆိုင်မှုအမွေဆက်ခံမှုနှင့် ထိလွယ်ရှလွယ်ကိစ္စရပ်များကို လက်တွေ့ကျစွာ ဖြေရှင်းရန် အကြံပေးခဲ့ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(6) .experience-matter-tag",
+        "mm": "အကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(6) h3",
+        "mm": "ဥပဒေအကြံပေးခြင်းနှင့် လစဉ်အကြံပေးဝန်ဆောင်မှု",
+        "html": false
+      },
+      {
+        "sel": ".experience-matter:nth-child(6) > p:last-of-type",
+        "mm": "စီးပွားရေးပိုင်ရှင်များအတွက် နေ့စဉ်မေးခွန်းများမှ ဘုတ်အဆင့်အန္တရာယ်နှင့် လိုက်နာမှုဆုံးဖြတ်ချက်များအထိ အဆက်မပြတ် မဟာဗျူဟာမြောက် ဥပဒေလမ်းညွှန်မှု ပေးခဲ့ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".experience-journey .eyebrow",
+        "mm": "Career",
+        "html": false
+      },
+      {
+        "sel": ".experience-journey h2",
+        "mm": "Professional journey",
+        "html": false
+      },
+      {
+        "sel": ".experience-journey .section-head .lead",
+        "mm": "Corporate ဥပဒေ၊ အိမ်ခြံမြေနှင့် စီးပွားရေးလုပ်ငန်းများနှင့် ရင်းနှီးမြှုပ်နှံသူများအတွက် လက်တွေ့အကြံပေးခြင်းကို အာရုံစိုက်သော ဥပဒေလုပ်ငန်းနှင့် ရုံးခွဲဦးဆောင်မှု။",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(1) .timeline-year",
+        "mm": "၂၀၂၀ – လက်ရှိ",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(1) h4",
+        "mm": "ဥပဒေလုပ်ငန်း",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(1) > div > p",
+        "mm": "Corporate နှင့် စီးပွားရေးဥပဒေ၊ စာချုပ်ရေးဆွဲခြင်းနှင့် ပြန်လည်သုံးသပ်ခြင်း၊ အိမ်ခြံမြေလုပ်ငန်းများ၊ စည်းမျဉ်းလိုက်နာမှုနှင့် စီးပွားရေးအကြံပေးခြင်းတွင် ဥပဒေဝန်ဆောင်မှုများ ပေးအပ်နေပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(2) .timeline-year",
+        "mm": "Founder",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(2) h4",
+        "mm": "SHWE LONE MYANMAR Business Law",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(2) > div > p",
+        "mm": "စီးပွားရေးလုပ်ငန်းများ၊ စီးပွားရေးလုပ်ငန်းရှင်များနှင့် ရင်းနှီးမြှုပ်နှံသူများအတွက် မဟာဗျူဟာမြောက် ဥပဒေအကြံဉာဏ်နှင့် လက်တွေ့ကျသော ဥပဒေဖြေရှင်းချက်များ ပေးအပ်ရန် SHWE LONE MYANMAR Business Law ကို တည်ထောင်ခဲ့ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(3) .timeline-year",
+        "mm": "EDUCATION",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(3) h4",
+        "mm": "LL.B နှင့် ယူကေဒီပလိုမာများ",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(3) > div > p",
+        "mm": "ဥပဒေဘွဲ့ (LL.B); Diploma in Business Law (UK); Diploma in International Law (UK)။",
+        "html": false
+      },
+      {
+        "sel": ".experience-aside .profile-subhead",
+        "mm": "အဓိက လုပ်ငန်းနယ်ပယ်များ",
+        "html": false
+      },
+      {
+        "sel": ".experience-pills span:nth-child(1)",
+        "mm": "Corporate နှင့် စီးပွားရေးဥပဒေ",
+        "html": false
+      },
+      {
+        "sel": ".experience-pills span:nth-child(2)",
+        "mm": "စာချုပ်ရေးဆွဲခြင်းနှင့် ညှိနှိုင်းခြင်း",
+        "html": false
+      },
+      {
+        "sel": ".experience-pills span:nth-child(3)",
+        "mm": "အိမ်ခြံမြေဥပဒေ",
+        "html": false
+      },
+      {
+        "sel": ".experience-pills span:nth-child(4)",
+        "mm": "စီးပွားရေးအကြံပေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": ".experience-pills span:nth-child(5)",
+        "mm": "စည်းမျဉ်းလိုက်နာမှု",
+        "html": false
+      },
+      {
+        "sel": ".experience-pills span:nth-child(6)",
+        "mm": "ဥပဒေဆိုင်ရာ စစ်ဆေးခြင်း",
+        "html": false
+      },
+      {
+        "sel": ".experience-pills span:nth-child(7)",
+        "mm": "ကုမ္ပဏီဖွဲ့စည်းခြင်းနှင့် ကော်ပိုရိတ်အုပ်ချုပ်မှု",
+        "html": false
+      },
+      {
+        "sel": ".experience-aside .btn-hero-primary",
+        "mm": "Start your consultation",
+        "html": false
+      },
+      {
+        "sel": ".experience-aside .btn-outline-light",
+        "mm": "View Profile",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-brand > p",
+        "mm": "ပုဂ္ဂလိကများနှင့် စီးပွားရေးလုပ်ငန်းများအတွက် လက်တွေ့ကျသော ဥပဒေအကြံဉာဏ်များ။",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col:nth-child(2) h4",
+        "mm": "Pages",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col:nth-child(2) a[href*='#home']",
+        "mm": "Home",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col:nth-child(2) a[href*='#profile']",
+        "mm": "Profile",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col:nth-child(2) a[href='experience.html']",
+        "mm": "Experience",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col:nth-child(2) a[href*='#services']",
+        "mm": "Services",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col:nth-child(2) a[href*='#contact']",
+        "mm": "Contact",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col-policies h4",
+        "mm": "Policies",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col-policies a[href='disclaimer.html']",
+        "mm": "မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col-policies a[href='terms.html']",
+        "mm": "အသုံးပြုမှု စည်းမျဉ်းများ",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col-policies a[href='privacy.html']",
+        "mm": "ကိုယ်ရေးအချက်အလက် မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col-policies a[href='consultation-policy.html']",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-col:nth-child(4) h4",
+        "mm": "Office",
+        "html": false
+      },
+      {
+        "sel": "body:has(.experience-page) .footer-bottom-left span",
+        "mm": "© 2026 (Daw Myat Noe Oo) Shwe Lone Myanmar. မူပိုင်ခွင့်အားလုံး လက်ဝယ်ရှိပါသည်။",
+        "html": false
+      }
+    ],
+    "insights": [
+      {
+        "sel": "main .eyebrow",
+        "mm": "Insights",
+        "html": false
+      },
+      {
+        "sel": "main h1",
+        "mm": "Legal Insights",
+        "html": false
+      },
+      {
+        "sel": "main .lead",
+        "mm": "Corporate ၊ အိမ်ခြံမြေနှင့် စီးပွားရေးဆိုင်ရာ Insight များ — လမ်းညွှန်မှုအတွက်သာ၊ တရားဝင်အကြံပေးချက် မဟုတ်ပါ။ ကျွန်ုပ်တို့၏ <a href=\"disclaimer.html\">မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်</a> ကို ကြည့်ပါ။",
+        "html": true
+      },
+      {
+        "sel": ".insights-actions .btn-primary",
+        "mm": "← Back to home",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href*='#insights']",
+        "mm": "Insights",
+        "html": false
+      }
+    ],
+    "insight": [
+      {
+        "sel": ".article-note",
+        "mm": "ဤဆောင်းပါးသည် ယေဘုယျအချက်အလက်အတွက်သာ ဖြစ်ပြီး ဥပဒေအကြံပေးချက် မဟုတ်ပါ။ ကျွန်ုပ်တို့၏ <a href=\"disclaimer.html\">မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်</a> ကို ကြည့်ပါ။ သင့်ကိစ္စရပ်အတွက် <a href=\"index.html#contact\">တိုင်ပင်ဆွေးနွေးမှု ကြိုတင်ရယူပါ</a>။",
+        "html": true
+      },
+      {
+        "sel": ".article-actions a[href='insights.html']",
+        "mm": "← ဥပဒေဆိုင်ရာ အမြင်အားလုံး",
+        "html": false
+      },
+      {
+        "sel": ".article-actions .btn-primary",
+        "mm": "Start your consultation",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href*='#insights']",
+        "mm": "အမြင်များ",
+        "html": false
+      }
+    ],
+    "common": [
+      {
+        "sel": ".site-header .nav-links a[href*='#home']",
+        "mm": "Home",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href*='#profile']",
+        "mm": "Profile",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href='experience.html']",
+        "mm": "Experience",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href*='#services']",
+        "mm": "Services",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href*='#process']",
+        "mm": "How we work",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href*='#fees']",
+        "mm": "Fees",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href*='#retainers']",
+        "mm": "Retainers",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href*='#insights']",
+        "mm": "Insights",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-links a[href*='#contact']",
+        "mm": "Contact",
+        "html": false
+      },
+      {
+        "sel": ".site-header .nav-cta",
+        "mm": "Start your consultation",
+        "html": false
+      },
+      {
+        "sel": ".legal-wrap > .eyebrow",
+        "mm": "ဥပဒေ",
+        "html": false
+      },
+      {
+        "sel": ".legal-org",
+        "mm": "Shwe Lone Myanmar · Myat Noe Oo · ကော်ပိုရိတ်ဥပဒေ ရှေ့နေ",
+        "html": false
+      },
+      {
+        "sel": ".lang-tab[data-lang='en']",
+        "mm": "English",
+        "html": false
+      },
+      {
+        "sel": ".lang-tab[data-lang='mm']",
+        "mm": "မြန်မာ",
+        "html": false
+      },
+      {
+        "sel": ".legal-actions a[href='index.html']",
+        "mm": "← ပင်မစာမျက်နှာသို့",
+        "html": false
+      },
+      {
+        "sel": ".legal-actions a[href='service-terms.html']",
+        "mm": "ဝန်ဆောင်မှု စည်းမျဉ်းများ →",
+        "html": false
+      }
+    ],
+    "terms": [
+      { "sel": ".legal-wrap > h1", "mm": "အသုံးပြုမှု စည်းမျဉ်းများ", "html": false },
+      { "sel": ".legal-wrap > .lead", "mm": "ဤ Website အသုံးပြုမှုကို ဤစည်းမျဉ်းများဖြင့် စီမံခန့်ခွဲပါသည်။ အခကြေးငွေ၊ ပြန်အမ်းငွေနှင့် ကotation ဆိုင်ရာ စည်းမျဉ်းများအတွက် <a href=\"service-terms.html\">ဝန်ဆောင်မှု စည်းမျဉ်းနှင့် သတ်မှတ်ချက်များ</a> ကို ကြည့်ပါ။", "html": true }
+    ],
+    "privacy": [
+      { "sel": ".legal-wrap > h1", "mm": "ကိုယ်ရေးကိုယ်တာ မူဝါဒ", "html": false },
+      { "sel": ".legal-wrap > .lead", "mm": "Myat Noe Oo တွင် သင့်ကိုယ်ရေးကိုယ်တာကို လေးစားပြီး သင့်ကိုယ်ရေးအချက်အလက်၏ လျှို့ဝှက်မှု၊ လုံခြုံမှုနှင့် တိကျမှုကို ကာကွယ်ရန် ကတိပြုပါသည်။", "html": false }
+    ],
+    "disclaimer": [
+      { "sel": ".legal-wrap > h1", "mm": "မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်", "html": false },
+      { "sel": ".legal-wrap > .lead", "mm": "ဤ Website ပါ အချက်အလက်များကို ယုံကြည်မှုမထားမီ ဤထုတ်ပြန်ချက်ကို ဂရုတစိုက် ဖတ်ရှုပါ။", "html": false }
+    ],
+    "consultation-policy": [
+      { "sel": ".legal-wrap > h1", "mm": "တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ", "html": false },
+      { "sel": ".legal-wrap > .lead", "mm": "ဤတိုင်ပင်ဆွေးနွေးမှု မူဝါဒသည် Shwe Lone Myanmar နှင့် ဥပဒေအကြံဉာဏ် တိုင်ပင်ဆွေးနွေးမှုများ ကြိုတင်ရယူမှု၊ အတိုင်းအတာ နှင့် အတည်ပြုချက်တို့ကို ရှင်းပြပါသည်။ ငွေပေးချေမှု စည်းမျဉ်းများအတွက် <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> ကို ကြည့်ပါ။", "html": true }
+    ],
+    "payment-policy": [
+      { "sel": ".legal-wrap > h1", "mm": "ငွေပေးချေမှု မူဝါဒ", "html": false },
+      { "sel": ".legal-wrap > .lead", "mm": "ဤငွေပေးချေမှု မူဝါဒသည် Shwe Lone Myanmar နှင့် တိုင်ပင်ဆွေးနွေးမှု၊ ကotation နှင့် ဝန်ဆောင်မှုအတွက် အခကြေးငွေ ပေးချေပုံကို ရှင်းပြပါသည်။ ကြိုတင်ရယူမှု စည်းမျဉ်းများအတွက် <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a> ကို ကြည့်ပါ။", "html": true }
+    ],
+    "service-terms": [
+      { "sel": ".legal-wrap > h1", "mm": "ဝန်ဆောင်မှု စည်းမျဉ်းနှင့် သတ်မှတ်ချက်များ", "html": false },
+      { "sel": ".legal-wrap > .lead", "mm": "ဤစည်းမျဉ်းများသည် ဤ Website မှတစ်ဆင့် သို့မဟုတ် တိုက်ရိုက် Shwe Lone Myanmar ၏ ဥပဒေဝန်ဆောင်မှုများကို ရယူသောအခါ အကျုံးဝင်ပါသည်။ Website ကြည့်ရှုမှု စည်းမျဉ်းများအတွက် <a href=\"terms.html\">အသုံးပြုမှု စည်းမျဉ်းများ</a> ကို ကြည့်ပါ။", "html": true }
+    ],
+    "cookie-policy": [
+      { "sel": ".legal-wrap > h1", "mm": "Cookie မူဝါဒ", "html": false },
+      { "sel": ".legal-wrap > .lead", "mm": "ဤ Cookie မူဝါဒသည် ဤ Website သို့ လာရောက်ကြည့်ရှုသောအခါ cookie နှင့် ဆင်တူသော နည်းပညာများ အသုံးပြုပုံကို ရှင်းပြပါသည်။ ကိုယ်ရေးအချက်အလက် ကိုင်တွယ်ပုံအတွက် <a href=\"privacy.html\">ကိုယ်ရေးကိုယ်တာ မူဝါဒ</a> ကို ကြည့်ပါ။", "html": true }
+    ],
+    "conflict-of-interest-policy": [
+      { "sel": ".legal-wrap > h1", "mm": "အကျိုးစားမှု ပဋိပက္ခနှင့် ပရော်ဖက်ရှင်နယ် မူဝါဒများ", "html": false },
+      { "sel": ".legal-wrap > .lead", "mm": "ဤမူဝါဒများသည် အကျိုးစားမှု ပဋိပက္ခ၊ ကလိုင်းယင့် ခွဲခြားမှတ်သားခြင်း၊ အီလက်ထရွန်နစ် ဆက်သွယ်ရေးနှင့် စာရွက်စာတမ်း ထိန်းသိမ်းခြင်းဆိုင်ရာ ပရော်ဖက်ရှင်နယ် စံနှုန်းများကို ဖော်ပြပါသည်။", "html": false }
+    ]
+  }
+}
