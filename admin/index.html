@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Admin — Shwe Lone Myanmar</title>
-  <link rel="stylesheet" href="css/admin.css?v=9" />
+  <link rel="stylesheet" href="css/admin.css?v=10" />
 </head>
 <body>
   <div id="login-screen" class="login-screen">
@@ -25,7 +25,8 @@
   </div>
 
   <div id="app" class="admin-app" hidden>
-    <aside class="admin-sidebar">
+    <div class="sidebar-overlay" id="sidebar-overlay" hidden aria-hidden="true"></div>
+    <aside class="admin-sidebar" id="admin-sidebar">
       <div class="sidebar-brand">
         <img src="../assets/2-nobg.png" alt="" />
         <span>Admin</span>
@@ -45,7 +46,10 @@
 
     <main class="admin-main">
       <header class="admin-topbar">
-        <div>
+        <button type="button" class="admin-menu-btn" id="sidebar-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="admin-sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="admin-topbar-title">
           <p class="topbar-eyebrow">Shwe Lone Myanmar</p>
           <h2 id="view-title">Insights</h2>
         </div>
@@ -265,6 +269,6 @@
     </main>
   </div>
 
-  <script src="js/admin.js?v=13"></script>
+  <script src="js/admin.js?v=14"></script>
 </body>
 </html>

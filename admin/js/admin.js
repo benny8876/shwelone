@@ -489,8 +489,10 @@
           <p>${esc(item.excerpt || '')}</p>
           <p class="data-row-meta">${esc(item.category || '')} · ${formatDate(item.date || '')}</p>
         </div>
-        <span class="badge ${item.published ? 'badge-live' : 'badge-draft'}">${item.published ? 'Published' : 'Draft'}</span>
-        <button type="button" class="btn btn-outline" data-edit-insight="${esc(item.id)}">Edit</button>
+        <div class="data-row-actions">
+          <span class="badge ${item.published ? 'badge-live' : 'badge-draft'}">${item.published ? 'Published' : 'Draft'}</span>
+          <button type="button" class="btn btn-outline" data-edit-insight="${esc(item.id)}">Edit</button>
+        </div>
       </div>`
       )
       .join('');
@@ -547,7 +549,9 @@
           <h3>${esc(p.title)}</h3>
           <p class="data-row-meta">${esc(p.file)}</p>
         </div>
-        <button type="button" class="btn btn-outline" data-edit-policy="${esc(p.id)}">Edit</button>
+        <div class="data-row-actions">
+          <button type="button" class="btn btn-outline" data-edit-policy="${esc(p.id)}">Edit</button>
+        </div>
       </div>`
       )
       .join('');
@@ -604,7 +608,9 @@
           <p>${esc(item.preview || '—')}</p>
           <p class="data-row-meta">${esc(item.status || '')} · ${item.messageCount || 0} messages · closed ${formatDate(item.closedAt || '')} · by ${esc(item.closedBy || '')}</p>
         </div>
-        <button type="button" class="btn btn-outline" data-view-chat="${esc(item.id)}">View</button>
+        <div class="data-row-actions">
+          <button type="button" class="btn btn-outline" data-view-chat="${esc(item.id)}">View</button>
+        </div>
       </div>`
       )
       .join('');
@@ -737,6 +743,52 @@
     }
   }
 
+  function closeSidebar() {
+    const sidebar = $('#admin-sidebar');
+    const overlay = $('#sidebar-overlay');
+    const toggle = $('#sidebar-toggle');
+    sidebar?.classList.remove('is-open');
+    overlay?.classList.remove('is-visible');
+    if (overlay) overlay.hidden = true;
+    toggle?.classList.remove('is-open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('admin-sidebar-open');
+  }
+
+  function openSidebar() {
+    const sidebar = $('#admin-sidebar');
+    const overlay = $('#sidebar-overlay');
+    const toggle = $('#sidebar-toggle');
+    sidebar?.classList.add('is-open');
+    overlay?.classList.add('is-visible');
+    if (overlay) {
+      overlay.hidden = false;
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+    toggle?.classList.add('is-open');
+    if (toggle) {
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close menu');
+    }
+    document.body.classList.add('admin-sidebar-open');
+  }
+
+  function toggleSidebar() {
+    if ($('#admin-sidebar')?.classList.contains('is-open')) closeSidebar();
+    else openSidebar();
+  }
+
+  function initMobileNav() {
+    bind('#sidebar-toggle', 'click', toggleSidebar);
+    bind('#sidebar-overlay', 'click', closeSidebar);
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeSidebar();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSidebar();
+    });
+  }
+
   /* ——— Init ——— */
   function init() {
     if (window.location.protocol === 'file:') {
@@ -772,8 +824,11 @@
         if (view === 'visitors') loadVisitorStats();
         if (view === 'settings') loadSiteSettings();
         showView(view);
+        closeSidebar();
       });
     });
+
+    initMobileNav();
 
     bind('#ins-image-pick', 'click', () => {
       $('#ins-image-file')?.click();

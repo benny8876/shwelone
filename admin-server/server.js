@@ -519,7 +519,7 @@ function generateInsightHtml(insight) {
   <meta name="description" content="${esc(insight.excerpt)}" />
   <link rel="canonical" href="../insight.html?slug=${esc(slug)}" />
   <meta http-equiv="refresh" content="0; url=../insight.html?slug=${esc(slug)}" />
-  <link rel="stylesheet" href="../css/styles.css?v=svc7" />
+  <link rel="stylesheet" href="../css/styles.css?v=svc8" />
 </head>
 <body>
   <p><a href="../insight.html?slug=${esc(slug)}">Continue to article</a></p>

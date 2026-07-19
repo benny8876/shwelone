@@ -52,6 +52,15 @@ html.lang-mm .nav-cta {
   max-width: none;
 }
 
+/* Language toggle — keep EN/MM on one line (body word-break must not apply) */
+html[lang="my"] .site-lang-toggle,
+html.lang-mm .site-lang-toggle,
+html[lang="my"] .site-lang-btn,
+html.lang-mm .site-lang-btn {
+  white-space: nowrap;
+  word-break: normal;
+}
+
 /* Eyebrows — no uppercase crush for Myanmar labels */
 html[lang="my"] .eyebrow,
 html[lang="my"] .pa-eyebrow,
