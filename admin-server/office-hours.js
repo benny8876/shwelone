@@ -1,7 +1,4 @@
-/**
- * Live chat office hours — Myanmar Time (Asia/Yangon)
- * Open daily 10:00–18:00 (18:00 exclusive)
- */
+
 const OFFICE_TZ = 'Asia/Yangon';
 const OFFICE_START_HOUR = 10;
 const OFFICE_END_HOUR = 18;

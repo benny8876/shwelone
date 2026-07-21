@@ -1,4 +1,4 @@
-/* ScrollStack — desktop: JS pin/scale; mobile: CSS sticky (smoother on touch) */
+
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const narrowMq = window.matchMedia('(max-width: 768px)');

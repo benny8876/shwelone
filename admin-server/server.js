@@ -1,11 +1,3 @@
-#!/usr/bin/env node
-/**
- * Shwe Lone Myanmar — local admin API
- * Serves /admin and writes insights + policy HTML to disk.
- *
- * Usage: node admin-server/server.js
- * Default: http://localhost:8790/admin/
- */
 
 const http = require('http');
 const fs = require('fs');
@@ -15,6 +7,7 @@ const { URL } = require('url');
 const sharp = require('sharp');
 const { createLiveChatApi } = require('./live-chat');
 const { createAnalyticsApi } = require('./analytics');
+const { createChatAnalytics } = require('./chat-analytics');
 const {
   isCrossOriginDenied,
   hashPassword,
@@ -27,9 +20,24 @@ const {
 
 const ROOT = path.join(__dirname, '..');
 const PORT = Number(process.env.ADMIN_PORT) || 8790;
+const DATA_DIR = path.join(ROOT, 'data');
+
+/** JSON files under /data/ that must never be served as static files. */
+const BLOCKED_DATA_FILES = new Set([
+  'admin-config.json',
+  'analytics.json',
+  'chat-analytics.json',
+  'chat-archive.json',
+  'chat-sessions.json',
+  'contact-messages.json',
+  'faq.json',
+  'insights.json',
+  'site-settings.json',
+]);
+
 const sessions = new Map();
 const SESSION_TTL = 1000 * 60 * 60 * 8;
-const DEFAULT_SETTINGS = { imageWatermark: true, logo: 'assets/2-nobg.png' };
+const DEFAULT_SETTINGS = { imageWatermark: true, logo: 'assets/6-nobg.png' };
 const TELEGRAM_RATE_WINDOW_MS = 60 * 1000;
 const TELEGRAM_CONTACT_RATE_MAX = 8;
 const TELEGRAM_LIVE_REQUEST_RATE_MAX = 5;
@@ -194,7 +202,7 @@ async function handleTelegramContact(req, res) {
   }
 
   const text = [
-    '📩 New contact — Shwe Lone Myanmar',
+    '📩 New contact — Stand Law Firm',
     '',
     `Name: ${name}`,
     `Email: ${email}`,
@@ -240,7 +248,7 @@ async function handleTelegramChat(req, res) {
     return;
   }
 
-  const text = ['💬 Ask Shwe Lone — chat message', '', message].join('\n');
+  const text = ['💬 Ask Stand Law — chat message', '', message].join('\n');
 
   try {
     await sendTelegramMessage(text);
@@ -278,6 +286,66 @@ function readJson(rel) {
 function writeJson(rel, data) {
   const file = path.join(ROOT, rel);
   fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n', 'utf8');
+}
+
+function isBlockedDataFile(filePath) {
+  if (!filePath.startsWith(DATA_DIR + path.sep)) return false;
+  return BLOCKED_DATA_FILES.has(path.basename(filePath));
+}
+
+function getPublicInsights() {
+  const store = readJson('data/insights.json');
+  return {
+    insights: (store.insights || []).filter((item) => item.published),
+  };
+}
+
+function defaultFaqStore() {
+  return { categories: [] };
+}
+
+function readFaqStore() {
+  try {
+    const store = readJson('data/faq.json');
+    if (!Array.isArray(store.categories)) return defaultFaqStore();
+    return store;
+  } catch {
+    return defaultFaqStore();
+  }
+}
+
+function normalizeFaqStore(body) {
+  const categories = Array.isArray(body?.categories) ? body.categories : [];
+  return {
+    categories: categories
+      .filter((cat) => cat && (cat.id || cat.label))
+      .map((cat, idx) => {
+        const id = String(cat.id || `cat-${idx + 1}`)
+          .trim()
+          .replace(/[^a-zA-Z0-9_-]/g, '')
+          .slice(0, 40) || `cat-${idx + 1}`;
+        const items = Array.isArray(cat.items) ? cat.items : [];
+        return {
+          id,
+          label: String(cat.label || id).trim().slice(0, 80),
+          items: items
+            .filter((item) => item && String(item.q || '').trim())
+            .map((item, qIdx) => ({
+              id: String(item.id || `${id}-${qIdx + 1}`).slice(0, 64),
+              q: String(item.q || '').trim().slice(0, 300),
+              a: String(item.a || '').trim().slice(0, 4000),
+            })),
+        };
+      }),
+  };
+}
+
+function sendPublicJson(res, body, cacheSeconds = 60) {
+  res.writeHead(200, {
+    ...buildStaticHeaders('application/json'),
+    'Cache-Control': `public, max-age=${cacheSeconds}`,
+  });
+  res.end(JSON.stringify(body));
 }
 
 function getAdminConfig() {
@@ -395,7 +463,7 @@ async function applyLogoWatermark(imageBuf) {
   const settings = getSiteSettings();
   if (settings.imageWatermark === false) return imageBuf;
 
-  const logoRel = settings.logo || 'assets/2-nobg.png';
+  const logoRel = settings.logo || 'assets/6-nobg.png';
   const logoPath = path.join(ROOT, logoRel);
   if (!fs.existsSync(logoPath)) return imageBuf;
 
@@ -548,7 +616,7 @@ function extractPolicyMeta(html) {
 function updatePolicyHtml(html, data) {
   let out = html;
   if (data.title) {
-    out = out.replace(/<title>[^<]*<\/title>/, `<title>${data.title} — Shwe Lone Myanmar</title>`);
+    out = out.replace(/<title>[^<]*<\/title>/, `<title>${data.title} — Stand Law Firm</title>`);
     out = out.replace(/<h1>[^<]*<\/h1>/, `<h1>${data.title}</h1>`);
   }
   if (data.legalMeta !== undefined) {
@@ -662,10 +730,27 @@ async function handleApi(req, res, pathname) {
     return;
   }
 
+  if (pathname === '/api/faq' && req.method === 'GET') {
+    send(res, 200, readFaqStore());
+    return;
+  }
+
+  if (pathname === '/api/chat/analytics/track' && req.method === 'POST') {
+    if (!checkAnalyticsRate(clientIp(req))) {
+      send(res, 429, { error: 'Too many requests' });
+      return;
+    }
+    const body = await parseBody(req);
+    chatAnalytics.handleTrack(req, res, body);
+    return;
+  }
+
   const needsAuth =
     pathname.startsWith('/api/insights') ||
     pathname.startsWith('/api/policies') ||
     pathname.startsWith('/api/chat/archive') ||
+    pathname === '/api/chat/analytics' ||
+    (pathname === '/api/faq' && req.method !== 'GET') ||
     pathname === '/api/analytics/stats' ||
     pathname === '/api/change-password' ||
     pathname === '/api/upload' ||
@@ -683,6 +768,12 @@ async function handleApi(req, res, pathname) {
 
   if (pathname === '/api/telegram/chat' && req.method === 'POST') {
     await handleTelegramChat(req, res);
+    return;
+  }
+
+  const liveStreamMatch = pathname.match(/^\/api\/chat\/session\/([^/]+)\/stream$/);
+  if (liveStreamMatch && req.method === 'GET') {
+    liveChat.handleSessionStream(req, res, decodeURIComponent(liveStreamMatch[1]));
     return;
   }
 
@@ -718,6 +809,19 @@ async function handleApi(req, res, pathname) {
     return;
   }
 
+  if (pathname === '/api/chat/analytics' && req.method === 'GET') {
+    chatAnalytics.handleStats(req, res);
+    return;
+  }
+
+  if (pathname === '/api/faq' && req.method === 'PUT') {
+    const body = await parseBody(req);
+    const next = normalizeFaqStore(body);
+    writeJson('data/faq.json', next);
+    send(res, 200, { ok: true, ...next });
+    return;
+  }
+
   if (pathname === '/api/telegram/webhook' && req.method === 'POST') {
     await liveChat.handleTelegramWebhook(req, res);
     return;
@@ -737,7 +841,7 @@ async function handleApi(req, res, pathname) {
     const body = await parseBody(req);
     const next = {
       imageWatermark: body.imageWatermark !== false,
-      logo: 'assets/2-nobg.png',
+      logo: 'assets/6-nobg.png',
     };
     writeJson('data/site-settings.json', next);
     send(res, 200, { ok: true, ...next });
@@ -868,12 +972,6 @@ const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, `http://localhost:${PORT}`);
     let pathname = decodeURIComponent(url.pathname);
 
-    if (pathname === '/') {
-      res.writeHead(302, { Location: '/admin/' });
-      res.end();
-      return;
-    }
-
     if (pathname.startsWith('/api/')) {
       activeReq = req;
       try {
@@ -881,6 +979,16 @@ const server = http.createServer(async (req, res) => {
       } finally {
         activeReq = null;
       }
+      return;
+    }
+
+    if (pathname === '/data/insights.json' && req.method === 'GET') {
+      sendPublicJson(res, getPublicInsights());
+      return;
+    }
+
+    if (pathname === '/data/faq.json' && req.method === 'GET') {
+      sendPublicJson(res, readFaqStore(), 30);
       return;
     }
 
@@ -903,6 +1011,11 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (fs.existsSync(filePath)) {
+      if (isBlockedDataFile(filePath)) {
+        res.writeHead(404, buildStaticHeaders('application/json'));
+        res.end(JSON.stringify({ error: 'Not found' }));
+        return;
+      }
       serveStatic(req, res, filePath);
       return;
     }
@@ -914,6 +1027,8 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
+const chatAnalytics = createChatAnalytics({ root: ROOT });
+
 const liveChat = createLiveChatApi({
   root: ROOT,
   getTelegramConfig,
@@ -923,6 +1038,8 @@ const liveChat = createLiveChatApi({
   checkSessionPollRate: checkAnalyticsRate,
   clientIp,
   send,
+  chatAnalytics,
+  buildApiHeaders,
 });
 
 const analytics = createAnalyticsApi({
@@ -937,7 +1054,7 @@ server.listen(PORT, () => {
   liveChat.registerBotCommands();
   liveChat.startTelegramPolling();
 
-  console.log(`Shwe Lone admin server running at http://localhost:${PORT}/admin/`);
+  console.log(`Stand Law admin server running at http://localhost:${PORT}/admin/`);
   console.log(`CORS allowed origins: ${getAllowedOrigins().join(', ')}`);
   const tg = getTelegramConfig();
   if (tg.token && tg.chatId) {

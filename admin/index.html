@@ -4,17 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Admin — Shwe Lone Myanmar</title>
-  <link rel="stylesheet" href="css/admin.css?v=10" />
+  <title>Admin — Stand Law Firm</title>
+  <link rel="stylesheet" href="css/admin.css?v=11" />
 </head>
 <body>
   <div id="login-screen" class="login-screen">
     <div class="login-card">
-      <img src="../assets/2-nobg.png" alt="" class="login-logo" />
-      <h1>Shwe Lone Admin</h1>
+      <img src="../assets/6-nobg.png?v=2" alt="" class="login-logo" />
+      <h1>Stand Law Admin</h1>
       <p class="login-sub">Manage insights and policy pages</p>
-      <p class="login-url">Open <strong>http://localhost:8790/admin/</strong></p>
-  <p class="login-sub" style="margin-top:0.5rem;font-size:0.82rem">Change the default password after first sign-in (Settings).</p>
       <form id="login-form">
         <label for="password">Password</label>
         <input type="password" id="password" name="password" autocomplete="current-password" required />
@@ -28,13 +26,15 @@
     <div class="sidebar-overlay" id="sidebar-overlay" hidden aria-hidden="true"></div>
     <aside class="admin-sidebar" id="admin-sidebar">
       <div class="sidebar-brand">
-        <img src="../assets/2-nobg.png" alt="" />
+        <img src="../assets/6-nobg.png?v=2" alt="" />
         <span>Admin</span>
       </div>
       <nav class="sidebar-nav">
         <button type="button" class="nav-item is-active" data-view="insights">Insights</button>
+        <button type="button" class="nav-item" data-view="faq">FAQ chat</button>
         <button type="button" class="nav-item" data-view="policies">Policies</button>
         <button type="button" class="nav-item" data-view="chats">Chat history</button>
+        <button type="button" class="nav-item" data-view="chat-stats">Chat stats</button>
         <button type="button" class="nav-item" data-view="visitors">Visitors</button>
         <button type="button" class="nav-item" data-view="settings">Settings</button>
       </nav>
@@ -50,7 +50,7 @@
           <span></span><span></span><span></span>
         </button>
         <div class="admin-topbar-title">
-          <p class="topbar-eyebrow">Shwe Lone Myanmar</p>
+          <p class="topbar-eyebrow">Stand Law Firm</p>
           <h2 id="view-title">Insights</h2>
         </div>
       </header>
@@ -61,6 +61,39 @@
           <button type="button" id="new-insight-btn" class="btn btn-primary">+ New insight</button>
         </div>
         <div id="insights-list" class="data-list"></div>
+      </section>
+
+      <section id="view-faq" class="admin-view" hidden>
+        <div class="view-toolbar">
+          <p class="view-hint">Edit FAQ categories and Q&amp;A shown in the website chat widget.</p>
+          <button type="button" id="faq-add-category" class="btn btn-outline">+ Category</button>
+        </div>
+        <form id="faq-form" class="editor-form editor-form--wide">
+          <div id="faq-categories" class="section-board"></div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save FAQ</button>
+          </div>
+          <p id="faq-status" class="form-status" hidden></p>
+        </form>
+      </section>
+
+      <section id="view-chat-stats" class="admin-view" hidden>
+        <p class="view-hint">Live chat outcomes and FAQ usage (last 90 days).</p>
+        <div id="chat-stats-grid" class="stats-grid"></div>
+        <div class="visitors-panels">
+          <div class="settings-card">
+            <h3>Daily chats</h3>
+            <div id="chat-stats-daily" class="breakdown-list"></div>
+          </div>
+          <div class="settings-card">
+            <h3>Top FAQ categories</h3>
+            <div id="chat-stats-categories" class="breakdown-list"></div>
+          </div>
+          <div class="settings-card">
+            <h3>Top FAQ questions</h3>
+            <div id="chat-stats-questions" class="breakdown-list"></div>
+          </div>
+        </div>
       </section>
 
       <section id="view-insight-edit" class="admin-view" hidden>
@@ -215,7 +248,7 @@
               </div>
               <div class="form-field span-2">
                 <label for="pol-org">Organization line <span class="label-opt">(optional)</span></label>
-                <input type="text" id="pol-org" placeholder="Shwe Lone Myanmar · Myat Noe Oo" />
+                <input type="text" id="pol-org" placeholder="Stand Law Firm · Daw Nang Moe Thu Zar Kyaw" />
               </div>
             </div>
           </details>
@@ -236,7 +269,7 @@
               <input type="checkbox" id="setting-watermark" checked />
               Add logo watermark to uploaded insight images
             </label>
-            <p class="field-hint">When on, uploads get the site logo stamped (center + corner) so photos are harder to reuse. Uses <code>assets/2-nobg.png</code>.</p>
+            <p class="field-hint">When on, uploads get the site logo stamped (center + corner) so photos are harder to reuse. Uses <code>assets/6-nobg.png</code>.</p>
             <button type="submit" class="btn btn-primary" style="margin-top:1rem">Save settings</button>
             <p id="site-settings-status" class="form-status" hidden></p>
           </form>
@@ -256,19 +289,10 @@
             <p id="password-status" class="form-status" hidden></p>
           </form>
         </div>
-        <div class="settings-card">
-          <h3>How to use</h3>
-          <ol class="settings-steps">
-            <li>Run <code>node admin-server/server.js</code></li>
-            <li>Open <code>http://localhost:8790/admin/</code></li>
-            <li>Edit content, then click Save</li>
-            <li>Commit and push to publish on the live site</li>
-          </ol>
-        </div>
       </section>
     </main>
   </div>
 
-  <script src="js/admin.js?v=14"></script>
+  <script src="js/admin.js?v=15"></script>
 </body>
 </html>

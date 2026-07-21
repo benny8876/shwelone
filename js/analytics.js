@@ -1,4 +1,4 @@
-/* Cookie-free visitor analytics — sends page path + screen size only */
+
 (function () {
   if (location.pathname.startsWith('/admin')) return;
 
@@ -9,7 +9,7 @@
     if (last && Date.now() - Number(last) < DEDUPE_MS) return;
     sessionStorage.setItem(key, String(Date.now()));
   } catch {
-    /* ignore */
+ 
   }
 
   const payload = {
@@ -28,7 +28,7 @@
       if (navigator.sendBeacon(url, blob)) return;
     }
   } catch {
-    /* fall through */
+ 
   }
 
   fetch(url, {

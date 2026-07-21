@@ -1,4 +1,4 @@
-/* Shared API base — contact form, chat, analytics when site is not on port 8790 */
+
 (function () {
   const ADMIN_PORT = '8790';
 

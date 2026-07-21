@@ -1,6 +1,4 @@
-/**
- * Cookie-free pageview analytics — stored locally on the admin server.
- */
+
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');

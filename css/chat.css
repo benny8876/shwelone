@@ -316,6 +316,27 @@
   box-shadow: 0 0 0 3px rgba(201, 168, 92, 0.18);
 }
 
+.chat-compose.is-locked .chat-input,
+.chat-compose.is-locked .chat-send {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.chat-compose.is-locked .chat-input {
+  background: #eef1f5;
+  border-color: #e4e9ea;
+}
+
+.chat-send:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.chat-input:disabled {
+  cursor: not-allowed;
+}
+
 .chat-send {
   flex-shrink: 0;
   height: 42px;

@@ -1,20 +1,24 @@
 {
   "meta": {
     "index": {
-      "en": "Myat Noe Oo — Corporate Lawyer | Shwe Lone Myanmar",
-      "mm": "Myat Noe Oo — Corporate Lawyer | Shwe Lone Myanmar"
+      "en": "Daw Nang Moe Thu Zar Kyaw — Founder & CEO | Stand Law Firm",
+      "mm": "ဒေါ်နန်းမိုးသူဇာကျော် — Founder & CEO | Stand Law Firm"
     },
     "experience": {
-      "en": "Experience — Shwe Lone Myanmar",
-      "mm": "Experience — Shwe Lone Myanmar"
+      "en": "Experience — Stand Law Firm",
+      "mm": "Experience — Stand Law Firm"
     },
     "insights": {
-      "en": "Insights — Shwe Lone Myanmar",
-      "mm": "Insights — Shwe Lone Myanmar"
+      "en": "Insights — Stand Law Firm",
+      "mm": "Insights — Stand Law Firm"
     },
     "insight": {
-      "en": "Insight — Shwe Lone Myanmar",
-      "mm": "Insight — Shwe Lone Myanmar"
+      "en": "Insight — Stand Law Firm",
+      "mm": "Insight — Stand Law Firm"
+    },
+    "services": {
+      "en": "Legal Services — Stand Law Firm",
+      "mm": "ဥပဒေဝန်ဆောင်မှုများ — Stand Law Firm"
     }
   },
   "strings": {
@@ -87,8 +91,8 @@
       "mm": "Start your consultation"
     },
     "chat.ask": {
-      "en": "Ask Shwe Lone",
-      "mm": "Shwe Lone ကို မေးမြန်းရန်"
+      "en": "Ask Stand Law",
+      "mm": "Stand Law ကို မေးမြန်းရန်"
     },
     "chat.subtitle": {
       "en": "Quick answers · FAQ",
@@ -113,23 +117,27 @@
     "lang.mm": {
       "en": "မြန်မာ",
       "mm": "မြန်မာ"
+    },
+    "nav.allServices": {
+      "en": "All services",
+      "mm": "ဝန်ဆောင်မှုအားလုံး"
     }
   },
   "pages": {
     "index": [
       {
         "sel": ".hero-badge",
-        "mm": "<span class=\"hero-badge-icon\" aria-hidden=\"true\">◆</span> Corporate Lawyer",
+        "mm": "<span class=\"hero-badge-icon\" aria-hidden=\"true\">◆</span> Founder &amp; Managing Lawyer",
         "html": true
       },
       {
         "sel": "#home .hero-role",
-        "mm": "Corporate Lawyer | Real Estate Legal Advisor",
+        "mm": "Founder & CEO | High Court Lawyer",
         "html": false
       },
       {
         "sel": "#home .hero-lead",
-        "mm": "Where Law Meets Strategy. Clear counsel for corporate,commercial,and real estate matters—with transparent fees and direct access.",
+        "mm": "Stand Law Firm — ကော်ပိုရိတ်နှင့် စီးပွားရေးဥပဒေ၊ Shareholders’ Agreements နှင့် Tax Compliance အတွက် မဟာဗျူဟာမြောက် အကြံဉာဏ် — ရှင်းလင်းသော လုပ်ငန်းစဉ်နှင့် တိုက်ရိုက်ဆက်သွယ်နိုင်မှု။",
         "html": false
       },
       {
@@ -214,7 +222,7 @@
       },
       {
         "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(1)",
-        "mm": "Coporate အုပ်ချုပ်မှု",
+        "mm": "Corporate အုပ်ချုပ်မှု",
         "html": false
       },
       {
@@ -224,12 +232,12 @@
       },
       {
         "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(3)",
-        "mm": "Coporate ပြန်လည်ဖွဲ့စည်းခြင်း",
+        "mm": "Corporate ပြန်လည်ဖွဲ့စည်းခြင်း",
         "html": false
       },
       {
         "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(4)",
-        "mm": "Coporate အတွင်းရေးဝန်ဆောင်မှု",
+        "mm": "Corporate အတွင်းရေးဝန်ဆောင်မှု",
         "html": false
       },
       {
@@ -279,12 +287,12 @@
       },
       {
         "sel": "#services .pa-card-accordion:nth-child(1) .pa-service-list li:nth-child(14)",
-        "mm": "Coporate ဥပဒေ အကြံပေးခြင်း",
+        "mm": "Corporate ဥပဒေ အကြံပေးခြင်း",
         "html": false
       },
       {
         "sel": "#services .pa-card-accordion:nth-child(1) h3",
-        "mm": "Coporate နှင့် စီးပွားရေးဥပဒေ",
+        "mm": "Corporate နှင့် စီးပွားရေးဥပဒေ",
         "html": false
       },
       {
@@ -504,7 +512,7 @@
       },
       {
         "sel": "#services .pa-card-accordion:nth-child(5) .pa-card-summary",
-        "mm": "ဥပဒေအမြင်များ၊ အန္တရာယ်အကဲဖြတ်ခြင်း၊ စီးပွားရေးမဟာဗျူဟာအကြံပေးခြင်းနှင့် ပုဂ္ဂလိကပုဂ္ဂလိကများနှင့် ကုမ္ပဏီများအတွက် ညှိနှိုင်းမှုဆိုင်ရာ အထောက်အပံ့။",
+        "mm": "ဥပဒေအမြင်များ၊ အန္တရာယ်အကဲဖြတ်ခြင်း၊ စီးပွားရေးမဟာဗျူဟာအကြံပေးခြင်းနှင့် ပုဂ္ဂလိကပုဂ္ဂိုလ်များနှင့် ကုမ္ပဏီများအတွက် ညှိနှိုင်းမှုဆိုင်ရာ အထောက်အပံ့။",
         "html": false
       },
       {
@@ -564,47 +572,52 @@
       },
       {
         "sel": "#profile .profile-stat:nth-child(1) span",
-        "mm": "Years",
+        "mm": "နှစ်",
         "html": false
       },
       {
         "sel": "#profile .profile-stat:nth-child(2) span",
-        "mm": "Cases",
+        "mm": "နှစ် Law Officer",
         "html": false
       },
       {
         "sel": "#profile .profile-stat:nth-child(3) span",
-        "mm": "Success",
+        "mm": "နှစ် Translator",
         "html": false
       },
       {
         "sel": "#profile .eyebrow",
-        "mm": "About Me",
+        "mm": "Founder & Managing Lawyer Profile",
+        "html": false
+      },
+      {
+        "sel": "#profile h2.reveal-text",
+        "mm": "ဒေါ်နန်းမိုးသူဇာကျော်",
         "html": false
       },
       {
         "sel": "#profile .profile-role",
-        "mm": "Corporate Lawyer | Real Estate Legal Advisor · Shwe Lone Myanmar",
+        "mm": "Founder & CEO, Stand Law Firm · High Court Lawyer (LL.B, D.B.L, D.I.L)",
         "html": false
       },
       {
         "sel": "#profile .profile-lead",
-        "mm": "I am Myat Noe Oo, a Corporate Lawyer specializing in corporate and commercial law, real estate, and business advisory.",
+        "mm": "ဒေါ်နန်းမိုးသူဇာကျော်သည် LL.B (ဥပဒေဘွဲ့) အပြင် D.B.L (စီးပွားရေးဥပဒေဘွဲ့လွန်ဒီပလိုမာ) နှင့် D.I.L (နိုင်ငံတကာဥပဒေဘွဲ့လွန်ဒီပလိုမာ) တို့ကို ရရှိထားသော မြန်မာနိုင်ငံ ရှေ့နေတစ်ဦး ဖြစ်ပါသည်။",
         "html": false
       },
       {
-        "sel": "#profile .profile-body:nth-of-type(1)",
-        "mm": "ကျွန်မလုပ်ငန်းသည် မဟာဗျူဟာမြောက် ဥပဒေအကြံဉာဏ်ပေးခြင်း၊ ဥပဒေဆိုင်ရာ အန္တရာယ်များကို စီမံခန့်ခွဲခြင်းနှင့် လက်တွေ့ကျသော စီးပွားရေးအမြင်ရှိသော ဥပဒေဖြေရှင်းချက်များဖြင့် စီးပွားရေး၊ စီးပွားရေးလုပ်ငန်းရှင်များနှင့် ရင်းနှီးမြှုပ်နှံသူများ၏ အကျိုးစီးပွားကို ကာကွယ်ပေးရန် အခြေခံထားပါသည်။",
+        "sel": "#profile .profile-copy > p.profile-body:nth-of-type(4)",
+        "mm": "၂၀၁၄ ခုနှစ်မှ စတင်၍ ယနေ့အထိ ဥပဒေရေးရာ နယ်ပယ်တွင် ၁၂ နှစ်နီးပါး ခိုင်မာစွာ ရပ်တည်လျက်ရှိပြီး၊ တရားဥပဒေစိုးမိုးရေးကဏ္ဍတွင် ဥပဒေအရာရှိ (Law Officer) အဖြစ် (၈) နှစ်တိုင်တိုင် တာဝန်ထမ်းဆောင်ခဲ့သည့် အတွေ့အကြုံရင့် ကျွမ်းကျင်သူဖြစ်ပါသည်။ ထို့အပြင် Chinese Language Translator အဖြစ် (၂) နှစ်တာ ဆောင်ရွက်ခဲ့သည့် အတွေ့အကြုံများကြောင့် ပြည်တွင်း/ပြည်ပ စီးပွားရေးလုပ်ငန်းများနှင့် နိုင်ငံတကာ ရင်းနှီးမြှုပ်နှံသူများအကြား ဥပဒေကြောင်းအရ ပေါင်းကူးတံတားအဖြစ် ထိရောက်စွာ ဝန်ဆောင်မှုပေးနိုင်ပါသည်။",
         "html": false
       },
       {
-        "sel": "#profile .profile-body:nth-of-type(2)",
-        "mm": "ပရော်ဖက်ရှင်နယ်လ်ဆန်မှု၊ ရိုးသားမှုနှင့် ထူးချွန်မှုတို့ကို ဦးတည်ပြီး ယုံကြည်မှုတည်ဆောက်ပေးသော ဥပဒေအကြံဉာဏ်များကို ပေးအပ်ရန် ကတိပြုပါသည်။",
+        "sel": "#profile .profile-copy > p.profile-body:nth-of-type(5)",
+        "mm": "လက်ရှိတွင် Corporate & Commercial Law၊ အစုစပ်နှင့် ရှယ်ယာရှင်များအကြား သဘောတူညီချက်များ (Shareholders’ Agreements) ရေးသားဆွဲသားခြင်း နှင့် အခွန်ဆိုင်ရာ ဥပဒေလိုက်နာဆောင်ရွက်မှုများ (Tax Compliance) တို့ကို အထူးပြု၍ ရုံးခွဲများစွာမှတစ်ဆင့် စီးပွားရေးလုပ်ငန်းရှင်များကို ဦးဆောင်ဝန်ဆောင်မှုပေးလျက် ရှိပါသည်။",
         "html": false
       },
       {
-        "sel": "#profile .profile-subhead:nth-of-type(1)",
-        "mm": "BACKGROUND EDUCATION",
+        "sel": "#profile .profile-copy > p.profile-subhead:nth-of-type(6)",
+        "mm": "Founder’s Vision & Commitment",
         "html": false
       },
       {
@@ -619,27 +632,27 @@
       },
       {
         "sel": "#profile .edu-rows li:nth-child(2) strong",
-        "mm": "Diploma in Business Law",
+        "mm": "D.B.L",
         "html": false
       },
       {
         "sel": "#profile .edu-rows li:nth-child(2) span:last-child",
-        "mm": "United Kingdom",
+        "mm": "Diploma in Business Law",
         "html": false
       },
       {
         "sel": "#profile .edu-rows li:nth-child(3) strong",
-        "mm": "Diploma in International Law",
+        "mm": "D.I.L",
         "html": false
       },
       {
         "sel": "#profile .edu-rows li:nth-child(3) span:last-child",
-        "mm": "United Kingdom",
+        "mm": "Diploma in International Law",
         "html": false
       },
       {
-        "sel": "#profile .profile-subhead:nth-of-type(2)",
-        "mm": "အဓိက လုပ်ငန်းနယ်ပယ်များ",
+        "sel": "#profile .profile-copy > p.profile-subhead:nth-of-type(8)",
+        "mm": "ပညာရေးနောက်ခံ",
         "html": false
       },
       {
@@ -649,17 +662,17 @@
       },
       {
         "sel": "#profile .focus-pills span:nth-child(2)",
-        "mm": "Real Estate",
+        "mm": "Shareholders’ Agreements",
         "html": false
       },
       {
         "sel": "#profile .focus-pills span:nth-child(3)",
-        "mm": "Business Advisory",
+        "mm": "Tax Compliance",
         "html": false
       },
       {
         "sel": "#profile .focus-pills span:nth-child(4)",
-        "mm": "Regulatory Compliance",
+        "mm": "Cross-border Advisory",
         "html": false
       },
       {
@@ -679,12 +692,12 @@
       },
       {
         "sel": "#process h2",
-        "mm": "Where Strategy Meets <em>Client Trust</em> ",
+        "mm": "Where Strategy Meets <em>Client Trust</em>",
         "html": true
       },
       {
-        "sel": "#process .hww-intro > p",
-        "mm": "ပထမဆုံးစကားပြောဆိုမှုမှ အပြီးသတ်ပေးသည့်အထိ ရှင်းလင်းသော အဆင့်များ ",
+        "sel": "#process .hww-intro > p:not(.eyebrow):not(.policy-micro)",
+        "mm": "No surprise fees. Clear steps from first call to delivery.",
         "html": false
       },
       {
@@ -699,42 +712,42 @@
       },
       {
         "sel": "#process .hww-stack-card:nth-child(1) h3",
-        "mm": "တိုင်ပင်ဆွေးနွေးခြင်း",
+        "mm": "ကနဦး တိုင်ပင်ဆွေးနွေးခြင်း",
         "html": false
       },
       {
         "sel": "#process .hww-stack-card:nth-child(1) > p:last-of-type",
-        "mm": "သင့်ကိစ္စရပ်ကို မျှဝေပါ။ ကျွန်ုပ်တို့ နားထောင်ပြီး လိုအပ်သော မေးခွန်းများမေးကာ လက်တွေ့ကျသော ရွေးချယ်စရာများကို ဖော်ပြပါသည်။",
+        "mm": "သင့်ကိစ္စကို နားထောင်ဆွေးနွေးပြီး လက်တွေ့ကျသော ဥပဒေရေးရာ ရွေးချယ်စရာများ တင်ပြခြင်း။",
         "html": false
       },
       {
         "sel": "#process .hww-stack-card:nth-child(2) h3",
-        "mm": "ရှင်းလင်းသော အတိုင်းအတာနှင့် အခကြေးငွေ",
+        "mm": "နယ်ပယ်နှင့် အခကြေးငွေ ရှင်းလင်းခြင်း",
         "html": false
       },
       {
         "sel": "#process .hww-stack-card:nth-child(2) > p:last-of-type",
-        "mm": "လုပ်ငန်းမစမီ ရေးဖွဲ့ထားသော အတိုင်းအတာ၊ အချိန်ဇယားနှင့် အခကြေးငွေကို ရရှိပါသည် — ခန့်မှန်းရန်မလို။",
+        "mm": "လုပ်ငန်းမစမီ ဝန်ဆောင်မှုနယ်ပယ်၊ အချိန်ကာလနှင့် အခကြေးငွေကို ရေးသား၍ ရှင်းလင်းသတ်မှတ်ခြင်း။",
         "html": false
       },
       {
         "sel": "#process .hww-stack-card:nth-child(3) h3",
-        "mm": "တိုက်ရိုက်အပ်ဒိတ်များ",
+        "mm": "တိုက်ရိုက် Update",
         "html": false
       },
       {
         "sel": "#process .hww-stack-card:nth-child(3) > p:last-of-type",
-        "mm": "ရှေ့နေနှင့် တိုက်ရိုက်ဆက်သွယ်နိုင်မှု — progress, risks နှင့် နောက်အဆင့်များကို ရိုးရှင်းစွာ ရှင်းပြပါသည်။",
+        "mm": "ရှေ့နေနှင့် တိုက်ရိုက် ဆက်သွယ်နိုင်ပြီး တိုးတက်မှု၊ အန္တရာယ်နှင့် နောက်အဆင့်များကို ရှင်းပြခြင်း။",
         "html": false
       },
       {
         "sel": "#process .hww-stack-card:nth-child(4) h3",
-        "mm": "သေချာစွာ ပြီးမြောက်ပေးခြင်း",
+        "mm": "ဂရုစိုက်စွာ ပြီးမြောက်ပေးခြင်း",
         "html": false
       },
       {
         "sel": "#process .hww-stack-card:nth-child(4) > p:last-of-type",
-        "mm": "လုပ်ငန်းကို တိကျမှုနှင့် ရှင်းလင်းမှုဖြင့် ပြီးမြောက်ပေးပါသည် — ရလဒ်အပေါ် ယုံကြည်မှုတည်ဆောက်နိုင်ပါသည်။",
+        "mm": "တိကျရှင်းလင်းစွာ ပြီးမြောက်အောင် ဆောင်ရွက်ပေးပြီး ရလဒ်အပေါ် ယုံကြည်မှု တည်ဆောက်ပေးခြင်း။",
         "html": false
       },
       {
@@ -784,7 +797,7 @@
       },
       {
         "sel": "#fees .eyebrow",
-        "mm": "Consulation",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု",
         "html": false
       },
       {
@@ -794,7 +807,7 @@
       },
       {
         "sel": "#fees .section-head .lead",
-        "mm": "သင့်ကိစ္စရပ်နှင့် ကိုက်ညီသော ပုံစံကို ရွေးချယ်ပါ။ စာရွက်စာတမ်းရေးဆွဲခြင်းနှင့် ပြန်လည်သုံးသပ်ခြင်းကို သီးခြား quoted ပေးပါသည် (မပါဝင်ကြောင်း မဖော်ပြပါက)။ ကြိုတင်ရယူမှုများသည် ကျွန်ုပ်တို့၏ <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a> နှင့် <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> အရ ဖြစ်ပါသည်။",
+        "mm": "သင့်ကိစ္စရပ်နှင့် ကိုက်ညီသော ပုံစံကို ရွေးချယ်ပါ။ စာရွက်စာတမ်းရေးဆွဲခြင်းနှင့် ပြန်လည်သုံးသပ်ခြင်းကို သီးခြား ဈေးနှုန်း တင်ပြပါသည် (မပါဝင်ကြောင်း မဖော်ပြပါက)။ ကြိုတင်ရယူမှုများသည် ကျွန်ုပ်တို့၏ <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a> နှင့် <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> အရ ဖြစ်ပါသည်။",
         "html": true
       },
       {
@@ -849,7 +862,7 @@
       },
       {
         "sel": "#engage-accordion .engage-item:nth-child(1) .engage-cta",
-        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု ကြိုတင်ရယူရန် →",
         "html": false
       },
       {
@@ -939,7 +952,7 @@
       },
       {
         "sel": "#engage-accordion .engage-item:nth-child(2) .engage-cta",
-        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု ကြိုတင်ရယူရန် →",
         "html": false
       },
       {
@@ -994,7 +1007,7 @@
       },
       {
         "sel": "#engage-accordion .engage-item:nth-child(3) .engage-cta",
-        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု ကြိုတင်ရယူရန် →",
         "html": false
       },
       {
@@ -1049,7 +1062,7 @@
       },
       {
         "sel": "#engage-accordion .engage-item:nth-child(4) .engage-cta",
-        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု ကြိုတင်ရယူရန် →",
         "html": false
       },
       {
@@ -1114,12 +1127,12 @@
       },
       {
         "sel": "#engage-accordion .engage-item:nth-child(5) .engage-note",
-        "mm": "စာရွက်စာတမ်းရေးဆွဲခြင်း/ပြန်လည်သုံးသပ်ခြင်း အခကြေးငွေများကို သီးခြားကotation ပေးပါသည်။",
+        "mm": "စာရွက်စာတမ်းရေးဆွဲခြင်း/ပြန်လည်သုံးသပ်ခြင်း အခကြေးငွေများကို သီးခြား ဈေးနှုန်း တင်ပြပါသည်။",
         "html": false
       },
       {
         "sel": "#engage-accordion .engage-item:nth-child(5) .engage-cta",
-        "mm": "Consulation ကို ကြိုတင်ရယူရန် →",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု ကြိုတင်ရယူရန် →",
         "html": false
       },
       {
@@ -1234,7 +1247,7 @@
       },
       {
         "sel": ".booking-info li:nth-child(4)",
-        "mm": "စာရွက်စာတမ်းရေးဆွဲခြင်း၊ ပြန်လည်သုံးသပ်ခြင်း၊ တရားရုံးကိုယ်စားလှယ်ခြင်းနှင့် အခြားဥပဒေဝန်ဆောင်မှုများကို သီးခြားကotation ပေးပါသည် (မပါဝင်ကြောင်း မဖော်ပြပါက)။",
+        "mm": "စာရွက်စာတမ်းရေးဆွဲခြင်း၊ ပြန်လည်သုံးသပ်ခြင်း၊ တရားရုံးကိုယ်စားလှယ်ခြင်းနှင့် အခြားဥပဒေဝန်ဆောင်မှုများကို သီးခြား ဈေးနှုန်း တင်ပြပါသည် (မပါဝင်ကြောင်း မဖော်ပြပါက)။",
         "html": false
       },
       {
@@ -1439,7 +1452,7 @@
       },
       {
         "sel": "#retainers .retainer-card:nth-child(4) .retainer-fee-custom",
-        "mm": "CustomBy proposal",
+        "mm": "စိတ်ကြိုက်",
         "html": false
       },
       {
@@ -1614,7 +1627,7 @@
       },
       {
         "sel": "#contact-success p",
-        "mm": "ကျေးဇူးတင်ပါသည်။ ရုံးမှ တစ်ရက်လုပ်ငန်းအတွင်း တုံ့ပြန်ပါမည်။",
+        "mm": "ကျေးဇူးတင်ပါသည်။ ရုံးမှ လုပ်ငန်းချိန်တစ်ရက်အတွင်း တုံ့ပြန်ပါမည်။",
         "html": false
       },
       {
@@ -1726,7 +1739,7 @@
       },
       {
         "sel": "#c-plan option[value=\"retainer-corporate\"]",
-        "mm": "Corporateအကြံပေးမှု — MMK 5,000,000/လ",
+        "mm": "Corporate အကြံပေးမှု — MMK 5,000,000/လ",
         "html": false
       },
       {
@@ -1886,7 +1899,7 @@
       },
       {
         "sel": ".footer-bottom-left > span:first-child",
-        "mm": "© 2026 (Daw Myat Noe Oo) Shwe Lone Myanmar. မူပိုင်ခွင့်အားလုံး လက်ဝယ်ရှိပါသည်။",
+        "mm": "© 2026 (ဒေါ်နန်းမိုးသူဇာကျော်) Stand Law Firm. မူပိုင်ခွင့်အားလုံး လက်ဝယ်ရှိပါသည်။",
         "html": false
       },
       {
@@ -1896,7 +1909,7 @@
       },
       {
         "sel": ".chat-panel-head strong",
-        "mm": "Shwe Lone ကို မေးမြန်းရန်",
+        "mm": "Stand Law ကို မေးမြန်းရန်",
         "html": false
       },
       {
@@ -1937,6 +1950,36 @@
       {
         "sel": ".chat-launcher-text",
         "mm": "မေးရန် · Ask us",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-copy > p.profile-subhead:nth-of-type(9)",
+        "mm": "အဓိက လုပ်ငန်းနယ်ပယ်များ",
+        "html": false
+      },
+      {
+        "sel": "#profile .profile-vision",
+        "mm": "“စီးပွားရေးလုပ်ငန်းတစ်ခု၏ အနာဂတ် ရေရှည်တည်တံ့မှုဆိုသည်မှာ ယုံကြည်မှုတစ်ခုတည်း မကဘဲ ခိုင်မာသော ဥပဒေအခြေခံနှင့် စနစ်တကျ ရေးသားထားသော စာချုပ်စာတမ်းများပေါ်တွင် မူတည်ပါသည်။ ကျွန်မတို့ Stand Law Firm အနေဖြင့် လုပ်ငန်းရှင်များ၏ အကျိုးစီးပွားနှင့် ရှယ်ယာများကို ဥပဒေဘောင်အတွင်းမှ အပြည့်အဝ အကာအကွယ်ပေးကာ၊ စိန်ခေါ်မှုများကို ဘေးကင်းစွာ ကျော်လွှားနိုင်မည့် မဟာဗျူဟာမြောက် ဥပဒေရေးရာ အဖြေများကို ပညာရှင်စံနှုန်းအပြည့်ဖြင့် ပေးအပ်သွားမည် ဖြစ်ပါသည်။”",
+        "html": false
+      },
+      {
+        "sel": ".pa-all-cta-lead",
+        "mm": "ကော်ပိုရိတ်နှင့် စီးပွားရေး ဝန်ဆောင်မှု စာရင်းအပြည့်အစုံကို ကြည့်လိုပါသလား?",
+        "html": false
+      },
+      {
+        "sel": ".pa-all-cta .btn-primary",
+        "mm": "ဝန်ဆောင်မှု ၁၉ ခုလုံး ကြည့်ရန် →",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(2) a[href=\"#services\"]",
+        "mm": "Practice areas",
+        "html": false
+      },
+      {
+        "sel": ".footer-col:nth-child(2) a[href=\"services.html\"]",
+        "mm": "ဝန်ဆောင်မှုအားလုံး",
         "html": false
       }
     ],
@@ -1998,7 +2041,7 @@
       },
       {
         "sel": ".experience-matter:nth-child(1) > p:last-of-type",
-        "mm": "SME နှင့် တိုးတက်နေသော စီးပွားရေးလုပ်ငန်းများအတွက် ဖွဲ့စည်းခြင်း၊ ရှယ်ယာရှင်စီမံခန့်ခွဲမှု၊ Corporateအုပ်ချုပ်မှုနှင့် အဆက်မပြတ် စည်းမျဉ်းလိုက်နာမှုအတွက် အကြံပေးခဲ့ပါသည်။",
+        "mm": "SME နှင့် တိုးတက်နေသော စီးပွားရေးလုပ်ငန်းများအတွက် ဖွဲ့စည်းခြင်း၊ ရှယ်ယာရှင်စီမံခန့်ခွဲမှု၊ Corporate အုပ်ချုပ်မှုနှင့် အဆက်မပြတ် စည်းမျဉ်းလိုက်နာမှုအတွက် အကြံပေးခဲ့ပါသည်။",
         "html": false
       },
       {
@@ -2088,52 +2131,82 @@
       },
       {
         "sel": ".experience-journey .section-head .lead",
-        "mm": "Corporate ဥပဒေ၊ အိမ်ခြံမြေနှင့် စီးပွားရေးလုပ်ငန်းများနှင့် ရင်းနှီးမြှုပ်နှံသူများအတွက် လက်တွေ့အကြံပေးခြင်းကို အာရုံစိုက်သော ဥပဒေလုပ်ငန်းနှင့် ရုံးခွဲဦးဆောင်မှု။",
+        "mm": "ကော်ပိုရိတ်နှင့် စီးပွားရေးဥပဒေ၊ Shareholders’ Agreements၊ Tax Compliance နှင့် စီးပွားရေးလုပ်ငန်းရှင်များအတွက် လက်တွေ့အကြံပေးခြင်းကို အာရုံစိုက်သော ဥပဒေလုပ်ငန်းနှင့် ရုံးခွဲဦးဆောင်မှု။",
         "html": false
       },
       {
         "sel": ".timeline-item:nth-child(1) .timeline-year",
-        "mm": "၂၀၂၀ – လက်ရှိ",
+        "mm": "၂၀၁၄ – လက်ရှိ",
         "html": false
       },
       {
         "sel": ".timeline-item:nth-child(1) h4",
-        "mm": "ဥပဒေလုပ်ငန်း",
+        "mm": "ဥပဒေရေးရာ လုပ်ငန်း",
         "html": false
       },
       {
         "sel": ".timeline-item:nth-child(1) > div > p",
-        "mm": "Corporate နှင့် စီးပွားရေးဥပဒေ၊ စာချုပ်ရေးဆွဲခြင်းနှင့် ပြန်လည်သုံးသပ်ခြင်း၊ အိမ်ခြံမြေလုပ်ငန်းများ၊ စည်းမျဉ်းလိုက်နာမှုနှင့် စီးပွားရေးအကြံပေးခြင်းတွင် ဥပဒေဝန်ဆောင်မှုများ ပေးအပ်နေပါသည်။",
+        "mm": "၂၀၁၄ မှစ၍ ဥပဒေနယ်ပယ်တွင် ၁၂ နှစ်နီးပါး — Corporate & Commercial Law၊ Shareholders’ Agreements နှင့် Tax Compliance တို့ကို အထူးပြု၍ လုပ်ငန်းရှင်များနှင့် ရင်းနှီးမြှုပ်နှံသူများကို ဝန်ဆောင်မှုပေးနေပါသည်။",
         "html": false
       },
       {
         "sel": ".timeline-item:nth-child(2) .timeline-year",
-        "mm": "Founder",
+        "mm": "ဥပဒေအရာရှိ · ၈ နှစ်",
         "html": false
       },
       {
         "sel": ".timeline-item:nth-child(2) h4",
-        "mm": "SHWE LONE MYANMAR Business Law",
+        "mm": "တရားဥပဒေစိုးမိုးရေးကဏ္ဍ",
         "html": false
       },
       {
         "sel": ".timeline-item:nth-child(2) > div > p",
-        "mm": "စီးပွားရေးလုပ်ငန်းများ၊ စီးပွားရေးလုပ်ငန်းရှင်များနှင့် ရင်းနှီးမြှုပ်နှံသူများအတွက် မဟာဗျူဟာမြောက် ဥပဒေအကြံဉာဏ်နှင့် လက်တွေ့ကျသော ဥပဒေဖြေရှင်းချက်များ ပေးအပ်ရန် SHWE LONE MYANMAR Business Law ကို တည်ထောင်ခဲ့ပါသည်။",
+        "mm": "ဥပဒေအရာရှိ (Law Officer) အဖြစ် ၈ နှစ်တိုင်တိုင် တာဝန်ထမ်းဆောင်ခဲ့ပြီး တရားဥပဒေစိုးမိုးရေးနှင့် အများပြည်သူဆိုင်ရာ ဥပဒေစီမံခန့်ခွဲမှု အတွေ့အကြုံ ရင့်ကျက်စွာ တည်ဆောက်ခဲ့ပါသည်။",
         "html": false
       },
       {
         "sel": ".timeline-item:nth-child(3) .timeline-year",
-        "mm": "EDUCATION",
+        "mm": "ဘာသာပြန် · ၂ နှစ်",
         "html": false
       },
       {
         "sel": ".timeline-item:nth-child(3) h4",
-        "mm": "LL.B နှင့် ယူကေဒီပလိုမာများ",
+        "mm": "Chinese Language Translator",
         "html": false
       },
       {
         "sel": ".timeline-item:nth-child(3) > div > p",
-        "mm": "ဥပဒေဘွဲ့ (LL.B); Diploma in Business Law (UK); Diploma in International Law (UK)။",
+        "mm": "တရုတ်ဘာသာ ဘာသာပြန်အဖြစ် ၂ နှစ် — ပြည်တွင်းလုပ်ငန်းများနှင့် နိုင်ငံတကာ ရင်းနှီးမြှုပ်နှံသူများအကြား ရှင်းလင်းသော ဆက်သွယ်မှုဖြင့် ပေါင်းကူးပေးနိုင်ခဲ့ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(4) .timeline-year",
+        "mm": "Founder",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(4) h4",
+        "mm": "Stand Law Firm",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(4) > div > p",
+        "mm": "ခိုင်မာသော စာချုပ်စာတမ်းများနှင့် ပညာရှင်စံနှုန်းဖြင့် စီးပွားရေးအကျိုးစီးပွားကို ကာကွယ်ရန် Stand Law Firm ကို တည်ထောင်ခဲ့ပါသည်။",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(5) .timeline-year",
+        "mm": "ပညာရေး",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(5) h4",
+        "mm": "LL.B, D.B.L နှင့် D.I.L",
+        "html": false
+      },
+      {
+        "sel": ".timeline-item:nth-child(5) > div > p",
+        "mm": "ဥပဒေဘွဲ့ (LL.B); စီးပွားရေးဥပဒေဘွဲ့လွန်ဒီပလိုမာ (D.B.L); နိုင်ငံတကာဥပဒေဘွဲ့လွန်ဒီပလိုမာ (D.I.L)။",
         "html": false
       },
       {
@@ -2148,32 +2221,27 @@
       },
       {
         "sel": ".experience-pills span:nth-child(2)",
-        "mm": "စာချုပ်ရေးဆွဲခြင်းနှင့် ညှိနှိုင်းခြင်း",
+        "mm": "Shareholders’ Agreements",
         "html": false
       },
       {
         "sel": ".experience-pills span:nth-child(3)",
-        "mm": "အိမ်ခြံမြေဥပဒေ",
+        "mm": "Tax Compliance",
         "html": false
       },
       {
         "sel": ".experience-pills span:nth-child(4)",
-        "mm": "စီးပွားရေးအကြံပေးခြင်း",
+        "mm": "Cross-border Advisory",
         "html": false
       },
       {
         "sel": ".experience-pills span:nth-child(5)",
-        "mm": "စည်းမျဉ်းလိုက်နာမှု",
+        "mm": "စာချုပ်ရေးဆွဲခြင်းနှင့် ညှိနှိုင်းခြင်း",
         "html": false
       },
       {
         "sel": ".experience-pills span:nth-child(6)",
-        "mm": "ဥပဒေဆိုင်ရာ စစ်ဆေးခြင်း",
-        "html": false
-      },
-      {
-        "sel": ".experience-pills span:nth-child(7)",
-        "mm": "ကုမ္ပဏီဖွဲ့စည်းခြင်းနှင့် ကော်ပိုရိတ်အုပ်ချုပ်မှု",
+        "mm": "ကုမ္ပဏီဖွဲ့စည်းခြင်းနှင့် Corporate Governance",
         "html": false
       },
       {
@@ -2253,7 +2321,7 @@
       },
       {
         "sel": "body:has(.experience-page) .footer-bottom-left span",
-        "mm": "© 2026 (Daw Myat Noe Oo) Shwe Lone Myanmar. မူပိုင်ခွင့်အားလုံး လက်ဝယ်ရှိပါသည်။",
+        "mm": "© 2026 (ဒေါ်နန်းမိုးသူဇာကျော်) Stand Law Firm. မူပိုင်ခွင့်အားလုံး လက်ဝယ်ရှိပါသည်။",
         "html": false
       }
     ],
@@ -2364,7 +2432,7 @@
       },
       {
         "sel": ".legal-org",
-        "mm": "Shwe Lone Myanmar · Myat Noe Oo · ကော်ပိုရိတ်ဥပဒေ ရှေ့နေ",
+        "mm": "Stand Law Firm · ဒေါ်နန်းမိုးသူဇာကျော် · Founder & CEO",
         "html": false
       },
       {
@@ -2389,36 +2457,137 @@
       }
     ],
     "terms": [
-      { "sel": ".legal-wrap > h1", "mm": "အသုံးပြုမှု စည်းမျဉ်းများ", "html": false },
-      { "sel": ".legal-wrap > .lead", "mm": "ဤ Website အသုံးပြုမှုကို ဤစည်းမျဉ်းများဖြင့် စီမံခန့်ခွဲပါသည်။ အခကြေးငွေ၊ ပြန်အမ်းငွေနှင့် ကotation ဆိုင်ရာ စည်းမျဉ်းများအတွက် <a href=\"service-terms.html\">ဝန်ဆောင်မှု စည်းမျဉ်းနှင့် သတ်မှတ်ချက်များ</a> ကို ကြည့်ပါ။", "html": true }
+      {
+        "sel": ".legal-wrap > h1",
+        "mm": "အသုံးပြုမှု စည်းမျဉ်းများ",
+        "html": false
+      },
+      {
+        "sel": ".legal-wrap > .lead",
+        "mm": "ဤ Website အသုံးပြုမှုကို ဤစည်းမျဉ်းများဖြင့် စီမံခန့်ခွဲပါသည်။ အခကြေးငွေ၊ ပြန်အမ်းငွေနှင့် ဈေးနှုန်းတင်ပြမှု ဆိုင်ရာ စည်းမျဉ်းများအတွက် <a href=\"service-terms.html\">ဝန်ဆောင်မှု စည်းမျဉ်းနှင့် သတ်မှတ်ချက်များ</a> ကို ကြည့်ပါ။",
+        "html": true
+      }
     ],
     "privacy": [
-      { "sel": ".legal-wrap > h1", "mm": "ကိုယ်ရေးကိုယ်တာ မူဝါဒ", "html": false },
-      { "sel": ".legal-wrap > .lead", "mm": "Myat Noe Oo တွင် သင့်ကိုယ်ရေးကိုယ်တာကို လေးစားပြီး သင့်ကိုယ်ရေးအချက်အလက်၏ လျှို့ဝှက်မှု၊ လုံခြုံမှုနှင့် တိကျမှုကို ကာကွယ်ရန် ကတိပြုပါသည်။", "html": false }
+      {
+        "sel": ".legal-wrap > h1",
+        "mm": "ကိုယ်ရေးကိုယ်တာ မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".legal-wrap > .lead",
+        "mm": "Daw Nang Moe Thu Zar Kyaw တွင် သင့်ကိုယ်ရေးကိုယ်တာကို လေးစားပြီး သင့်ကိုယ်ရေးအချက်အလက်၏ လျှို့ဝှက်မှု၊ လုံခြုံမှုနှင့် တိကျမှုကို ကာကွယ်ရန် ကတိပြုပါသည်။",
+        "html": false
+      }
     ],
     "disclaimer": [
-      { "sel": ".legal-wrap > h1", "mm": "မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်", "html": false },
-      { "sel": ".legal-wrap > .lead", "mm": "ဤ Website ပါ အချက်အလက်များကို ယုံကြည်မှုမထားမီ ဤထုတ်ပြန်ချက်ကို ဂရုတစိုက် ဖတ်ရှုပါ။", "html": false }
+      {
+        "sel": ".legal-wrap > h1",
+        "mm": "မသက်ဆိုင်ကြောင်း ထုတ်ပြန်ချက်",
+        "html": false
+      },
+      {
+        "sel": ".legal-wrap > .lead",
+        "mm": "ဤ Website ပါ အချက်အလက်များကို ယုံကြည်မှုမထားမီ ဤထုတ်ပြန်ချက်ကို ဂရုတစိုက် ဖတ်ရှုပါ။",
+        "html": false
+      }
     ],
     "consultation-policy": [
-      { "sel": ".legal-wrap > h1", "mm": "တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ", "html": false },
-      { "sel": ".legal-wrap > .lead", "mm": "ဤတိုင်ပင်ဆွေးနွေးမှု မူဝါဒသည် Shwe Lone Myanmar နှင့် ဥပဒေအကြံဉာဏ် တိုင်ပင်ဆွေးနွေးမှုများ ကြိုတင်ရယူမှု၊ အတိုင်းအတာ နှင့် အတည်ပြုချက်တို့ကို ရှင်းပြပါသည်။ ငွေပေးချေမှု စည်းမျဉ်းများအတွက် <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> ကို ကြည့်ပါ။", "html": true }
+      {
+        "sel": ".legal-wrap > h1",
+        "mm": "တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".legal-wrap > .lead",
+        "mm": "ဤတိုင်ပင်ဆွေးနွေးမှု မူဝါဒသည် Stand Law Firm နှင့် ဥပဒေအကြံဉာဏ် တိုင်ပင်ဆွေးနွေးမှုများ ကြိုတင်ရယူမှု၊ အတိုင်းအတာ နှင့် အတည်ပြုချက်တို့ကို ရှင်းပြပါသည်။ ငွေပေးချေမှု စည်းမျဉ်းများအတွက် <a href=\"payment-policy.html\">ငွေပေးချေမှု မူဝါဒ</a> ကို ကြည့်ပါ။",
+        "html": true
+      }
     ],
     "payment-policy": [
-      { "sel": ".legal-wrap > h1", "mm": "ငွေပေးချေမှု မူဝါဒ", "html": false },
-      { "sel": ".legal-wrap > .lead", "mm": "ဤငွေပေးချေမှု မူဝါဒသည် Shwe Lone Myanmar နှင့် တိုင်ပင်ဆွေးနွေးမှု၊ ကotation နှင့် ဝန်ဆောင်မှုအတွက် အခကြေးငွေ ပေးချေပုံကို ရှင်းပြပါသည်။ ကြိုတင်ရယူမှု စည်းမျဉ်းများအတွက် <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a> ကို ကြည့်ပါ။", "html": true }
+      {
+        "sel": ".legal-wrap > h1",
+        "mm": "ငွေပေးချေမှု မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".legal-wrap > .lead",
+        "mm": "ဤငွေပေးချေမှု မူဝါဒသည် Stand Law Firm နှင့် တိုင်ပင်ဆွေးနွေးမှု၊ ဈေးနှုန်းတင်ပြမှုနှင့် ဝန်ဆောင်မှုအတွက် အခကြေးငွေ ပေးချေပုံကို ရှင်းပြပါသည်။ ကြိုတင်ရယူမှု စည်းမျဉ်းများအတွက် <a href=\"consultation-policy.html\">တိုင်ပင်ဆွေးနွေးမှု မူဝါဒ</a> ကို ကြည့်ပါ။",
+        "html": true
+      }
     ],
     "service-terms": [
-      { "sel": ".legal-wrap > h1", "mm": "ဝန်ဆောင်မှု စည်းမျဉ်းနှင့် သတ်မှတ်ချက်များ", "html": false },
-      { "sel": ".legal-wrap > .lead", "mm": "ဤစည်းမျဉ်းများသည် ဤ Website မှတစ်ဆင့် သို့မဟုတ် တိုက်ရိုက် Shwe Lone Myanmar ၏ ဥပဒေဝန်ဆောင်မှုများကို ရယူသောအခါ အကျုံးဝင်ပါသည်။ Website ကြည့်ရှုမှု စည်းမျဉ်းများအတွက် <a href=\"terms.html\">အသုံးပြုမှု စည်းမျဉ်းများ</a> ကို ကြည့်ပါ။", "html": true }
+      {
+        "sel": ".legal-wrap > h1",
+        "mm": "ဝန်ဆောင်မှု စည်းမျဉ်းနှင့် သတ်မှတ်ချက်များ",
+        "html": false
+      },
+      {
+        "sel": ".legal-wrap > .lead",
+        "mm": "ဤစည်းမျဉ်းများသည် ဤ Website မှတစ်ဆင့် သို့မဟုတ် တိုက်ရိုက် Stand Law Firm ၏ ဥပဒေဝန်ဆောင်မှုများကို ရယူသောအခါ အကျုံးဝင်ပါသည်။ Website ကြည့်ရှုမှု စည်းမျဉ်းများအတွက် <a href=\"terms.html\">အသုံးပြုမှု စည်းမျဉ်းများ</a> ကို ကြည့်ပါ။",
+        "html": true
+      }
     ],
     "cookie-policy": [
-      { "sel": ".legal-wrap > h1", "mm": "Cookie မူဝါဒ", "html": false },
-      { "sel": ".legal-wrap > .lead", "mm": "ဤ Cookie မူဝါဒသည် ဤ Website သို့ လာရောက်ကြည့်ရှုသောအခါ cookie နှင့် ဆင်တူသော နည်းပညာများ အသုံးပြုပုံကို ရှင်းပြပါသည်။ ကိုယ်ရေးအချက်အလက် ကိုင်တွယ်ပုံအတွက် <a href=\"privacy.html\">ကိုယ်ရေးကိုယ်တာ မူဝါဒ</a> ကို ကြည့်ပါ။", "html": true }
+      {
+        "sel": ".legal-wrap > h1",
+        "mm": "Cookie မူဝါဒ",
+        "html": false
+      },
+      {
+        "sel": ".legal-wrap > .lead",
+        "mm": "ဤ Cookie မူဝါဒသည် ဤ Website သို့ လာရောက်ကြည့်ရှုသောအခါ cookie နှင့် ဆင်တူသော နည်းပညာများ အသုံးပြုပုံကို ရှင်းပြပါသည်။ ကိုယ်ရေးအချက်အလက် ကိုင်တွယ်ပုံအတွက် <a href=\"privacy.html\">ကိုယ်ရေးကိုယ်တာ မူဝါဒ</a> ကို ကြည့်ပါ။",
+        "html": true
+      }
     ],
     "conflict-of-interest-policy": [
-      { "sel": ".legal-wrap > h1", "mm": "အကျိုးစားမှု ပဋိပက္ခနှင့် ပရော်ဖက်ရှင်နယ် မူဝါဒများ", "html": false },
-      { "sel": ".legal-wrap > .lead", "mm": "ဤမူဝါဒများသည် အကျိုးစားမှု ပဋိပက္ခ၊ ကလိုင်းယင့် ခွဲခြားမှတ်သားခြင်း၊ အီလက်ထရွန်နစ် ဆက်သွယ်ရေးနှင့် စာရွက်စာတမ်း ထိန်းသိမ်းခြင်းဆိုင်ရာ ပရော်ဖက်ရှင်နယ် စံနှုန်းများကို ဖော်ပြပါသည်။", "html": false }
+      {
+        "sel": ".legal-wrap > h1",
+        "mm": "အကျိုးစားမှု ပဋိပက္ခနှင့် ပရော်ဖက်ရှင်နယ် မူဝါဒများ",
+        "html": false
+      },
+      {
+        "sel": ".legal-wrap > .lead",
+        "mm": "ဤမူဝါဒများသည် အကျိုးစားမှု ပဋိပက္ခ၊ ကလိုင်းယင့် ခွဲခြားမှတ်သားခြင်း၊ အီလက်ထရွန်နစ် ဆက်သွယ်ရေးနှင့် စာရွက်စာတမ်း ထိန်းသိမ်းခြင်းဆိုင်ရာ ပရော်ဖက်ရှင်နယ် စံနှုန်းများကို ဖော်ပြပါသည်။",
+        "html": false
+      }
+    ],
+    "services": [
+      {
+        "sel": ".services-hero .eyebrow",
+        "mm": "Service Portfolio",
+        "html": false
+      },
+      {
+        "sel": ".services-title",
+        "mm": "ကော်ပိုရိတ်နှင့် စီးပွားရေး ဥပဒေ ဝန်ဆောင်မှုများ",
+        "html": false
+      },
+      {
+        "sel": ".services-motto",
+        "mm": "Stand as Your Business Shield.",
+        "html": false
+      },
+      {
+        "sel": ".services-hero .lead",
+        "mm": "ကုမ္ပဏီများ၊ ရင်းနှီးမြှုပ်နှံသူများနှင့် လုပ်ငန်းရှင်များအတွက် ဝန်ဆောင်မှုလိုင်း ၁၉ ခု — အုပ်ချုပ်မှုနှင့် စာချုပ်များမှ နိုင်ငံဖြတ်ကျော်လုပ်ငန်းနှင့် တရားဝင် ဘာသာပြန်ဆိုခြင်းအထိ။",
+        "html": false
+      },
+      {
+        "sel": ".services-foot > p",
+        "mm": "သင့်အတွက် သင့်တော်သော ဝန်ဆောင်မှုကို ရွေးချယ်ရန် အကူအညီ လိုအပ်ပါသလား?",
+        "html": false
+      },
+      {
+        "sel": ".services-foot .btn-primary",
+        "mm": "Start your consultation",
+        "html": false
+      },
+      {
+        "sel": ".services-foot .btn-outline",
+        "mm": "← Featured practice areas",
+        "html": false
+      }
     ]
   }
 }

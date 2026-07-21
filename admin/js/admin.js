@@ -1,4 +1,4 @@
-/* Shwe Lone Myanmar — Admin panel (section-card editor) */
+/* Stand Law Firm — Admin panel (section-card editor) */
 (function () {
   const ADMIN_PORT = '8790';
   const TOKEN_KEY = 'shwelone_admin_token';
@@ -377,10 +377,12 @@
   const views = {
     insights: { el: '#view-insights', title: 'Insights' },
     'insight-edit': { el: '#view-insight-edit', title: 'Edit insight' },
+    faq: { el: '#view-faq', title: 'FAQ chat' },
     policies: { el: '#view-policies', title: 'Policies' },
     'policy-edit': { el: '#view-policy-edit', title: 'Edit policy' },
     chats: { el: '#view-chats', title: 'Chat history' },
     'chat-detail': { el: '#view-chat-detail', title: 'Chat session' },
+    'chat-stats': { el: '#view-chat-stats', title: 'Chat stats' },
     visitors: { el: '#view-visitors', title: 'Visitors' },
     settings: { el: '#view-settings', title: 'Settings' },
   };
@@ -462,6 +464,176 @@
       }
     } catch (_) {}
     showLogin();
+  }
+
+  let faqCategories = [];
+
+  function slugId(text, fallback) {
+    const s = String(text || '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '')
+      .slice(0, 40);
+    return s || fallback;
+  }
+
+  function renderFaqEditor() {
+    const board = $('#faq-categories');
+    if (!board) return;
+    if (!faqCategories.length) {
+      board.innerHTML = '<p class="view-hint">No categories yet. Click “+ Category”.</p>';
+      return;
+    }
+    board.innerHTML = faqCategories
+      .map((cat, catIdx) => {
+        const items = (cat.items || [])
+          .map(
+            (item, qIdx) => `
+          <div class="section-card faq-item-card" data-cat="${catIdx}" data-q="${qIdx}">
+            <div class="section-card-top">
+              <span class="section-num">${qIdx + 1}</span>
+              <input class="sec-title faq-q" type="text" value="${esc(item.q || '')}" placeholder="Question" />
+              <div class="section-card-actions">
+                <button type="button" class="btn-icon btn-icon-danger" data-del-q="${catIdx}:${qIdx}" title="Remove">×</button>
+              </div>
+            </div>
+            <textarea class="sec-body faq-a" rows="3" placeholder="Answer">${esc(item.a || '')}</textarea>
+          </div>`
+          )
+          .join('');
+        return `
+        <div class="settings-card faq-cat-card" data-cat="${catIdx}">
+          <div class="section-card-top" style="margin-bottom:0.85rem">
+            <input class="sec-title faq-cat-label" type="text" value="${esc(cat.label || '')}" placeholder="Category label" />
+            <div class="section-card-actions">
+              <button type="button" class="btn-icon btn-icon-danger" data-del-cat="${catIdx}" title="Remove category">×</button>
+            </div>
+          </div>
+          <input type="hidden" class="faq-cat-id" value="${esc(cat.id || '')}" />
+          <div class="section-board">${items}</div>
+          <button type="button" class="btn btn-outline btn-add-section" data-add-q="${catIdx}">+ Add question</button>
+        </div>`;
+      })
+      .join('');
+
+    board.querySelectorAll('[data-del-cat]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.dataset.delCat);
+        if (!window.confirm('Delete this category and all questions?')) return;
+        collectFaqFromDom();
+        faqCategories.splice(idx, 1);
+        renderFaqEditor();
+      });
+    });
+    board.querySelectorAll('[data-del-q]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const [c, q] = btn.dataset.delQ.split(':').map(Number);
+        collectFaqFromDom();
+        faqCategories[c]?.items?.splice(q, 1);
+        renderFaqEditor();
+      });
+    });
+    board.querySelectorAll('[data-add-q]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.dataset.addQ);
+        collectFaqFromDom();
+        if (!faqCategories[idx].items) faqCategories[idx].items = [];
+        faqCategories[idx].items.push({ id: '', q: '', a: '' });
+        renderFaqEditor();
+      });
+    });
+  }
+
+  function collectFaqFromDom() {
+    const board = $('#faq-categories');
+    if (!board) return;
+    const next = [];
+    board.querySelectorAll('.faq-cat-card').forEach((card, catIdx) => {
+      const label = card.querySelector('.faq-cat-label')?.value?.trim() || `Category ${catIdx + 1}`;
+      let id = card.querySelector('.faq-cat-id')?.value?.trim();
+      if (!id) id = slugId(label, `cat-${catIdx + 1}`);
+      const items = [];
+      card.querySelectorAll('.faq-item-card').forEach((row, qIdx) => {
+        const q = row.querySelector('.faq-q')?.value?.trim() || '';
+        const a = row.querySelector('.faq-a')?.value?.trim() || '';
+        if (!q && !a) return;
+        items.push({
+          id: `${id}-${qIdx + 1}`,
+          q,
+          a,
+        });
+      });
+      next.push({ id, label, items });
+    });
+    faqCategories = next;
+  }
+
+  async function loadFaq() {
+    const data = await api('/api/faq');
+    faqCategories = Array.isArray(data.categories) ? data.categories : [];
+    renderFaqEditor();
+    setStatus($('#faq-status'), '', true);
+  }
+
+  async function saveFaq(e) {
+    e?.preventDefault?.();
+    collectFaqFromDom();
+    const status = $('#faq-status');
+    try {
+      await api('/api/faq', {
+        method: 'PUT',
+        body: JSON.stringify({ categories: faqCategories }),
+      });
+      setStatus(status, 'FAQ saved.', true);
+      await loadFaq();
+    } catch (err) {
+      setStatus(status, err.message, false);
+    }
+  }
+
+  function renderBreakdownSimple(rows, emptyText) {
+    if (!rows?.length) return `<p class="view-hint">${esc(emptyText)}</p>`;
+    return rows
+      .map(
+        (row) => `
+      <div class="breakdown-row">
+        <span>${esc(row.label || row.id || row.date || '—')}</span>
+        <strong>${esc(String(row.count ?? row.started ?? 0))}</strong>
+      </div>`
+      )
+      .join('');
+  }
+
+  async function loadChatStats() {
+    const data = await api('/api/chat/analytics');
+    const t = data.totals || {};
+    const grid = $('#chat-stats-grid');
+    if (grid) {
+      grid.innerHTML = `
+        <div class="stat-card"><p class="stat-label">Chats started</p><p class="stat-value">${t.started || 0}</p></div>
+        <div class="stat-card"><p class="stat-label">Accepted</p><p class="stat-value">${t.accepted || 0}</p><p class="stat-sub">${t.acceptRate || 0}% accept rate</p></div>
+        <div class="stat-card"><p class="stat-label">Rejected</p><p class="stat-value">${t.rejected || 0}</p><p class="stat-sub">${t.rejectRate || 0}% reject rate</p></div>
+        <div class="stat-card"><p class="stat-label">Avg first reply</p><p class="stat-value" style="font-size:1.25rem">${esc(t.avgResponseLabel || '—')}</p></div>
+      `;
+    }
+    const daily = $('#chat-stats-daily');
+    if (daily) {
+      daily.innerHTML = renderBreakdownSimple(
+        (data.daily || []).map((d) => ({
+          label: `${d.date} · start ${d.started || 0} · ok ${d.accepted || 0} · no ${d.rejected || 0}`,
+          count: d.started || 0,
+        })),
+        'No chat activity yet'
+      );
+    }
+    const cats = $('#chat-stats-categories');
+    if (cats) {
+      cats.innerHTML = renderBreakdownSimple(data.topCategories || [], 'No FAQ category clicks yet');
+    }
+    const qs = $('#chat-stats-questions');
+    if (qs) {
+      qs.innerHTML = renderBreakdownSimple(data.topQuestions || [], 'No FAQ question clicks yet');
+    }
   }
 
   /* ——— Insights ——— */
@@ -819,8 +991,10 @@
       btn.addEventListener('click', () => {
         const view = btn.dataset.view;
         if (view === 'insights') loadInsights();
+        if (view === 'faq') loadFaq();
         if (view === 'policies') loadPolicies();
         if (view === 'chats') loadChatArchive();
+        if (view === 'chat-stats') loadChatStats();
         if (view === 'visitors') loadVisitorStats();
         if (view === 'settings') loadSiteSettings();
         showView(view);
@@ -829,6 +1003,17 @@
     });
 
     initMobileNav();
+
+    bind('#faq-add-category', 'click', () => {
+      collectFaqFromDom();
+      faqCategories.push({
+        id: `cat-${Date.now().toString(36)}`,
+        label: 'New category',
+        items: [{ id: '', q: '', a: '' }],
+      });
+      renderFaqEditor();
+    });
+    bind('#faq-form', 'submit', saveFaq);
 
     bind('#ins-image-pick', 'click', () => {
       $('#ins-image-file')?.click();

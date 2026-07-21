@@ -1,4 +1,4 @@
-/* Site-wide English / Myanmar language toggle */
+
 (function () {
   const STORAGE_KEY = 'site-lang';
   const DEFAULT_LANG = 'en';

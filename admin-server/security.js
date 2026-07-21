@@ -1,6 +1,4 @@
-/**
- * Security helpers — CORS, password hashing, response headers.
- */
+
 const crypto = require('crypto');
 
 const SCRYPT_KEYLEN = 64;
@@ -38,6 +36,17 @@ function resolveCorsOrigin(req) {
   const allowed = getAllowedOrigins();
   if (allowed.includes('*')) return { allowed: true, origin: '*' };
   if (allowed.includes(origin)) return { allowed: true, origin };
+
+  // Same host (IP or domain): Origin matches request Host — allow for VPS / production
+  try {
+    const originHost = new URL(origin).host;
+    const reqHost = String(req.headers.host || '');
+    if (reqHost && originHost === reqHost) {
+      return { allowed: true, origin };
+    }
+  } catch {
+    /* ignore invalid Origin */
+  }
 
   return { allowed: false, origin };
 }

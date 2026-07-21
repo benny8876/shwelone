@@ -1,14 +1,12 @@
-/* Shwe Lone Myanmar — interactions */
+
 (function () {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(pointer: fine)').matches;
   const narrowScreen = window.matchMedia('(max-width: 768px)').matches;
-  /* Lenis perpetual RAF feels heavy on touch — desktop/fine pointer only */
+ 
   const useLenis = !reduceMotion && finePointer && !narrowScreen && typeof Lenis !== 'undefined';
 
-  /* Site settings loaded by homepage if needed later */
 
-  /* Smooth scroll (Lenis) — shared RAF with effects */
   let lenis = null;
   let sharedRafId = 0;
   let effectsNeedFrame = false;
@@ -93,7 +91,7 @@
     });
   }
 
-  /* FAQ accordion */
+ 
   document.querySelectorAll('.faq-q').forEach((btn) => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
@@ -103,7 +101,7 @@
     });
   });
 
-  /* Consultation sessions accordion */
+ 
   document.querySelectorAll('.engage-summary').forEach((btn) => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.engage-item');
@@ -124,7 +122,7 @@
     });
   });
 
-  /* Practice area card accordion */
+ 
   document.querySelectorAll('.pa-card-toggle').forEach((btn) => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.pa-card-accordion');
@@ -142,7 +140,7 @@
     });
   });
 
-  /* Scroll reveal + staggered grids */
+
   const staggerGroups = [
     { root: document.querySelector('.pa-grid'), item: '.pa-card.reveal' },
     { root: document.querySelector('.engage-accordion#engage-accordion'), item: '.engage-item.reveal' },
@@ -188,7 +186,7 @@
     reveals.forEach((el) => el.classList.add('visible'));
   }
 
-  /* BlurText (react-bits style) — word-by-word blur reveal */
+
   function initBlurText(el) {
     if (!el || el.dataset.blurReady === '1') return;
     const raw = el.textContent.replace(/\s+/g, ' ').trim();
@@ -281,7 +279,7 @@
     }
   }
 
-  /* Contact form */
+ 
   const contactForm = document.getElementById('contact-form');
   const planSelect = document.getElementById('c-plan');
 
@@ -353,7 +351,7 @@
     });
   }
 
-  /* Single-page hash nav active state */
+  
   const sectionIds = ['home', 'services', 'profile', 'process', 'fees', 'retainers', 'insights', 'contact'];
   const navAnchors = document.querySelectorAll('.nav-links a[data-nav]');
   const sectionEls = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
@@ -374,7 +372,7 @@
 
   if (navAnchors.length) setActiveNav();
 
-  /* ——— Effects: magnetic + 3D cards (demand-driven RAF) ——— */
+
   const magnets = Array.from(document.querySelectorAll('.magnetic'));
   const cards3d = Array.from(document.querySelectorAll('.pa-card, .retainer-card'));
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Share the Shwe Lone Myanmar demo locally with a public URL (temporary).
+# Share the Stand Law Firm demo locally with a public URL (temporary).
 # Requires: python3, ssh
 
 set -euo pipefail

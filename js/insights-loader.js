@@ -1,4 +1,4 @@
-/* Load legal insights from data/insights.json */
+
 (function () {
   const DATA_URL = 'data/insights.json';
 

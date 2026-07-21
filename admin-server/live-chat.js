@@ -1,6 +1,4 @@
-/**
- * Live chat sessions — visitor <-> admin via Telegram
- */
+
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -8,9 +6,11 @@ const { isWithinOfficeHours, officeHoursMessage } = require('./office-hours');
 
 const SESSIONS_FILE = 'data/chat-sessions.json';
 const ARCHIVE_FILE = 'data/chat-archive.json';
+const CHAT_ARCHIVE_RETENTION_DAYS = Number(process.env.CHAT_ARCHIVE_RETENTION_DAYS) || 90;
+const CHAT_ARCHIVE_MAX_SESSIONS = 500;
 const LIVE_SESSION_TTL_MS = 1000 * 60 * 60 * 2; // 2 hours
 const CLOSED_GRACE_MS = 5 * 60 * 1000; // keep closed sessions for visitor poll
-const CLOSE_BUTTON_LABEL = '🔚 Chat ပီးပါပြီ';
+const CLOSE_BUTTON_LABEL = '🔚 Done Chat';
 const TELEGRAM_FETCH_RETRIES = 4;
 const TELEGRAM_FETCH_BASE_DELAY_MS = 1500;
 const TELEGRAM_FETCH_TIMEOUT_MS = 35000;
@@ -77,10 +77,48 @@ function createLiveChatApi({
   checkSessionPollRate,
   clientIp,
   send,
+  chatAnalytics,
+  buildApiHeaders,
 }) {
   const rateLiveMessage = checkLiveMessageRate || checkTelegramRate;
   const rateSessionPoll = checkSessionPollRate || (() => true);
   const sessionsPath = () => path.join(root, SESSIONS_FILE);
+  /** @type {Map<string, Set<import('http').ServerResponse>>} */
+  const streamSubscribers = new Map();
+
+  function trackChat(type, meta) {
+    try {
+      chatAnalytics?.track?.(type, meta);
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
+  function notifySessionStream(sessionId, payload) {
+    const set = streamSubscribers.get(sessionId);
+    if (!set || !set.size) return;
+    const data = `data: ${JSON.stringify(payload)}\n\n`;
+    for (const res of [...set]) {
+      try {
+        res.write(data);
+      } catch {
+        set.delete(res);
+      }
+    }
+    if (!set.size) streamSubscribers.delete(sessionId);
+  }
+
+  function broadcastSession(session) {
+    if (!session) return;
+    notifySessionStream(session.id, {
+      ok: true,
+      sessionId: session.id,
+      status: session.status,
+      messages: [],
+      nextIndex: (session.messages || []).length,
+      full: false,
+    });
+  }
 
   function readStore() {
     try {
@@ -269,6 +307,20 @@ function createLiveChatApi({
     rebuildMaps();
   }
 
+  function pruneArchiveSessions(archive) {
+    const cutoff = Date.now() - CHAT_ARCHIVE_RETENTION_DAYS * 24 * 60 * 60 * 1000;
+    archive.sessions = (archive.sessions || []).filter((s) => {
+      const closed = s.closedAt || s.createdAt;
+      if (!closed) return true;
+      const t = new Date(closed).getTime();
+      return !Number.isNaN(t) && t >= cutoff;
+    });
+    if (archive.sessions.length > CHAT_ARCHIVE_MAX_SESSIONS) {
+      archive.sessions.length = CHAT_ARCHIVE_MAX_SESSIONS;
+    }
+    return archive;
+  }
+
   function archiveSessionCopy(session) {
     const archivePath = path.join(root, ARCHIVE_FILE);
     let archive = { sessions: [] };
@@ -295,7 +347,7 @@ function createLiveChatApi({
     if (idx >= 0) archive.sessions[idx] = entry;
     else archive.sessions.unshift(entry);
 
-    if (archive.sessions.length > 500) archive.sessions.length = 500;
+    pruneArchiveSessions(archive);
 
     fs.mkdirSync(path.dirname(archivePath), { recursive: true });
     fs.writeFileSync(archivePath, JSON.stringify(archive, null, 2) + '\n', 'utf8');
@@ -317,6 +369,8 @@ function createLiveChatApi({
     session.closedBy = closedBy;
     saveSession(session);
     archiveSessionCopy(session);
+    trackChat('live_closed', { sessionId, closedBy });
+    broadcastSession(session);
 
     if (focusedSessionId === sessionId) focusedSessionId = null;
 
@@ -344,8 +398,29 @@ function createLiveChatApi({
   }
 
   function pushMessage(session, from, text) {
-    session.messages.push({ from, text, at: new Date().toISOString() });
-    session.updatedAt = new Date().toISOString();
+    const at = new Date().toISOString();
+    session.messages.push({ from, text, at });
+    session.updatedAt = at;
+
+    if (from === 'admin' && !session.firstAdminReplyAt && session.acceptedAt) {
+      session.firstAdminReplyAt = at;
+      const responseMs = new Date(at).getTime() - new Date(session.acceptedAt).getTime();
+      if (responseMs >= 0) {
+        trackChat('first_admin_reply', {
+          sessionId: session.id,
+          responseMs,
+        });
+      }
+    }
+
+    notifySessionStream(session.id, {
+      ok: true,
+      sessionId: session.id,
+      status: session.status,
+      messages: [{ from, text, at }],
+      nextIndex: session.messages.length,
+      full: false,
+    });
   }
 
   async function telegramCall(method, body, channel = 'live') {
@@ -478,6 +553,8 @@ function createLiveChatApi({
     if (!session || session.status !== 'pending') return;
 
     session.status = 'active';
+    session.acceptedAt = new Date().toISOString();
+    trackChat('live_accepted', { sessionId });
     pushMessage(
       session,
       'system',
@@ -514,6 +591,7 @@ function createLiveChatApi({
     }
     setFocusedSession(sessionId);
     saveSession(session);
+    broadcastSession(session);
   }
 
   async function rejectSession(sessionId) {
@@ -535,8 +613,10 @@ function createLiveChatApi({
     );
     session.closedAt = new Date().toISOString();
     session.closedBy = 'admin';
+    trackChat('live_rejected', { sessionId });
     saveSession(session);
     archiveSessionCopy(session);
+    broadcastSession(session);
 
     await telegramSendLive(session, `❌ Live chat rejected (${sessionId})`);
     await closeSessionTopic(session);
@@ -575,7 +655,7 @@ function createLiveChatApi({
 
     if (text.match(/^\/(?:start|help)(?:@\w+)?$/i)) {
       const lines = [
-        '📬 Shwe Lone Myanmar Bot',
+        '📬 Stand Law Firm Bot',
         '',
         '• Contact form notifications → ဒီ private chat',
       ];
@@ -818,20 +898,20 @@ function createLiveChatApi({
       const tg = await telegramSendLive(
         session,
         [
-          '👤 Live chat request — Shwe Lone Myanmar',
+          '👤 Live chat request — Stand Law Firm',
           '',
           `Name: ${visitorName}`,
           `Reason: ${visitorReason}`,
           `Session: ${sessionId}`,
           '',
-          'လက်ခံမလား ငြင်းပယ်မလား?',
+          'Accept (or) Decline?',
         ].join('\n'),
         {
           reply_markup: {
             inline_keyboard: [
               [
-                { text: '✅ လက်ခံမယ်', callback_data: `live_accept:${sessionId}` },
-                { text: '❌ ငြင်းပယ်မယ်', callback_data: `live_reject:${sessionId}` },
+                { text: '✅ Accept Chat', callback_data: `live_accept:${sessionId}` },
+                { text: '❌ Decline Chat', callback_data: `live_reject:${sessionId}` },
               ],
             ],
           },
@@ -840,6 +920,7 @@ function createLiveChatApi({
       session.notifyMessageId = tg.result.message_id;
       registerTelegramMessage(session, tg.result.message_id);
       saveSession(session);
+      trackChat('live_started', { sessionId });
       send(res, 200, { ok: true, sessionId, status: session.status });
     } catch (err) {
       console.error('Live request failed:', err.message);
@@ -935,6 +1016,78 @@ function createLiveChatApi({
       messages: slice,
       nextIndex: since + slice.length,
     });
+  }
+
+  function handleSessionStream(req, res, sessionId) {
+    if (!rateSessionPoll(clientIp(req))) {
+      send(res, 429, { error: 'Too many requests. Please try again shortly.' });
+      return;
+    }
+
+    const session = getSession(sessionId);
+    if (!session) {
+      send(res, 404, { error: 'Session not found.' });
+      return;
+    }
+
+    const url = new URL(req.url, 'http://localhost');
+    let cursor = Math.max(0, Number(url.searchParams.get('since')) || 0);
+
+    const headers = {
+      'Content-Type': 'text/event-stream; charset=utf-8',
+      'Cache-Control': 'no-cache, no-transform',
+      Connection: 'keep-alive',
+      'X-Accel-Buffering': 'no',
+    };
+    if (typeof buildApiHeaders === 'function') {
+      Object.assign(headers, buildApiHeaders(req, 'text/event-stream; charset=utf-8'));
+      headers['Content-Type'] = 'text/event-stream; charset=utf-8';
+      headers['Cache-Control'] = 'no-cache, no-transform';
+      delete headers['Content-Length'];
+    }
+
+    res.writeHead(200, headers);
+    if (typeof res.flushHeaders === 'function') res.flushHeaders();
+
+    if (!streamSubscribers.has(sessionId)) streamSubscribers.set(sessionId, new Set());
+    streamSubscribers.get(sessionId).add(res);
+
+    const sendEvent = (payload) => {
+      try {
+        res.write(`data: ${JSON.stringify(payload)}\n\n`);
+      } catch {
+        /* closed */
+      }
+    };
+
+    sendEvent({
+      ok: true,
+      sessionId: session.id,
+      status: session.status,
+      messages: session.messages.slice(cursor),
+      nextIndex: session.messages.length,
+      full: true,
+    });
+    cursor = session.messages.length;
+
+    const heartbeat = setInterval(() => {
+      try {
+        res.write(`: ping ${Date.now()}\n\n`);
+      } catch {
+        clearInterval(heartbeat);
+      }
+    }, 20000);
+
+    const onClose = () => {
+      clearInterval(heartbeat);
+      const set = streamSubscribers.get(sessionId);
+      if (set) {
+        set.delete(res);
+        if (!set.size) streamSubscribers.delete(sessionId);
+      }
+    };
+    req.on('close', onClose);
+    res.on('close', onClose);
   }
 
   async function handleLiveClose(req, res) {
@@ -1033,11 +1186,27 @@ function createLiveChatApi({
   pruneOldSessions();
   initFocusedSession();
 
+  (function pruneArchiveOnStartup() {
+    const archivePath = path.join(root, ARCHIVE_FILE);
+    try {
+      const archive = JSON.parse(fs.readFileSync(archivePath, 'utf8'));
+      if (!Array.isArray(archive.sessions)) return;
+      const before = archive.sessions.length;
+      pruneArchiveSessions(archive);
+      if (archive.sessions.length !== before) {
+        fs.writeFileSync(archivePath, JSON.stringify(archive, null, 2) + '\n', 'utf8');
+      }
+    } catch {
+      /* no archive yet */
+    }
+  })();
+
   return {
     handleLiveRequest,
     handleLiveMessage,
     handleLiveClose,
     handleSessionPoll,
+    handleSessionStream,
     handleChatArchiveList,
     handleChatArchiveDetail,
     handleTelegramWebhook,

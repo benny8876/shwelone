@@ -1,4 +1,4 @@
-/* Language toggle for legal pages */
+
 (function () {
   const tabs = document.querySelectorAll('.lang-tab');
   const panels = document.querySelectorAll('.legal-body[data-panel]');

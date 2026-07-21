@@ -1,62 +1,7 @@
-/* FAQ chat widget — Telegram-style inline buttons */
-(function () {
-  const faqData = {
-    realEstate: [
-      { q: "မြေမဝယ်ခင် Lawyer နဲ့ တိုင်ပင်ဖို့ လိုအပ်ပါသလား?", a: "ဟုတ်ပါတယ်။ ငွေမချေခင် Lawyer နဲ့ တိုင်ပင်ခြင်းက ရောင်းပိုင်ခွင့်၊ စာရွက်စာတမ်း၊ စာချုပ်နဲ့ ဥပဒေရေးရာအန္တရာယ်တွေကို ကြိုတင်စစ်ဆေးနိုင်ပြီး အနာဂတ်အငြင်းပွားမှုတွေကို လျှော့ချပေးနိုင်ပါတယ်။" },
-      { q: "စာချုပ်ရှိရုံနဲ့ မြေက လုံခြုံပြီလား?", a: "မဟုတ်ပါ။ စာချုပ်တစ်စောင်ရှိရုံနဲ့ ပိုင်ဆိုင်ခွင့်အာမခံမရပါဘူး။ ရောင်းချသူရဲ့ ရောင်းပိုင်ခွင့်၊ စာရွက်စာတမ်းမှန်ကန်မှု၊ ဥပဒေဆိုင်ရာအခြေအနေတွေကိုလည်း စစ်ဆေးဖို့ လိုအပ်ပါတယ်။" },
-      { q: "မြေမှာ ဘဏ်အပေါင်တင်ထားတာကို ဘယ်လိုသိနိုင်မလဲ?", a: "စာရွက်စာတမ်းကြည့်ရုံနဲ့ မသေချာနိုင်ပါဘူး။ သက်ဆိုင်ရာအချက်အလက်တွေကို ဥပဒေနည်းလမ်းအတိုင်း စစ်ဆေးပြီးမှသာ အပေါင်၊ ကန့်သတ်ချက် သို့မဟုတ် အခြားအခွင့်အရေးတွေ ရှိ/မရှိကို သိနိုင်ပါတယ်။" },
-      { q: "Deposit ပေးပြီးမှ Due Diligence လုပ်လို့ရလား?", a: "လုပ်လို့ရပေမယ့် အကောင်းဆုံးက Deposit မပေးခင် စစ်ဆေးတာပါ။ Deposit ပေးပြီးမှ ပြဿနာတွေတွေ့ရင် ငွေပြန်ရဖို့ ခက်ခဲနိုင်ပါတယ်။" },
-      { q: "Developer Project ကို ဝယ်ရင်လည်း Due Diligence လိုပါသလား?", a: "လိုပါတယ်။ Developer ရဲ့ မြေပိုင်ဆိုင်မှု၊ လုပ်ငန်းလိုင်စင်၊ ခွင့်ပြုချက်များ၊ စာချုပ်အချက်အလက်များကို စစ်ဆေးသင့်ပါတယ်။" },
-      { q: "SP, GP, POA ရှိရုံနဲ့ မြေဝယ်လို့ စိတ်ချရလား?", a: "မဟုတ်ပါ။ SP (Special Power), GP (General Power) သို့မဟုတ် POA (Power of Attorney) ရှိရုံနဲ့ မလုံလောက်ပါဘူး။ အဲဒီစာရွက်စာတမ်းတွေက တရားဝင်ဆဲလား၊ ရုပ်သိမ်းထားသလား၊ ပေးပိုင်ခွင့်ဘောင်အတွင်းရှိလားဆိုတာ စစ်ဆေးရပါတယ်။" },
-      { q: "အမွေဆိုင်ရာ ပြဿနာရှိတဲ့မြေကို ဘယ်လိုသိနိုင်မလဲ?", a: "ပိုင်ရှင်သေဆုံးထားတာ၊ အမွေဆက်ခံသူများရှိတာ၊ အမွေခွဲဝေမှုမပြီးသေးတာတွေကို စစ်ဆေးဖို့လိုပါတယ်။ ဒီလိုအခြေအနေတွေက နောက်ပိုင်း အမှုဖြစ်နိုင်တဲ့ Risk မြင့်ပါတယ်။" },
-      { q: "ရောင်းသူက 'စာရွက်စာတမ်း အကုန်စုံတယ်' လို့ပြောရင် ယုံလို့ရလား?", a: "စာရွက်စာတမ်းစုံတာနဲ့ ဥပဒေအရ အန္တရာယ်မရှိဘူးလို့ မဆိုနိုင်ပါဘူး။ စာရွက်စာတမ်းရဲ့ တရားဝင်မှု၊ ရောင်းပိုင်ခွင့်နဲ့ လက်ရှိဥပဒေအခြေအနေတွေကို သီးခြားစစ်ဆေးဖို့ လိုပါတယ်။" },
-      { q: "Real Estate Due Diligence မှာ ဘာတွေ ပါဝင်လဲ?", a: "ဝန်ဆောင်မှုအတိုင်းအတာပေါ်မူတည်ပေမယ့် အများအားဖြင့်— ပိုင်ဆိုင်မှုစစ်ဆေးခြင်း၊ ရောင်းပိုင်ခွင့်စစ်ဆေးခြင်း၊ စာချုပ်သုံးသပ်ခြင်း၊ ဥပဒေရေးရာ Risk Assessment၊ လိုအပ်သော အကြံပြုချက်များ တို့ ပါဝင်ပါတယ်။" },
-      { q: "Lawyer ကို မခန့်ဘဲ ဝယ်ရင် ဘာ Risk ရှိနိုင်လဲ?", a: "ငွေဆုံးရှုံးမှု၊ ရောင်းပိုင်ခွင့်မပြည့်စုံခြင်း၊ အမွေဆိုင်ရာအငြင်းပွားမှု၊ ဘဏ်အပေါင်၊ တရားရုံးအမှု၊ စာချုပ်အားနည်းချက်တွေကြောင့် အချိန်နဲ့ ငွေကြေးပိုမိုဆုံးရှုံးနိုင်ပါတယ်။" }
-    ],
-    businessLaw: [
-      { q: "Company တည်ထောင်ဖို့ Lawyer လိုအပ်ပါသလား?", a: "Company Registration ကို ကိုယ်တိုင်လုပ်နိုင်သော်လည်း Share Structure၊ Director Responsibilities၊ Internal Agreements နဲ့ Legal Compliance တွေကို အစကတည်းက မှန်ကန်အောင် စီစဉ်ထားဖို့ Lawyer နဲ့ တိုင်ပင်တာက နောင်တစ်ချိန်မှာ ဖြစ်လာနိုင်တဲ့ ဥပဒေရေးရာပြဿနာတွေကို လျှော့ချပေးနိုင်ပါတယ်။" },
-      { q: "Company Registration ပြီးရုံနဲ့ တရားဝင်လုပ်ငန်းစလုပ်လို့ ရပြီလား?", a: "အမြဲတမ်း မဟုတ်ပါ။ လုပ်ငန်းအမျိုးအစားပေါ်မူတည်ပြီး လိုအပ်တဲ့ Licences, Permits, Regulatory Approvals နဲ့ Tax Registration တွေကိုလည်း ဆောင်ရွက်ရနိုင်ပါတယ်။" },
-      { q: "Business Contract ကို Internet က Sample ယူသုံးလို့ ရပါသလား?", a: "Sample Contract တွေဟာ သင့်လုပ်ငန်းအခြေအနေနဲ့ မကိုက်ညီနိုင်ပါဘူး။ စာချုပ်တစ်စောင်ဟာ လုပ်ငန်းရဲ့ ရည်ရွယ်ချက်၊ Risk နဲ့ သက်ဆိုင်ရာဥပဒေကို ထည့်သွင်းရေးဆွဲထားမှ အကာအကွယ်ကောင်းကောင်း ရရှိနိုင်ပါတယ်။" },
-      { q: "NDA (Non-Disclosure Agreement) က ဘယ်အချိန်မှာ လိုအပ်သလဲ?", a: "Business Idea၊ Customer List၊ Financial Information၊ Trade Secret၊ Software၊ Formula နဲ့ Confidential Information တွေကို အခြားသူထံ မျှဝေမီ NDA ချုပ်ဆိုထားသင့်ပါတယ်။" },
-      { q: "Shareholder Agreement က ဘာကြောင့် အရေးကြီးတာလဲ?", a: "Shareholder Agreement က Shareholders တွေရဲ့ အခွင့်အရေး၊ တာဝန်၊ အမြတ်ခွဲဝေမှု၊ Share Transfer နဲ့ Dispute Resolution ကို ကြိုတင်သတ်မှတ်ထားတာကြောင့် နောင်ဖြစ်လာနိုင်တဲ့ အငြင်းပွားမှုတွေကို လျှော့ချပေးပါတယ်။" },
-      { q: "Business Partner ကို ယုံကြည်ရင် စာချုပ်မလိုဘူးလား?", a: "ယုံကြည်မှုက အရေးကြီးပေမယ့် စာချုပ်က ပိုအရေးကြီးပါတယ်။ စာချုပ်ဟာ ယုံကြည်မှုမရှိလို့ ချုပ်တာမဟုတ်ဘဲ နှစ်ဖက်စလုံးရဲ့ အခွင့်အရေးနဲ့ တာဝန်တွေကို ရှင်းလင်းစေဖို့ ဖြစ်ပါတယ်။" },
-      { q: "Contract Review Service ဆိုတာ ဘာလဲ?", a: "Contract Review Service ဆိုတာ စာချုပ်ထဲက အန္တရာယ်ရှိနိုင်တဲ့ Clause တွေ၊ မမျှတတဲ့ သဘောတူညီချက်တွေ၊ ပြင်ဆင်သင့်တဲ့ အချက်တွေကို Lawyer က သုံးသပ်ပြီး အကြံပြုပေးတဲ့ ဝန်ဆောင်မှုဖြစ်ပါတယ်။" },
-      { q: "Lawyer နဲ့ တိုင်ပင်ထားတဲ့ အချက်အလက်တွေကို လျှို့ဝှက်ထားပေးပါသလား?", a: "ဟုတ်ပါတယ်။ Client ထံမှ ရရှိတဲ့ အချက်အလက်တွေကို Professional Confidentiality အရ လျှို့ဝှက်ထိန်းသိမ်းပေးပြီး၊ Client ရဲ့ သဘောတူညီချက်မရှိဘဲ အခြားသူထံ ထုတ်ဖော်မည် မဟုတ်ပါ။" },
-      { q: "Startup လုပ်ငန်းအသစ်တစ်ခု စတင်မယ်ဆိုရင် ဘယ်လို ဥပဒေရေးရာ ပြင်ဆင်မှုတွေ လိုအပ်လဲ?", a: "Business Structure ရွေးချယ်ခြင်း၊ Company Registration၊ Shareholder Agreement၊ Employment Contract၊ NDA၊ Trademark Registration၊ Tax Compliance နဲ့ လုပ်ငန်းလိုင်စင်များကို လုပ်ငန်းအမျိုးအစားအလိုက် စီစဉ်သင့်ပါတယ်။" },
-      { q: "Legal Consultation ကို Online ရနိုင်ပါသလား?", a: "ရပါတယ်။ Appointment ရယူပြီး Video Call သို့မဟုတ် Online Meeting မှတစ်ဆင့် မြန်မာနိုင်ငံအတွင်းနှင့် ပြည်ပရောက် Clients များကိုလည်း ဝန်ဆောင်မှုပေးလျက်ရှိပါတယ်။" }
-    ],
-    companyLaw: [
-      { q: "Company Registration လုပ်ပြီးရုံနဲ့ လုပ်ငန်းစတင်လို့ ရပြီလား?", a: "မဟုတ်ပါ။ Company Registration ပြီးတာဟာ စတင်ခြေလှမ်းတစ်ခုသာ ဖြစ်ပါတယ်။ လုပ်ငန်းအမျိုးအစားပေါ်မူတည်ပြီး လိုအပ်တဲ့ Licences, Permits, Tax Registration နဲ့ Regulatory Compliance တွေကို ဆက်လက်ဆောင်ရွက်ရန် လိုအပ်နိုင်ပါတယ်။" },
-      { q: "Private Company နဲ့ Public Company က ဘာကွာခြားလဲ?", a: "Private Company က အစုရှယ်ယာလွှဲပြောင်းခြင်းနဲ့ အများပြည်သူထံမှ ရင်းနှီးမြှုပ်နှံငွေစုဆောင်းခြင်းအပေါ် ကန့်သတ်ချက်များ ရှိနိုင်ပါတယ်။ Public Company ကတော့ ဥပဒေသတ်မှတ်ချက်များကို လိုက်နာပြီး အများပြည်သူထံမှ ရင်းနှီးမြှုပ်နှံငွေ ရယူနိုင်တဲ့ ပုံစံဖြစ်ပါတယ်။" },
-      { q: "Director တစ်ယောက်မှာ ဘာတာဝန်တွေရှိလဲ?", a: "Director ဟာ Company နဲ့ Shareholders တွေရဲ့ အကျိုးစီးပွားကို ဦးစားပေးပြီး ဥပဒေနဲ့အညီ၊ ရိုးသားစွာ စီမံခန့်ခွဲရမယ့် Fiduciary Duties နဲ့ Statutory Duties တွေကို ထမ်းဆောင်ရပါတယ်။" },
-      { q: "Shareholder Agreement မရှိရင် ဘာဖြစ်နိုင်လဲ?", a: "Share Transfer၊ Voting Rights၊ Profit Distribution၊ Decision Making နဲ့ Exit Plan စတဲ့ အရေးကြီးတဲ့ကိစ္စတွေမှာ သဘောထားကွဲလွဲမှု ဖြစ်နိုင်ပြီး ဖြေရှင်းရ ပိုမိုခက်ခဲနိုင်ပါတယ်။" },
-      { q: "Company မှာ Share အသစ်ထုတ်ပေးချင်ရင် ဘာလုပ်ရမလဲ?", a: "Company Constitution၊ Shareholders' Resolution၊ Directors' Resolution နဲ့ သက်ဆိုင်ရာ ဥပဒေသတ်မှတ်ချက်များကို လိုက်နာပြီး ဆောင်ရွက်ရပါတယ်။" },
-      { q: "Share Transfer လုပ်တဲ့အခါ ဘာတွေစစ်ဆေးသင့်လဲ?", a: "Share Transfer မပြုလုပ်မီ Shareholder Agreement၊ Company Constitution၊ Existing Share Rights နဲ့ ဥပဒေဆိုင်ရာ လိုအပ်ချက်များကို စစ်ဆေးသင့်ပါတယ်။" },
-      { q: "Foreign Investor က မြန်မာ Company မှာ ရင်းနှီးမြှုပ်နှံလို့ရလား?", a: "ရင်းနှီးမြှုပ်နှံနိုင်တဲ့ လုပ်ငန်းအမျိုးအစားများလည်း ရှိသလို ကန့်သတ်ထားတဲ့ လုပ်ငန်းများလည်း ရှိပါတယ်။ လုပ်ငန်းအမျိုးအစား၊ ရင်းနှီးမြှုပ်နှံမှုပုံစံနဲ့ သက်ဆိုင်ရာ ဥပဒေများကို သီးခြားသုံးသပ်ဖို့ လိုအပ်ပါတယ်။" },
-      { q: "Company Constitution က မဖြစ်မနေ လိုအပ်ပါသလား?", a: "Company Constitution ရှိခြင်းက Company ရဲ့ စီမံခန့်ခွဲမှု၊ Shareholder Rights နဲ့ Internal Governance ကို ပိုမိုရှင်းလင်းစေပါတယ်။ လုပ်ငန်းအရွယ်အစားကြီးလာလေ အရေးပါလာလေ ဖြစ်ပါတယ်။" },
-      { q: "Annual Return မတင်ရင် ဘာဖြစ်နိုင်လဲ?", a: "ဥပဒေအရ လိုအပ်တဲ့ Annual Return နဲ့ အခြား Statutory Filing တွေကို အချိန်မီ မတင်ပါက ဒဏ်ကြေး၊ Compliance ပြဿနာ သို့မဟုတ် Company Status အပေါ် သက်ရောက်မှုတွေ ဖြစ်နိုင်ပါတယ်။" },
-      { q: "Company ကို Legal Retainer နဲ့ Lawyer ခန့်ထားဖို့ လိုအပ်လား?", a: "လုပ်ငန်းမှာ Contract Review၊ Employment Issues၊ Compliance၊ Corporate Governance နဲ့ Legal Risk Management တွေကို ဆက်တိုက် ကြုံတွေ့ရတဲ့ Company တွေအတွက် Legal Retainer Service က ဥပဒေရေးရာအန္တရာယ်တွေကို ကြိုတင်ကာကွယ်ပေးပြီး ဆုံးဖြတ်ချက်တွေကို ပိုမိုလုံခြုံစေပါတယ်။" }
-    ],
-    contractLaw: [
-      { q: "Contract (စာချုပ်) တစ်စောင် မဖြစ်မနေ လိုအပ်ပါသလား?", a: "အရေးကြီးတဲ့ စီးပွားရေးသဘောတူညီချက်၊ ငွေကြေးပေးချေမှု၊ ပစ္စည်းရောင်းဝယ်မှု၊ ဝန်ဆောင်မှုပေးခြင်း၊ Partnership သို့မဟုတ် Investment ကိစ္စများတွင် စာချုပ်ရှိခြင်းက နှစ်ဖက်စလုံး၏ အခွင့်အရေးနှင့် တာဝန်များကို ရှင်းလင်းစေပြီး ဥပဒေရေးရာအန္တရာယ်များကို လျှော့ချပေးနိုင်ပါတယ်။" },
-      { q: "Internet က Sample Contract ကို အသုံးပြုလို့ ရပါသလား?", a: "Sample Contract များကို အခြေခံအနေနဲ့ ကြည့်ရှုနိုင်ပေမယ့် လုပ်ငန်းအမျိုးအစား၊ ဥပဒေ၊ သဘောတူညီချက်နဲ့ အန္တရာယ်များ မတူညီတဲ့အတွက် တိုက်ရိုက်အသုံးပြုခြင်းက အန္တရာယ်ရှိနိုင်ပါတယ်။ သင့်အခြေအနေနဲ့ ကိုက်ညီအောင် ရေးဆွဲထားတဲ့ Contract က ပိုမိုလုံခြုံပါတယ်။" },
-      { q: "Contract ကို Lawyer က Review လုပ်ပေးဖို့ ဘာကြောင့်လိုအပ်တာလဲ?", a: "Contract Review က မမျှတတဲ့ Clause များ၊ ဥပဒေနဲ့ မကိုက်ညီတဲ့ အချက်များ၊ ငွေကြေးဆုံးရှုံးစေနိုင်တဲ့ Risk များ၊ Termination နဲ့ Dispute Resolution Clause များ၊ ပြင်ဆင်သင့်တဲ့ အချက်များကို စစ်ဆေးပေးပါတယ်။" },
-      { q: "နှစ်ဖက်လက်မှတ်ထိုးပြီးရင် Contract ကို ပြင်ဆင်လို့ ရသေးလား?", a: "ရပါတယ်။ သို့သော် နှစ်ဖက်စလုံးရဲ့ သဘောတူညီချက်နဲ့ Amendment Agreement သို့မဟုတ် Addendum အဖြစ် တရားဝင်ပြင်ဆင်သင့်ပါတယ်။" },
-      { q: "စာချုပ်ကို Notary Public မှာ မှတ်ပုံတင်ရမလား?", a: "Contract အမျိုးအစားပေါ် မူတည်ပါတယ်။ Contract တိုင်း Notarization လုပ်ရန် မလိုအပ်သော်လည်း အချို့သော သဘောတူညီချက်များတွင် သက်သေအထောက်အထားပိုမိုခိုင်မာစေရန် Notarization ပြုလုပ်နိုင်ပါတယ်။" },
-      { q: "မြန်မာဘာသာနဲ့ အင်္ဂလိပ်ဘာသာ နှစ်မျိုးလုံးရေးဖို့ လိုပါသလား?", a: "International Transaction၊ Foreign Partner၊ Foreign Investor နဲ့ ချုပ်ဆိုတဲ့ Contract များတွင် Bilingual Contract (Myanmar–English) အသုံးပြုခြင်းက ပိုမိုရှင်းလင်းပြီး အနာဂတ်အငြင်းပွားမှုများကို လျှော့ချပေးနိုင်ပါတယ်။" },
-      { q: "Contract မှာ မဖြစ်မနေ ပါသင့်တဲ့ အချက်တွေက ဘာတွေလဲ?", a: "Contract အမျိုးအစားပေါ် မူတည်ပေမယ့် အများအားဖြင့်— Parties၊ Scope of Work၊ Payment Terms၊ Rights & Obligations၊ Confidentiality၊ Intellectual Property၊ Term & Termination၊ Governing Law၊ Dispute Resolution၊ Force Majeure စတဲ့ အချက်တွေ ပါဝင်သင့်ပါတယ်။" },
-      { q: "NDA (Non-Disclosure Agreement) ကို ဘယ်အချိန်မှာ ချုပ်သင့်လဲ?", a: "Business Idea၊ Customer Data၊ Formula၊ Software၊ Financial Information၊ Trade Secret သို့မဟုတ် Confidential Information တွေကို အခြားသူနဲ့ မျှဝေမီ NDA ချုပ်ဆိုထားသင့်ပါတယ်။" },
-      { q: "Contract ကို လက်မှတ်မထိုးခင် ဘာတွေစစ်ဆေးသင့်လဲ?", a: "လက်မှတ်မထိုးမီ အဖွဲ့အစည်း/လူပုဂ္ဂိုလ်၏ တရားဝင်အခြေအနေ၊ စာချုပ်ပါ တာဝန်များ၊ ငွေပေးချေမှုစည်းကမ်းများ၊ Penalty Clause၊ Termination Clause၊ Dispute Resolution၊ Governing Law တို့ကို စစ်ဆေးသင့်ပါတယ်။" },
-      { q: "Contract ချိုးဖောက်ခံရရင် ဘာလုပ်နိုင်လဲ?", a: "Contract ပါ အချက်အလက်များနဲ့ သက်ဆိုင်ရာဥပဒေအရ အခွင့်အရေးများကို အသုံးပြုနိုင်ပါတယ်။ အခြေအနေပေါ်မူတည်ပြီး Negotiation၊ Mediation၊ Arbitration သို့မဟုတ် တရားစွဲဆိုခြင်းကဲ့သို့သော နည်းလမ်းများကို ရွေးချယ်နိုင်ပါတယ်။" }
-    ]
-  };
 
-  const categories = [
-    { id: 'realEstate', label: 'Real Estate FAQ' },
-    { id: 'businessLaw', label: 'Business Law FAQ' },
-    { id: 'companyLaw', label: 'Company Law FAQ' },
-    { id: 'contractLaw', label: 'Contract Law FAQ' }
-  ];
+(function () {
+  let faqData = {};
+  let categories = [];
 
   const CONTACT_ADMIN_LABEL = 'တိုက်ရိုက်ဆက်သွယ်ရန် · Contact admin';
   const OFFICE_START_HOUR = 10;
@@ -102,6 +47,7 @@
     const messages = document.getElementById('chat-messages');
     const form = document.getElementById('chat-compose');
     const input = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('chat-send');
     if (!root || !panel || !launcher || !messages) return;
 
     const closeBtn = panel.querySelector('.chat-close');
@@ -110,6 +56,8 @@
     let liveSessionId = null;
     let liveStatus = null;
     let pollTimer = null;
+    let eventSource = null;
+    let useSse = typeof EventSource !== 'undefined';
     let messageCursor = 0;
     let liveIntakeStep = null;
     let pendingVisitorName = '';
@@ -119,13 +67,107 @@
     let pollBackoffMs = 2000;
     let outboundQueue = [];
     let flushingQueue = false;
+    const SESSION_STORE_KEY = 'shwelone_live_chat';
     const DEFAULT_INPUT_PLACEHOLDER = 'Type your message…';
+    const LOCKED_INPUT_PLACEHOLDER =
+      'တိုက်ရိုက်ဆက်သွယ်ရန် ကို နှိပ်ပြီး စာပို့နိုင်ပါသည်…';
     const POLL_BASE_MS = 2000;
     const POLL_MAX_MS = 12000;
     const FETCH_TIMEOUT_MS = 15000;
+    const PRIVACY_CONSENT_TEXT = [
+      'တိုက်ရိုက်ဆက်သွယ်မှု မစမီ အောက်ပါအချက်များကို သဘောတူပါ —',
+      '',
+      '• ဤ chat သည် ယေဘုယျအချက်အလက်အတွက်သာ ဖြစ်ပြီး တရားဝင် ဥပဒေအကြံပေးချက် မဟုတ်ပါ။',
+      '• သင့်အမည်နှင့် မက်ဆေ့ဂျ်များကို ရုံးသို့ ပေးပို့သိမ်းဆည်းနိုင်ပါသည်။',
+      '• Privacy Policy ကို ဖတ်ရှုပြီးမှ ဆက်သွယ်ပါ။',
+    ].join('\n');
 
     function sleep(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    function trackEvent(type, meta = {}) {
+      try {
+        const body = JSON.stringify({ type, ...meta });
+        const url = apiUrl('/api/chat/analytics/track');
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon(url, new Blob([body], { type: 'application/json' }));
+          return;
+        }
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body,
+          keepalive: true,
+        }).catch(() => {});
+      } catch (_) {
+     
+      }
+    }
+
+    function persistLiveSession() {
+      try {
+        if (!liveSessionId || liveStatus === 'closed' || liveStatus === 'rejected') {
+          sessionStorage.removeItem(SESSION_STORE_KEY);
+          return;
+        }
+        sessionStorage.setItem(
+          SESSION_STORE_KEY,
+          JSON.stringify({
+            sessionId: liveSessionId,
+            status: liveStatus,
+            messageCursor,
+          })
+        );
+      } catch (_) {
+        
+      }
+    }
+
+    function clearPersistedSession() {
+      try {
+        sessionStorage.removeItem(SESSION_STORE_KEY);
+      } catch (_) {
+        
+      }
+    }
+
+    function readPersistedSession() {
+      try {
+        const raw = sessionStorage.getItem(SESSION_STORE_KEY);
+        if (!raw) return null;
+        const data = JSON.parse(raw);
+        if (!data?.sessionId) return null;
+        return data;
+      } catch {
+        return null;
+      }
+    }
+
+    async function loadFaqData() {
+      try {
+        const res = await fetch(apiUrl('/api/faq'), { cache: 'no-store' });
+        if (!res.ok) throw new Error('FAQ load failed');
+        const data = await res.json();
+        const cats = Array.isArray(data.categories) ? data.categories : [];
+        categories = cats.map((c) => ({
+          id: c.id,
+          label: c.label || c.id,
+          items: Array.isArray(c.items) ? c.items : [],
+        }));
+        faqData = {};
+        categories.forEach((c) => {
+          faqData[c.id] = c.items.map((item) => ({
+            id: item.id,
+            q: item.q,
+            a: item.a,
+          }));
+        });
+      } catch (err) {
+        console.warn('FAQ load:', err.message);
+        categories = [];
+        faqData = {};
+      }
     }
 
     async function fetchWithTimeout(url, options = {}, timeoutMs = FETCH_TIMEOUT_MS) {
@@ -138,16 +180,45 @@
       }
     }
 
-    function stopLivePoll() {
+    function canUseCompose() {
+      return !!liveIntakeStep || isLiveActive() || isLivePending();
+    }
+
+    function updateComposeState() {
+      const locked = !canUseCompose();
+      if (form) form.classList.toggle('is-locked', locked);
+      if (input) {
+        input.disabled = locked;
+        if (locked) {
+          input.value = '';
+          input.style.height = 'auto';
+          input.placeholder = LOCKED_INPUT_PLACEHOLDER;
+        } else if (!liveIntakeStep) {
+          input.placeholder = DEFAULT_INPUT_PLACEHOLDER;
+        }
+      }
+      if (sendBtn) sendBtn.disabled = locked;
+    }
+
+    function stopLiveStream() {
       if (pollTimer) {
         clearTimeout(pollTimer);
         pollTimer = null;
       }
+      if (eventSource) {
+        try {
+          eventSource.close();
+        } catch (_) {
+         
+        }
+        eventSource = null;
+      }
     }
 
     function scheduleLivePoll(delayMs = pollBackoffMs) {
-      stopLivePoll();
+      stopLiveStream();
       if (!liveSessionId) return;
+      useSse = false;
       pollTimer = window.setTimeout(() => {
         pollLiveSession();
       }, delayMs);
@@ -156,7 +227,7 @@
     function cancelLiveIntake() {
       liveIntakeStep = null;
       pendingVisitorName = '';
-      if (input) input.placeholder = DEFAULT_INPUT_PLACEHOLDER;
+      updateComposeState();
     }
 
     function isLiveActive() {
@@ -168,20 +239,22 @@
     }
 
     function endLiveSessionUi(greeting = 'ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?') {
-      stopLivePoll();
+      stopLiveStream();
       liveSessionId = null;
       liveStatus = null;
       messageCursor = 0;
       liveEndHandled = false;
+      clearPersistedSession();
       cancelLiveIntake();
       currentCatId = null;
       setBackVisible(false);
+      updateComposeState();
       messages.innerHTML = '';
       showMainMenu(greeting);
     }
 
     function clearLiveSessionState() {
-      stopLivePoll();
+      stopLiveStream();
       liveSessionId = null;
       liveStatus = null;
       messageCursor = 0;
@@ -190,9 +263,10 @@
       pollBackoffMs = POLL_BASE_MS;
       outboundQueue = [];
       flushingQueue = false;
+      clearPersistedSession();
       cancelLiveIntake();
       setBackVisible(false);
-      if (input) input.placeholder = DEFAULT_INPUT_PLACEHOLDER;
+      updateComposeState();
     }
 
     function applyPollPayload(data) {
@@ -202,7 +276,15 @@
           appendBubble(msg.text, 'bot', msg.from === 'system');
         }
       });
-      messageCursor = data.nextIndex ?? messageCursor;
+      if (typeof data.nextIndex === 'number') {
+        messageCursor = data.nextIndex;
+      } else if (data.full) {
+        messageCursor = (data.messages || []).length;
+      } else {
+        messageCursor += (data.messages || []).length;
+      }
+      persistLiveSession();
+      updateComposeState();
 
       if (liveStatus === 'active') {
         flushOutboundQueue();
@@ -256,12 +338,60 @@
       }
     }
 
-    function startLivePoll() {
+    function startLiveSse() {
+      if (!liveSessionId || typeof EventSource === 'undefined') {
+        useSse = false;
+        scheduleLivePoll(0);
+        return;
+      }
+      stopLiveStream();
+      useSse = true;
+      const url = apiUrl(
+        `/api/chat/session/${encodeURIComponent(liveSessionId)}/stream?since=${messageCursor}`
+      );
+      try {
+        eventSource = new EventSource(url);
+      } catch (err) {
+        console.warn('SSE open failed:', err.message);
+        useSse = false;
+        scheduleLivePoll(0);
+        return;
+      }
+
+      eventSource.onmessage = (ev) => {
+        try {
+          const data = JSON.parse(ev.data);
+          pollFailCount = 0;
+          pollNotFoundCount = 0;
+          applyPollPayload(data);
+        } catch (err) {
+          console.warn('SSE parse:', err.message);
+        }
+      };
+
+      eventSource.onerror = () => {
+        if (eventSource) {
+          try {
+            eventSource.close();
+          } catch (_) {
+            
+          }
+          eventSource = null;
+        }
+        if (!liveSessionId) return;
+        console.warn('SSE disconnected — falling back to poll');
+        useSse = false;
+        scheduleLivePoll(1000);
+      };
+    }
+
+    function startLiveUpdates() {
       pollFailCount = 0;
       pollNotFoundCount = 0;
       pollBackoffMs = POLL_BASE_MS;
-      stopLivePoll();
-      pollLiveSession();
+      persistLiveSession();
+      if (useSse) startLiveSse();
+      else scheduleLivePoll(0);
     }
 
     async function sendLiveMessageToServer(text, { retries = 4 } = {}) {
@@ -369,7 +499,7 @@
                     showOutsideOfficeHours();
                     return;
                   }
-                  startLiveIntake();
+                  showPrivacyConsent();
                 },
                 isContact: true,
               },
@@ -437,12 +567,49 @@
       liveIntakeStep = 'name';
       pendingVisitorName = '';
       setBackVisible(true);
-      appendBubble(CONTACT_ADMIN_LABEL, 'user');
       appendBubble('ရုံးနှင့် တိုက်ရိုက်ဆက်သွယ်ရန် သင့်နာမည် ရေးပေးပါ။', 'bot');
+      updateComposeState();
       if (input) {
         input.placeholder = 'သင့်နာမည်…';
         input.focus();
       }
+    }
+
+    function showPrivacyConsent() {
+      if (liveSessionId && (liveStatus === 'pending' || liveStatus === 'active')) {
+        appendBubble('ရုံးနှင့် ဆက်သွယ်မှု တောင်းဆိုထားပြီးသား ဖြစ်ပါသည်။', 'bot');
+        return;
+      }
+
+      if (!isWithinOfficeHours()) {
+        showOutsideOfficeHours();
+        return;
+      }
+
+      disableLastKeyboard();
+      appendBubble(CONTACT_ADMIN_LABEL, 'user');
+      appendBubble(PRIVACY_CONSENT_TEXT, 'bot', true);
+      appendKeyboard([
+        {
+          label: 'သဘောတူပြီး ဆက်သွားမယ်',
+          isContact: true,
+          onClick: () => {
+            disableLastKeyboard();
+            startLiveIntake();
+          },
+        },
+        {
+          label: 'Privacy Policy ကြည့်ရန်',
+          onClick: () => {
+            window.open('privacy.html', '_blank', 'noopener');
+          },
+        },
+        {
+          label: '← Main Menu',
+          isBack: true,
+          onClick: () => goMainMenu('ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?'),
+        },
+      ]);
     }
 
     async function submitLiveRequest(visitorName, visitorReason) {
@@ -479,8 +646,8 @@
         liveStatus = data.status || 'pending';
         messageCursor = 0;
         liveEndHandled = false;
-        if (input) input.placeholder = DEFAULT_INPUT_PLACEHOLDER;
-        startLivePoll();
+        updateComposeState();
+        startLiveUpdates();
       } catch (err) {
         console.warn('Live request:', err.message);
         appendBubble(
@@ -524,7 +691,7 @@
     }
 
     async function requestLiveAdmin() {
-      startLiveIntake();
+      showPrivacyConsent();
     }
 
     function mainMenuButtons() {
@@ -596,15 +763,17 @@
       currentCatId = null;
       cancelLiveIntake();
       setBackVisible(false);
+      updateComposeState();
       showMainMenu(greeting);
     }
 
-    function showMainMenu(greeting = "မင်္ဂလာပါ။ Shwe Lone Myanmar မှ ကြိုဆိုပါတယ်။ ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?") {
+    function showMainMenu(greeting = "မင်္ဂလာပါ။ Stand Law Firm မှ ကြိုဆိုပါတယ်။ ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?") {
       appendBubble(greeting, 'bot');
       appendKeyboard(mainMenuButtons());
     }
 
     function handleCategorySelect(cat) {
+      trackEvent('faq_category', { categoryId: cat.id, label: cat.label });
       appendBubble(cat.label, 'user');
       currentCatId = cat.id;
       setBackVisible(true);
@@ -629,7 +798,7 @@
       appendKeyboard([
         ...data.map((item) => ({
           label: item.q,
-          onClick: () => handleQuestionSelect(item.q, item.a, catId),
+          onClick: () => handleQuestionSelect(item, catId),
         })),
         {
           label: '← နောက်သို့ (Main Menu)',
@@ -639,11 +808,17 @@
       ]);
     }
 
-    function handleQuestionSelect(q, a, catId) {
+    function handleQuestionSelect(item, catId) {
+      const q = item.q;
+      const a = item.a;
+      trackEvent('faq_question', {
+        categoryId: catId,
+        questionId: item.id || q.slice(0, 80),
+        label: q.slice(0, 120),
+      });
       appendBubble(q, 'user');
       setTimeout(() => {
         const answerEl = appendBubble(a, 'bot');
-        // Keep answer visible at bottom — don't dump full question list under it
         appendKeyboard([
           {
             label: 'မေးခွန်းများ ထပ်ရွေးရန်',
@@ -655,7 +830,6 @@
             onClick: () => goMainMenu('ဘယ်အကြောင်းအရာကို သိချင်ပါသလဲ?'),
           },
         ]);
-        // Scroll so the answer sits near the top of the visible chat area
         window.setTimeout(() => {
           answerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 50);
@@ -672,7 +846,9 @@
           showMainMenu();
         }
         scrollToBottom();
-        window.setTimeout(() => input && input.focus(), 80);
+        if (canUseCompose()) {
+          window.setTimeout(() => input && input.focus(), 80);
+        }
         if (window.lenis) window.lenis.stop();
         document.body.style.overflow = 'hidden';
       } else {
@@ -680,13 +856,58 @@
         panel.style.display = 'none';
         root.classList.remove('is-open');
         launcher.setAttribute('aria-expanded', 'false');
-        stopLivePoll();
         if (window.lenis) window.lenis.start();
         document.body.style.overflow = '';
       }
     }
 
+    async function tryReconnectSession() {
+      const saved = readPersistedSession();
+      if (!saved?.sessionId) return false;
+      try {
+        const res = await fetchWithTimeout(
+          apiUrl(`/api/chat/session/${encodeURIComponent(saved.sessionId)}?since=0`)
+        );
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          clearPersistedSession();
+          return false;
+        }
+        if (data.status === 'closed' || data.status === 'rejected') {
+          clearPersistedSession();
+          return false;
+        }
+        liveSessionId = data.sessionId || saved.sessionId;
+        liveStatus = data.status;
+        messageCursor = 0;
+        liveEndHandled = false;
+        messages.innerHTML = '';
+        appendBubble('ယခင် ဆက်သွယ်မှုကို ပြန်ချိတ်ဆက်ထားပါသည်။', 'bot', true);
+        (data.messages || []).forEach((msg) => {
+          if (msg.from === 'system' || msg.from === 'admin') {
+            appendBubble(msg.text, 'bot', msg.from === 'system');
+          } else if (msg.from === 'user') {
+            appendBubble(msg.text, 'user');
+          }
+        });
+        messageCursor = data.nextIndex ?? (data.messages || []).length;
+        setBackVisible(true);
+        updateComposeState();
+        persistLiveSession();
+        startLiveUpdates();
+        return true;
+      } catch (err) {
+        console.warn('Reconnect:', err.message);
+        return false;
+      }
+    }
+
     setOpen(false);
+    updateComposeState();
+
+    loadFaqData().then(() => {
+      tryReconnectSession();
+    });
 
     launcher.addEventListener('click', (e) => {
       e.preventDefault();
@@ -728,18 +949,8 @@
       });
     }
 
-    async function notifyTelegram(message) {
-      const res = await fetch(apiUrl('/api/telegram/chat'), {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message }),
-      });
-      const result = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(result.error || 'Send failed');
-    }
-
-    function sendMessage() {
-      if (!input) return;
+    async function sendMessage() {
+      if (!input || !canUseCompose()) return;
       const text = (input.value || '').trim();
       if (!text) return;
 
@@ -773,22 +984,6 @@
         done();
         return;
       }
-
-      notifyTelegram(text)
-        .catch((err) => {
-          console.warn('Chat telegram:', err.message);
-        })
-        .finally(done);
-
-      window.setTimeout(() => {
-        appendBubble(
-          'ကျေးဇူးတင်ပါသည်။ သင့်မေးခွန်းကို လက်ခံရရှိပါပြီ။ ရုံးမှ တစ်ရက်အတွင်း ပြန်လည်ဆက်သွယ်ပါမည်။ အောက်ပါ FAQ မှလည်း ရွေးမေးနိုင်ပါသည်။',
-          'bot'
-        );
-        currentCatId = null;
-        setBackVisible(false);
-        appendKeyboard(mainMenuButtons());
-      }, 450);
     }
 
     if (form) {
@@ -811,15 +1006,21 @@
       });
     }
 
-    // Reconnect poll when tab becomes visible or network returns
+    
     window.addEventListener('online', () => {
-      if (liveSessionId) pollLiveSession();
+      if (liveSessionId) {
+        if (useSse) startLiveSse();
+        else pollLiveSession();
+      }
     });
     document.addEventListener('visibilitychange', () => {
-      if (!document.hidden && liveSessionId) pollLiveSession();
+      if (!document.hidden && liveSessionId) {
+        if (useSse && !eventSource) startLiveSse();
+        else if (!useSse) pollLiveSession();
+      }
     });
 
-    // Prevent page scroll while hovering chat messages
+   
     messages.addEventListener(
       'wheel',
       (e) => {
