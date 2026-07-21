@@ -50,6 +50,7 @@ html.lang-mm .nav-cta {
   white-space: nowrap;
   text-align: inherit;
   max-width: none;
+  word-break: normal;
 }
 
 /* Language toggle — keep EN/MM on one line (body word-break must not apply) */
@@ -113,8 +114,8 @@ html.lang-mm .experience-page .experience-journey .timeline-year {
 
   html[lang="my"] .nav-cta,
   html.lang-mm .nav-cta {
-    font-size: 0.75rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.72rem;
+    padding: 0.45rem 0.85rem;
   }
 }
 
@@ -127,6 +128,10 @@ html.lang-mm .experience-page .experience-journey .timeline-year {
 
   html[lang="my"] .nav-cta,
   html.lang-mm .nav-cta {
-    font-size: 0.88rem;
+    font-size: 0.72rem;
+    padding: 0.4rem 0.75rem;
+    max-width: none;
+    overflow: visible;
+    text-overflow: clip;
   }
 }

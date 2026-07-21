@@ -62,6 +62,10 @@
       "en": "Start your consultation",
       "mm": "Start your consultation"
     },
+    "nav.ctaShort": {
+      "en": "Consult",
+      "mm": "တိုင်ပင်"
+    },
     "nav.book": {
       "en": "Start your consultation",
       "mm": "Start your consultation"
@@ -2418,11 +2422,6 @@
       {
         "sel": ".site-header .nav-links a[href*='#contact']",
         "mm": "Contact",
-        "html": false
-      },
-      {
-        "sel": ".site-header .nav-cta",
-        "mm": "Start your consultation",
         "html": false
       },
       {
